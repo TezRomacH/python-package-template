@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "python-package-template"
+version = "0.1.0"
+description = "Cookiecutter template for Python packages"
+authors = ["Tezikov Roman <tez.romach@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+cookiecutter = "^1.7.0"
+lice = "^0.6"
+
+[tool.poetry.dev-dependencies]
+darglint = "^1.2.2"
+isort = "^4.3.21"
+pyupgrade = "^2.1.1"
+black = "^19.10b0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
