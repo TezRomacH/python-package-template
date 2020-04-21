@@ -16,9 +16,7 @@ def validate_project_name():
         ValueError: If module_name is not a valid Python module name
     """
     if not re.match(MODULE_REGEX, module_name):
-        message = (
-            f"ERROR: The project name `{module_name}` is not a valid Python module name."
-        )
+        message = f"ERROR: The project name `{module_name}` is not a valid Python module name."
 
         raise ValueError(message)
 

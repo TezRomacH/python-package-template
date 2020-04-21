@@ -1,3 +1,7 @@
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
 [tool.poetry]
 name = "python-package-template"
 version = "0.1.0"
@@ -6,6 +10,14 @@ readme = "README.md"
 authors = ["Tezikov Roman <tez.romach@gmail.com>"]
 license = "MIT"
 repository = "https://github.com/TezRomacH/python-package-template"
+homepage = "https://github.com/TezRomacH/python-package-template"
+keywords = ["cookiecutter", "template", "packages", "black"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
 
 [tool.poetry.dependencies]
 python = "^3.7"
@@ -18,7 +30,21 @@ darglint = "^1.2.2"
 isort = "^4.3.21"
 pyupgrade = "^2.1.1"
 black = "^19.10b0"
+mypy = "^0.770"
 
-[build-system]
-requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
+[tool.black]
+# https://github.com/psf/black
+line-length = 80
+target-version = ["py37"]
+
+[tool.isort]
+# https://github.com/timothycrosley/isort/
+known_typing = "typing,types,typing_extensions,mypy,mypy_extensions"
+known_ds = "pandas,numpy,torch,torchvision,pytorch_lightning,catalyst"
+sections = "FUTURE,TYPING,STDLIB,FIRSTPARTY,DS,THIRDPARTY,LOCALFOLDER"
+include_trailing_comma = true
+default_section = "FIRSTPARTY"
+multi_line_output = 3
+force_grid_wrap = 0
+use_parentheses = true
+line_length = 80
