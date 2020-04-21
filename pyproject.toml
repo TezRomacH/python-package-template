@@ -13,10 +13,8 @@ repository = "https://github.com/TezRomacH/python-package-template"
 homepage = "https://github.com/TezRomacH/python-package-template"
 keywords = ["cookiecutter", "template", "packages", "black"]
 classifiers = [
-  "Development Status :: 3 - Alpha",
   "Intended Audience :: Developers",
   "Operating System :: OS Independent",
-  "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 
 [tool.poetry.dependencies]
