@@ -14,6 +14,8 @@ To install them you would need to run `install` command:
 poetry install
 ```
 
+And then install pre-commit hooks
+
 ```bash
 poetry run pre-commit install
 ```

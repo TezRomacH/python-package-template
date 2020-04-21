@@ -6,7 +6,7 @@ MODULE_REGEX = r"^[a-z][a-z0-9\-]+[a-z0-9]$"
 module_name = "{{ cookiecutter.project_name }}"
 
 
-def validate_project_name():
+def validate_project_name() -> None:
     """This validator is used to ensure that `project_name` is valid.
 
     Valid inputs starts with the lowercase letter.
@@ -21,7 +21,7 @@ def validate_project_name():
         raise ValueError(message)
 
 
-validators: List[Callable] = [validate_project_name]
+validators: List[Callable[[], None]] = [validate_project_name]
 
 for validator in validators:
     try:
