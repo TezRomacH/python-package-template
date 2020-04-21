@@ -20,7 +20,7 @@ licenses = {
 }
 
 
-def generate_license():
+def generate_license() -> None:
     """Generates license file for the project."""
     license_result = os.system(
         f"lice {licenses[LICENSE]} -o '{ORGANIZATION}' -p {PROJECT_NAME} > {PROJECT_DIRECTORY}/LICENSE"
@@ -29,15 +29,15 @@ def generate_license():
         print(license_result)
 
 
-def print_futher_instuctions():
+def print_futher_instuctions() -> None:
     """Shows user what to do next after project creation."""
-    message = """
-    Your project {0} is created.
+    message = f"""
+    Your project {PROJECT_NAME} is created.
     Now you can start working on it:
 
-        cd {0}
+        cd {PROJECT_NAME} && make install
     """
-    print(textwrap.dedent(message.format(PROJECT_NAME)))  # noqa: WPS421
+    print(textwrap.dedent(message))
 
 
 generate_license()
