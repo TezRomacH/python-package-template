@@ -7,11 +7,17 @@ def hello(name: str) -> str:
     Args:
         name (str): Name to greet.
 
-    .. code:: python
+    Returns:
+        str: greeting message
 
-        >>> hello("Roman")
-        "Hello Roman!"
+    Examples:
+        .. code:: python
 
+            >>> hello("Roman")
+            "Hello Roman!"
+
+            >>> hello("Taylor")
+            "Hello Taylor!"
     """
     return f"Hello {name}!"
 

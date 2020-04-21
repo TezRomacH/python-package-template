@@ -17,9 +17,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
 
     - name: Install poetry
-      run: |
-        curl -sSL \
-          "https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py" | python
+      run: make download-poetry
 
     - name: Set up cache
       uses: actions/cache@v1
@@ -29,15 +27,15 @@ jobs:
     - name: Install dependencies
       run: |
         source "$HOME/.poetry/env"
-
         poetry config virtualenvs.in-project true
         poetry install
 
-    - name: Run checks
+    - name: Run safety checks
       run: |
         source "$HOME/.poetry/env"
+        STRICT=1 make check-safety
 
-        poetry run black --diff --target-version py37 ./
-        poetry run poetry check
-        poetry run pip check
-        poetry run safety check --bare --full-report
+    - name: Run style checks
+      run: |
+        source "$HOME/.poetry/env"
+        STRICT=1 make check-style

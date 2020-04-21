@@ -7,15 +7,14 @@ using this template.
 ## Dependencies
 
 We use `poetry` to manage the [dependencies](https://github.com/python-poetry/poetry).
-
-To install them you would need to run `install` command:
+If you dont have `poetry` installed, you should run the command below.
 
 ```bash
-poetry install
+make download-poetry
 ```
 
-And then install pre-commit hooks
+To install dependencies and prepare [`pre-commit`](https://pre-commit.com/) hooks you would need to run `install` command:
 
 ```bash
-poetry run pre-commit install
+make install
 ```

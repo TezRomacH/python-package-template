@@ -1,4 +1,4 @@
-# Package template for Python librarieas and CLI apps
+# Package template for Python libraries and CLI apps
 
 <p align="center">
 
