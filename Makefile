@@ -21,7 +21,7 @@ check-safety:
 	poetry check
 	$(SEP)pip check
 	$(SEP)poetry run safety check --full-report
-	$(SEP)poetry run bandit -r ./
+	# $(SEP)poetry run bandit -r ./
 
 .PHONY: check-style
 check-style:
