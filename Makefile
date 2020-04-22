@@ -21,12 +21,13 @@ check-safety:
 	poetry check
 	$(SEP)pip check
 	$(SEP)poetry run safety check --full-report
-	# $(SEP)poetry run bandit -r ./
+	-poetry run bandit -r **/*.py
 
 .PHONY: check-style
 check-style:
 	$(SEP)poetry run black --diff --target-version py37 --check ./
 	$(SEP)poetry run darglint -v 2 **/*.py
+	$(SEP)poetry run mypy --config-file setup.cfg  **/*.py
 
 .PHONY: codestyle
 codestyle:

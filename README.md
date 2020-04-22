@@ -13,7 +13,7 @@ Mostly built on [wemake-python-package](https://github.com/wemake-services/wemak
 
 ## Features
 
-- Supports latest `python3.7+`
+- Supports `python3.7+`
 - [`Poetry`](https://github.com/python-poetry/poetry) dependencies manager
 - [`black`](https://github.com/psf/black) formatter
 - [`isort`](https://github.com/timothycrosley/isort) for sorting imports
