@@ -33,3 +33,16 @@ cookiecutter gh:TezRomacH/python-package-template
 ## License
 
 MIT. See [LICENSE](https://github.com/TezRomacH/python-package-template/blob/master/LICENCE) for more details.
+
+## Citation
+
+```
+@misc{python-package-template,
+  author = {Roman Tezikov},
+  title = {Package template for Python libraries and CLI apps},
+  year = {2020},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/TezRomacH/python-package-template}}
+}
+```

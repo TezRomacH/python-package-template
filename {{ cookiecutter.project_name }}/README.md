@@ -27,6 +27,19 @@ poetry add {{ cookiecutter.project_name }}
 
 {{ cookiecutter.license }}. See [LICENSE](https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}/blob/master/LICENCE) for more details.
 
+## Citation
+
+```
+{% raw %}@misc{{% endraw %}{{ cookiecutter.project_name }},
+  author = {% raw %}{{% endraw %}{{ cookiecutter.organization }}{% raw %}}{% endraw %},
+  title = {% raw %}{{% endraw %}{{ cookiecutter.project_description }}{% raw %}}{% endraw %},
+  year = {2020},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}{% raw %}}}{% endraw %}
+}
+```
+
 ## Credits
 
 This project was generated with [`python-package-template`](https://github.com/TezRomacH/python-package-template).
