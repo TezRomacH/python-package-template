@@ -3,5 +3,7 @@
   "project_description": "{{ cookiecutter.project_name.lower().replace(' ', '-') }} is a Python cli/package created with https://github.com/TezRomacH/python-package-template",
   "organization": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "license": ["MIT", "BSD-3", "GNU GPL v3.0", "Apache Software License 2.0"],
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "git_name": "{{ cookiecutter.organization }}",
+  "email": ""
 }

@@ -1,11 +1,11 @@
 # Package template for Python libraries and CLI apps
 
-<p align="center">
+<div align="center">
 
 [![Build status](https://github.com/TezRomacH/python-package-template/workflows/test/badge.svg?branch=master&event=push)](https://github.com/TezRomacH/python-package-template/actions?query=workflow%3Atest)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-</p>
+</div>
 
 Yet another cookiecutter template for Python packages.
 

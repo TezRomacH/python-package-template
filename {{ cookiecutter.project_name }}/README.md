@@ -1,13 +1,13 @@
 # {{ cookiecutter.project_name }}
 
-<p align="center">
+<div align="center">
 
-[![Build status](https://github.com/{{ cookiecutter.organization }}/{{ cookiecutter.project_name }}/workflows/test/badge.svg?branch=master&event=push)](https://github.com/{{ cookiecutter.organization }}/{{ cookiecutter.project_name }}/actions?query=workflow%3Atest)
+[![Build status](https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}/workflows/test/badge.svg?branch=master&event=push)](https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}/actions?query=workflow%3Atest)
 [![Python Version](https://img.shields.io/pypi/pyversions/{{ cookiecutter.project_name }}.svg)](https://pypi.org/project/{{ cookiecutter.project_name }}/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![security: bandit](https://img.shields.io/badge/security-bandit-green.svg)](https://github.com/PyCQA/bandit)
 
-</p>
+</div>
 
 {{ cookiecutter.project_description }}
 
@@ -25,7 +25,7 @@ poetry add {{ cookiecutter.project_name }}
 
 ## License
 
-{{ cookiecutter.license }}. See [LICENSE](https://github.com/{{ cookiecutter.organization }}/{{ cookiecutter.project_name }}/blob/master/LICENCE) for more details.
+{{ cookiecutter.license }}. See [LICENSE](https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}/blob/master/LICENCE) for more details.
 
 ## Credits
 
