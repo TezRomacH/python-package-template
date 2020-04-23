@@ -5,5 +5,9 @@
   "license": ["MIT", "BSD-3", "GNU GPL v3.0", "Apache Software License 2.0"],
   "version": "0.1.0",
   "git_name": "{{ cookiecutter.organization }}",
-  "email": "hello@{{ cookiecutter.organization.lower().replace(' ', '-') }}.com"
+  "email": "hello@{{ cookiecutter.organization.lower().replace(' ', '-') }}.com",
+
+  "_copy_without_render": [
+    ".github"
+  ]
 }
