@@ -6,10 +6,21 @@
 [![Python Version](https://img.shields.io/pypi/pyversions/{{ cookiecutter.project_name }}.svg)](https://pypi.org/project/{{ cookiecutter.project_name }}/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![security: bandit](https://img.shields.io/badge/security-bandit-green.svg)](https://github.com/PyCQA/bandit)
+[![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
 
 </div>
 
 {{ cookiecutter.project_description }}
+
+## Features
+
+- Supports `python3.7+`
+- [`Poetry`](https://github.com/python-poetry/poetry) dependencies manager
+- [`black`](https://github.com/psf/black) formatter
+- [`isort`](https://github.com/timothycrosley/isort) for sorting imports
+- [`pre-commit`](https://pre-commit.com/) hooks
+- Fully typed with annotations and checked with [`mypy`](https://mypy.readthedocs.io)
+- `Github Actions` as the default CI
 
 ## Installation
 
