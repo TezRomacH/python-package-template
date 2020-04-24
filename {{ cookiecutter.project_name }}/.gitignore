@@ -223,6 +223,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Plugins
+.secrets.baseline
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/tasks.json
