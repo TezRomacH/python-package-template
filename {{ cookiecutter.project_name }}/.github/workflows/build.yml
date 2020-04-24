@@ -1,4 +1,4 @@
-name: test
+{% raw %}name: build
 
 on: [push, pull_request]
 
@@ -39,3 +39,6 @@ jobs:
       run: |
         source "$HOME/.poetry/env"
         STRICT=1 make check-style
+
+
+{% endraw %}

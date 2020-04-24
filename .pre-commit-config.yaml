@@ -2,8 +2,9 @@ repos:
   -   repo: https://github.com/pre-commit/pre-commit-hooks
       rev: v2.3.0
       hooks:
-      -   id: check-yaml
-      -   id: end-of-file-fixer
+      - id: check-yaml
+        exclude: ^{{ cookiecutter.project_name }}/.github/
+      - id: end-of-file-fixer
 
   -   repo: https://github.com/timothycrosley/isort
       rev: 4.3.21-2
