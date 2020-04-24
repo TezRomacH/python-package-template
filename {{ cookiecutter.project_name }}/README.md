@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Build status](https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}/workflows/test/badge.svg?branch=master&event=push)](https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}/actions?query=workflow%3Atest)
+[![Build status](https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}/workflows/build/badge.svg?branch=master&event=push)](https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}/actions?query=workflow%3Abuild)
 [![Python Version](https://img.shields.io/pypi/pyversions/{{ cookiecutter.project_name }}.svg)](https://pypi.org/project/{{ cookiecutter.project_name }}/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![security: bandit](https://img.shields.io/badge/security-bandit-green.svg)](https://github.com/PyCQA/bandit)
