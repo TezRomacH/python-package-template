@@ -6,6 +6,7 @@ ifeq ($(STRICT),1)
 	PIP_COMMAND_FLAG =
 	SAFETY_COMMAND_FLAG =
 	BANDIT_COMMAND_FLAG =
+	SECRETS_COMMAND_FLAG =
 	BLACK_COMMAND_FLAG =
 	DARGLINT_COMMAND_FLAG =
 	MYPY_COMMAND_FLAG =
@@ -14,6 +15,7 @@ else
 	PIP_COMMAND_FLAG = -
 	SAFETY_COMMAND_FLAG = -
 	BANDIT_COMMAND_FLAG = -
+	SECRETS_COMMAND_FLAG = -
 	BLACK_COMMAND_FLAG = -
 	DARGLINT_COMMAND_FLAG = -
 	MYPY_COMMAND_FLAG = -
@@ -43,6 +45,12 @@ ifeq ($(BANDIT_STRICT),1)
 	BANDIT_COMMAND_FLAG =
 else ifeq ($(BANDIT_STRICT),0)
 	BANDIT_COMMAND_FLAG = -
+endif
+
+ifeq ($(SECRETS_STRICT),1)
+	SECRETS_COMMAND_FLAG =
+else ifeq ($(SECRETS_STRICT),0)
+	SECRETS_COMMAND_FLAG = -
 endif
 
 ifeq ($(BLACK_STRICT),1)
@@ -81,6 +89,7 @@ check-safety:
 	$(PIP_COMMAND_FLAG)pip check
 	$(SAFETY_COMMAND_FLAG)poetry run safety check --full-report
 	$(BANDIT_COMMAND_FLAG)poetry run bandit -r **/*.py
+	# $(SECRETS_COMMAND_FLAG)poetry run detect-secrets scan
 
 .PHONY: check-style
 check-style:

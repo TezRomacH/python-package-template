@@ -9,6 +9,7 @@
 
   "_copy_without_render": [
     ".github",
-    "poetry.lock"
+    "poetry.lock",
+    "Makefile"
   ]
 }
