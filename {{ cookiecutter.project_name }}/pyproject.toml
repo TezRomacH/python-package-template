@@ -1,0 +1,37 @@
+# Poetry pyproject.toml: https://python-poetry.org/docs/pyproject/
+
+[build-system]
+requires = ["poetry>=1.0"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry]
+name = "{{ cookiecutter.project_name }}"
+version = "{{ cookiecutter.version }}"
+description = "{{ cookiecutter.project_description }}"
+readme = "README.md"
+authors = []  # Update me
+license = "{{ cookiecutter.license }}"
+repository = "https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}"
+homepage = "https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}"
+
+keywords = []  # Update me
+
+# Pypi classifiers: https://pypi.org/classifiers/
+classifiers = [  # Update me
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+darglint = "^1.2.2"
+isort = "^4.3.21"
+pyupgrade = "^2.2.1"
+black = "^19.10b0"
+mypy = "^0.770"
+bandit = "^1.6.2"
+safety = "^1.8.7"

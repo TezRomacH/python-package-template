@@ -1,5 +1,7 @@
+# Poetry pyproject.toml: https://python-poetry.org/docs/pyproject/
+
 [build-system]
-requires = ["poetry>=0.12"]
+requires = ["poetry>=1.0"]
 build-backend = "poetry.masonry.api"
 
 [tool.poetry]
@@ -12,6 +14,8 @@ license = "MIT"
 repository = "https://github.com/TezRomacH/python-package-template"
 homepage = "https://github.com/TezRomacH/python-package-template"
 keywords = ["cookiecutter", "template", "packages", "black"]
+
+# Pypi classifiers: https://pypi.org/classifiers/
 classifiers = []
 
 [tool.poetry.dependencies]
