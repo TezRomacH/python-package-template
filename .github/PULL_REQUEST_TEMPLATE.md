@@ -21,7 +21,7 @@
 <!-- Mark with an `x` all the checkboxes that apply (like `[x]`) -->
 
 - [ ] I have read the [`CODE_OF_CONDUCT.md`](https://github.com/TezRomacH/python-package-template/blob/master/CODE_OF_CONDUCT.md) document.
-- [ ] I have read the [`CONTRIBUTING.md`](https://github.com/catalyst-team/catalyst/blob/master/CONTRIBUTING.md) guide.
+- [ ] I have read the [`CONTRIBUTING.md`](https://github.com/TezRomacH/python-package-template/blob/master/CONTRIBUTING.md) guide.
 - [ ] I have update the code style using `make codestyle`.
 - [ ] I have written tests for all new methods and classes that I created.
 - [ ] I have written the docstring in Google format for all the methods and classes that I used.

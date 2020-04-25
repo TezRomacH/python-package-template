@@ -8,7 +8,6 @@
   "email": "hello@{{ cookiecutter.organization.lower().replace(' ', '-') }}.com",
 
   "_copy_without_render": [
-    ".github",
     "poetry.lock",
     "Makefile"
   ]
