@@ -101,6 +101,10 @@ check-style:
 codestyle:
 	poetry run pre-commit run --all-files
 
+.PHONY: test
+test:
+	pytest
+
 .PHONY: clean
 clean:
 	rm -rf build/

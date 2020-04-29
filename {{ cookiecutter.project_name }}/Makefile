@@ -95,11 +95,15 @@ check-safety:
 check-style:
 	$(BLACK_COMMAND_FLAG)poetry run black --diff --target-version py37 --check ./
 	$(DARGLINT_COMMAND_FLAG)poetry run darglint -v 2 **/*.py
-	$(MYPY_COMMAND_FLAG)poetry run mypy --config-file setup.cfg  **/*.py
+	$(MYPY_COMMAND_FLAG)poetry run mypy --config-file setup.cfg  {{ cookiecutter.project_name.lower().replace('-', '_') }} tests/**/*.py
 
 .PHONY: codestyle
 codestyle:
 	poetry run pre-commit run --all-files
+
+.PHONY: test
+test:
+	pytest
 
 .PHONY: clean
 clean:

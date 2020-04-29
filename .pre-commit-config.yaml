@@ -10,13 +10,16 @@ repos:
     rev: 4.3.21-2
     hooks:
       - id: isort
+        exclude: ^{{ cookiecutter.project_name }}/tests/
 
   - repo: https://github.com/asottile/pyupgrade
     rev: v2.2.0
     hooks:
       - id: pyupgrade
+        exclude: ^{{ cookiecutter.project_name }}/tests/
 
   - repo: https://github.com/psf/black
     rev: stable
     hooks:
       - id: black
+        exclude: ^{{ cookiecutter.project_name }}/tests/
