@@ -38,7 +38,7 @@ bandit = "^1.6.2"
 safety = "^1.9.0"
 
 [tool.poetry.scripts]
-"{{ cookiecutter.project_name }}" = "{{ cookiecutter.project_name.lower().replace('-', '_') }}:main"
+"{{ cookiecutter.project_name }}" = "{{ cookiecutter.project_name.lower().replace('-', '_') }}.__main__:app"
 
 [tool.black]
 # https://github.com/psf/black
