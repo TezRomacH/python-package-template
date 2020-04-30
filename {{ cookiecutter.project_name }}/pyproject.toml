@@ -36,6 +36,7 @@ black = "^19.10b0"
 mypy = "^0.770"
 bandit = "^1.6.2"
 safety = "^1.9.0"
+pytest = "^5.4.1"
 
 [tool.poetry.scripts]
 "{{ cookiecutter.project_name }}" = "{{ cookiecutter.project_name.lower().replace('-', '_') }}.__main__:app"
