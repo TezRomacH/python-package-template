@@ -12,6 +12,11 @@
 
 {{ cookiecutter.project_description }}
 
+## What's next
+
+- Set up [Dependabot](https://github.com/marketplace/dependabot-preview) to enshure you have latest dependencies.
+- Set up [Stale bot](https://github.com/apps/stale) for automatic issue closing.
+
 ## Features
 
 - Supports `python3.7+`
