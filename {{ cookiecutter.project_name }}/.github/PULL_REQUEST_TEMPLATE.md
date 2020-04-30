@@ -10,18 +10,18 @@
 
 <!-- Mark with an `x` all the checkboxes that apply (like `[x]`) -->
 
-- [ ] Examples / docs / tutorials / contributors update
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] Improvement (non-breaking change which improves an existing feature)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to change)
+- [ ] ✅ Examples / docs / tutorials update
+- [ ] 🔧 Bug fix (non-breaking change which fixes an issue)
+- [ ] 🥂 Improvement (non-breaking change which improves an existing feature)
+- [ ] 🚀 New feature (non-breaking change which adds functionality)
+- [ ] ❗️ Breaking change (fix or feature that would cause existing functionality to change)
 
 ## Checklist
 
 <!-- Mark with an `x` all the checkboxes that apply (like `[x]`) -->
 
-- [ ] I have read the [`CODE_OF_CONDUCT.md`](https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}/blob/master/CODE_OF_CONDUCT.md) document.
-- [ ] I have read the [`CONTRIBUTING.md`](https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}/blob/master/CONTRIBUTING.md) guide.
-- [ ] I have update the code style using `make codestyle`.
-- [ ] I have written tests for all new methods and classes that I created.
-- [ ] I have written the docstring in Google format for all the methods and classes that I used.
+- [ ] I've read the [`CODE_OF_CONDUCT.md`](https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}/blob/master/CODE_OF_CONDUCT.md) document.
+- [ ] I've read the [`CONTRIBUTING.md`](https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}/blob/master/CONTRIBUTING.md) guide.
+- [ ] I've updated the code style using `make codestyle`.
+- [ ] I've written tests for all new methods and classes that I created.
+- [ ] I've written the docstring in Google format for all the methods and classes that I used.
