@@ -9,11 +9,14 @@ name = "{{ cookiecutter.project_name }}"
 version = "{{ cookiecutter.version }}"
 description = "{{ cookiecutter.project_description }}"
 readme = "README.md"
-authors = []  # Update me
+authors = [
+  "{{ cookiecutter.organization }} <{{ cookiecutter.email }}>"
+]
 license = "{{ cookiecutter.license }}"
 repository = "https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}"
 homepage = "https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}"
 
+# Keywords description https://python-poetry.org/docs/pyproject/#keywords
 keywords = []  # Update me
 
 # Pypi classifiers: https://pypi.org/classifiers/
@@ -39,6 +42,7 @@ safety = "^1.9.0"
 pytest = "^5.4.1"
 
 [tool.poetry.scripts]
+# Entry points for the package https://python-poetry.org/docs/pyproject/#scripts
 "{{ cookiecutter.project_name }}" = "{{ cookiecutter.project_name.lower().replace('-', '_') }}.__main__:app"
 
 [tool.black]
