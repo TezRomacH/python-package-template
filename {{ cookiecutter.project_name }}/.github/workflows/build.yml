@@ -38,7 +38,4 @@ jobs:
     - name: Run style checks
       run: |
         source "$HOME/.poetry/env"
-        STRICT=1 make check-style
-
-
-{% endraw %}
+        STRICT=1 make check-style{% endraw %}

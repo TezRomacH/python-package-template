@@ -12,6 +12,9 @@ PROJECT_NAME = "{{ cookiecutter.project_name }}"
 LICENSE = "{{ cookiecutter.license }}"
 ORGANIZATION = "{{ cookiecutter.organization }}"
 
+# We need these values to generate github repository:
+GITHUB_USER = "{{ cookiecutter.git_name }}"
+
 licenses = {
     "MIT": "mit",
     "BSD-3": "bsd3",
@@ -33,9 +36,25 @@ def print_futher_instuctions() -> None:
     """Shows user what to do next after project creation."""
     message = f"""
     Your project {PROJECT_NAME} is created.
-    Now you can start working on it:
 
-        cd {PROJECT_NAME} && make install
+    1) Now you can start working on it:
+
+        $ cd {PROJECT_NAME} && git init
+
+    2) If you don't have Poetry installed run then:
+
+        $ make download-poetry
+
+    3) Initialize poetry and install pre-commit hooks:
+
+        $ make install
+
+    4) Upload initial code to GitHub:
+
+        $ git add .
+        $ git commit -m "first commit"
+        $ git remote add origin https://github.com/{GITHUB_USER}/{PROJECT_NAME}.git
+        $ git push -u origin master
     """
     print(textwrap.dedent(message))
 
