@@ -146,21 +146,6 @@ python-versions = ">=3.5,<4.0"
 version = "1.2.3"
 
 [[package]]
-category = "dev"
-description = "Tool for detecting secrets in the codebase"
-name = "detect-secrets"
-optional = false
-python-versions = "*"
-version = "0.13.1"
-
-[package.dependencies]
-pyyaml = "*"
-requests = "*"
-
-[package.extras]
-word_list = ["pyahocorasick"]
-
-[[package]]
 category = "main"
 description = "Distribution utilities"
 name = "distlib"
@@ -603,7 +588,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "09cce9cf3c968b9852d87538aecd8ec2b9615221716cbedbe4809f47f04c4d08"
+content-hash = "55a7ce1734247bbab338ef07f25c6e088bb51e6fed11ceb0aad19d933e7cfcb9"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -658,10 +643,6 @@ cookiecutter = [
 darglint = [
     {file = "darglint-1.2.3-py3-none-any.whl", hash = "sha256:cf56caa6cf059bd9cff798ee34cd6ac4b017d0c43760c15db42158fc31535de3"},
     {file = "darglint-1.2.3.tar.gz", hash = "sha256:d1ab063da91987342c0e51b41028b4b5fc7fb72b04789e4534f7368a9146cd92"},
-]
-detect-secrets = [
-    {file = "detect_secrets-0.13.1-py2.py3-none-any.whl", hash = "sha256:edafc0c77f560482f3c169517ebb11352744f7682ff09ad255a40623f530c0d5"},
-    {file = "detect_secrets-0.13.1.tar.gz", hash = "sha256:178e084cd38e78f8fe9a10eb0f429071fa6075b1c4ea40ef62e55ba3d6acc1ec"},
 ]
 distlib = [
     {file = "distlib-0.3.0.zip", hash = "sha256:2e166e231a26b36d6dfe35a48c4464346620f8645ed0ace01ee31822b288de21"},

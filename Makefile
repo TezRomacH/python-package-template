@@ -89,13 +89,12 @@ check-safety:
 	$(PIP_COMMAND_FLAG)pip check
 	$(SAFETY_COMMAND_FLAG)poetry run safety check --full-report
 	$(BANDIT_COMMAND_FLAG)poetry run bandit -r **/*.py
-	# $(SECRETS_COMMAND_FLAG)poetry run detect-secrets scan
 
 .PHONY: check-style
 check-style:
-	$(BLACK_COMMAND_FLAG)poetry run black --diff --target-version py37 --check ./
+	$(BLACK_COMMAND_FLAG)poetry run black --diff --check ./
 	$(DARGLINT_COMMAND_FLAG)poetry run darglint -v 2 **/*.py
-	$(MYPY_COMMAND_FLAG)poetry run mypy --config-file setup.cfg  **/*.py
+	$(MYPY_COMMAND_FLAG)poetry run mypy --config-file setup.cfg **/*.py
 
 .PHONY: codestyle
 codestyle:
@@ -104,6 +103,9 @@ codestyle:
 .PHONY: test
 test:
 	pytest
+
+.PHONY: lint
+lint: test check-safety check-style
 
 .PHONY: clean
 clean:
