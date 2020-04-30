@@ -26,6 +26,7 @@ classifiers = [  # Update me
 
 [tool.poetry.dependencies]
 python = "^3.7"
+typer = {extras = ["all"], version = "^0.2.1"}
 
 [tool.poetry.dev-dependencies]
 darglint = "^1.2.2"
@@ -35,6 +36,9 @@ black = "^19.10b0"
 mypy = "^0.770"
 bandit = "^1.6.2"
 safety = "^1.9.0"
+
+[tool.poetry.scripts]
+"{{ cookiecutter.project_name }}" = "{{ cookiecutter.project_name.lower().replace('-', '_') }}.__main__:app"
 
 [tool.black]
 # https://github.com/psf/black
