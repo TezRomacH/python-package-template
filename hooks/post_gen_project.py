@@ -41,7 +41,7 @@ def print_futher_instuctions() -> None:
 
         $ cd {PROJECT_NAME} && git init
 
-    2) If you don't have Poetry installed run then:
+    2) If you don't have Poetry installed run:
 
         $ make download-poetry
 

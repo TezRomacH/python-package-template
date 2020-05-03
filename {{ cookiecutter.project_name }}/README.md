@@ -12,7 +12,38 @@
 
 {{ cookiecutter.project_description }}
 
-## What's next
+## Very first steps
+
+### Initial
+
+1. Initialize `git` inside your repo:
+
+```bash
+git init
+```
+
+2. If you don't have `Poetry` installed run:
+
+```bash
+make download-poetry
+```
+
+3. Initialize poetry and install `pre-commit` hooks:
+
+```bash
+make install
+```
+
+4. Upload initial code to `GitHub`:
+
+```bash
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/{GITHUB_USER}/{PROJECT_NAME}.git
+git push -u origin master
+```
+
+### What's next
 
 - Set up [Dependabot](https://github.com/marketplace/dependabot-preview) to enshure you have latest dependencies.
 - Set up [Stale bot](https://github.com/apps/stale) for automatic issue closing.

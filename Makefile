@@ -94,6 +94,7 @@ check-safety:
 check-style:
 	$(BLACK_COMMAND_FLAG)poetry run black --diff --check ./
 	$(DARGLINT_COMMAND_FLAG)poetry run darglint -v 2 **/*.py
+	# todo: add isort and pyupgrade
 	$(MYPY_COMMAND_FLAG)poetry run mypy --config-file setup.cfg **/*.py
 
 .PHONY: codestyle
