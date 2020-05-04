@@ -9,6 +9,7 @@ ifeq ($(STRICT),1)
 	SECRETS_COMMAND_FLAG =
 	BLACK_COMMAND_FLAG =
 	DARGLINT_COMMAND_FLAG =
+	ISORT_COMMAND_FLAG =
 	MYPY_COMMAND_FLAG =
 else
 	POETRY_COMMAND_FLAG = -
@@ -18,6 +19,7 @@ else
 	SECRETS_COMMAND_FLAG = -
 	BLACK_COMMAND_FLAG = -
 	DARGLINT_COMMAND_FLAG = -
+	ISORT_COMMAND_FLAG = -
 	MYPY_COMMAND_FLAG = -
 endif
 
@@ -65,6 +67,13 @@ else ifeq (DARGLINT_STRICT),0)
 	DARGLINT_COMMAND_FLAG = -
 endif
 
+ifeq ($(ISORT_STRICT),1)
+	ISORT_COMMAND_FLAG =
+else ifeq ($(ISORT_STRICT),0)
+	ISORT_COMMAND_FLAG = -
+endif
+
+
 ifeq ($(MYPY_STRICT),1)
 	MYPY_COMMAND_FLAG =
 else ifeq ($(MYPY_STRICT),0)
@@ -94,6 +103,7 @@ check-safety:
 check-style:
 	$(BLACK_COMMAND_FLAG)poetry run black --diff --check ./
 	$(DARGLINT_COMMAND_FLAG)poetry run darglint -v 2 **/*.py
+	$(ISORT_COMMAND_FLAG)poetry run isort --check-only
 	$(MYPY_COMMAND_FLAG)poetry run mypy --config-file setup.cfg {{ cookiecutter.project_name.lower().replace('-', '_') }} tests/**/*.py
 
 .PHONY: codestyle

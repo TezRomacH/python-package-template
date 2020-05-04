@@ -1,6 +1,9 @@
+default_language_version:
+  python: python3.7
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.3.0
+    rev: v2.5.0
     hooks:
       - id: check-yaml
         exclude: ^{{ cookiecutter.project_name }}/.github/
@@ -17,6 +20,7 @@ repos:
     hooks:
       - id: pyupgrade
         exclude: ^{{ cookiecutter.project_name }}/
+        args: [--py37-plus]
 
   - repo: https://github.com/psf/black
     rev: stable

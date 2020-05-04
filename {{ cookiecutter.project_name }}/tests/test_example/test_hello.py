@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import pytest
 
 from {{ cookiecutter.project_name.lower().replace('-', '_') }}.example import hello
