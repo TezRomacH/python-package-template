@@ -1,4 +1,4 @@
-SHELL:=/usr/bin/env bash
+SHELL := /usr/bin/env bash
 
 #! An ugly hack to create individual flags
 ifeq ($(STRICT),1)
@@ -24,6 +24,7 @@ else
 endif
 
 ##! Please tell me how to use `for loops` to create variables in Makefile :(
+##! If you have better idea, please PR me in https://github.com/TezRomacH/python-package-template
 
 ifeq ($(POETRY_STRICT),1)
 	POETRY_COMMAND_FLAG =

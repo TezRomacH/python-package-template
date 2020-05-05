@@ -43,7 +43,7 @@ pytest = "^5.4.1"
 
 [tool.poetry.scripts]
 # Entry points for the package https://python-poetry.org/docs/pyproject/#scripts
-"{{ cookiecutter.project_name }}" = "{{ cookiecutter.project_name.lower().replace('-', '_') }}.__main__:app"
+"{{ cookiecutter.project_name }}" = "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}.__main__:app"
 
 [tool.black]
 # https://github.com/psf/black

@@ -1,4 +1,6 @@
-SHELL:=/usr/bin/env bash
+SHELL := /usr/bin/env bash
+
+IMAGE := {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}
 
 #! An ugly hack to create individual flags
 ifeq ($(STRICT),1)
@@ -24,6 +26,7 @@ else
 endif
 
 ##! Please tell me how to use `for loops` to create variables in Makefile :(
+##! If you have better idea, please PR me in https://github.com/TezRomacH/python-package-template
 
 ifeq ($(POETRY_STRICT),1)
 	POETRY_COMMAND_FLAG =
@@ -104,7 +107,7 @@ check-style:
 	$(BLACK_COMMAND_FLAG)poetry run black --diff --check ./
 	$(DARGLINT_COMMAND_FLAG)poetry run darglint -v 2 **/*.py
 	$(ISORT_COMMAND_FLAG)poetry run isort --check-only
-	$(MYPY_COMMAND_FLAG)poetry run mypy --config-file setup.cfg {{ cookiecutter.project_name.lower().replace('-', '_') }} tests/**/*.py
+	$(MYPY_COMMAND_FLAG)poetry run mypy --config-file setup.cfg {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }} tests/**/*.py
 
 .PHONY: codestyle
 codestyle:
@@ -117,6 +120,25 @@ test:
 .PHONY: lint
 lint: test check-safety check-style
 
-.PHONY: clean
+# Example: make docker VERSION=latest
+# Example: make docker IMAGE=some_name VERSION={{ cookiecutter.version }}
+.PHONY: docker
+docker:
+	@echo `Building docker $(IMAGE):$(VERSION)` ...
+	docker build \
+		-t $(IMAGE):$(VERSION) . \
+		-f ./docker/Dockerfile --no-cache
+
+# Example: make clean_docker VERSION=latest
+# Example: make clean_docker IMAGE=some_name VERSION={{ cookiecutter.version }}
+.PHONY: clean_docker
+clean_docker:
+	@echo `Removing docker $(IMAGE):$(VERSION)` ...
+	docker rmi -f $(IMAGE):$(VERSION)
+
+.PHONY: clean_build
 clean:
 	rm -rf build/
+
+.PHONY: clean
+clean: clean_build clean_docker
