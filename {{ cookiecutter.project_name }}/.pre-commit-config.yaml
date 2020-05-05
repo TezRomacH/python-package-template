@@ -14,7 +14,7 @@ default_language_version:
       - id: isort
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.3.0
+    rev: v2.4.0
     hooks:
       - id: pyupgrade
         args: [--py37-plus]
