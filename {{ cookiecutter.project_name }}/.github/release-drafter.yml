@@ -1,4 +1,5 @@
 # Release drafter configuration https://github.com/release-drafter/release-drafter#configuration
+# Emojis were chosen to match the https://gitmoji.carloscuesta.me/
 
 name-template: "v$NEXT_PATCH_VERSION :pushpin:"
 tag-template: "v$NEXT_PATCH_VERSION"
@@ -10,9 +11,9 @@ categories:
     labels: [bug, refactoring, bugfix, fix]
   - title: ":package: Build System & CI/CD"
     labels: [build, ci, testing]
-  - title: ":exclamation: Breaking Changes"
+  - title: ":boom: Breaking Changes"
     labels: [breaking]
-  - title: ":books: Documentation"
+  - title: ":pencil: Documentation"
     labels: [documentation]
 
 template: |
