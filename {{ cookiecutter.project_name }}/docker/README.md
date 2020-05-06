@@ -2,23 +2,24 @@
 
 ## Installation
 
-To create Docker you have to specify the version and run `make docker` command:
+To create Docker you need to run:
 
 ```bash
-make docker VERSION={{ cookiecutter.version }}
+make docker
 ```
 
-or
+which is equivalent to:
 
 ```bash
 make docker VERSION=latest
 ```
 
-You could also provide name for the image itself.
-Default name is `IMAGE := {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}`
+You could also provide name and version for the image itself.
+Default name is `IMAGE := {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}`.
+Default version is `VERSION := latest`.
 
 ```bash
-make docker IMAGE=some_name VERSION=latest
+make docker IMAGE=some_name VERSION={{ cookiecutter.version }}
 ```
 
 ## Usage
