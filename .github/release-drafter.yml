@@ -1,0 +1,25 @@
+# Release drafter configuration https://github.com/release-drafter/release-drafter#configuration
+
+name-template: "v$NEXT_PATCH_VERSION :pushpin:"
+tag-template: "v$NEXT_PATCH_VERSION"
+
+categories:
+  - title: ":rocket: Features"
+    labels: [enhancement, feature]
+  - title: ":wrench: Fixes & Refactoring"
+    labels: [bug, refactoring, bugfix, fix]
+  - title: ":package: Build System & CI/CD"
+    labels: [build, ci, testing]
+  - title: ":exclamation: Breaking Changes"
+    labels: [breaking]
+  - title: ":books: Documentation"
+    labels: [documentation]
+
+template: |
+  ## What’s Changed
+
+  $CHANGES
+
+  ## List of contributors
+
+  $CONTRIBUTORS

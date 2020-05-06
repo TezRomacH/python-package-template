@@ -10,7 +10,7 @@
 
 <!-- Mark with an `x` all the checkboxes that apply (like `[x]`) -->
 
-- [ ] ✅ Examples / docs / tutorials / dependencies update
+- [ ] 📚 Examples / docs / tutorials / dependencies update
 - [ ] 🔧 Bug fix (non-breaking change which fixes an issue)
 - [ ] 🥂 Improvement (non-breaking change which improves an existing feature)
 - [ ] 🚀 New feature (non-breaking change which adds functionality)
