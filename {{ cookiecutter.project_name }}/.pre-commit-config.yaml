@@ -1,7 +1,7 @@
 default_language_version:
   python: python3.7
 
-  repos:
+repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.3.0
     hooks:
@@ -12,6 +12,8 @@ default_language_version:
     rev: 4.3.21-2
     hooks:
       - id: isort
+        args: [--settings-path, ./pyproject.toml]
+        additional_dependencies: [tomlkit, toml]
 
   - repo: https://github.com/asottile/pyupgrade
     rev: v2.4.1
@@ -23,3 +25,4 @@ default_language_version:
     rev: stable
     hooks:
       - id: black
+        args: [--config, ./pyproject.toml]
