@@ -1,9 +1,10 @@
 SHELL := /usr/bin/env bash
 
 IMAGE := {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}
+VERSION := latest
 
 #! An ugly hack to create individual flags
-ifeq ($(STRICT),1)
+ifeq ($(STRICT), 1)
 	POETRY_COMMAND_FLAG =
 	PIP_COMMAND_FLAG =
 	SAFETY_COMMAND_FLAG =
@@ -28,58 +29,58 @@ endif
 ##! Please tell me how to use `for loops` to create variables in Makefile :(
 ##! If you have better idea, please PR me in https://github.com/TezRomacH/python-package-template
 
-ifeq ($(POETRY_STRICT),1)
+ifeq ($(POETRY_STRICT), 1)
 	POETRY_COMMAND_FLAG =
-else ifeq ($(POETRY_STRICT),0)
+else ifeq ($(POETRY_STRICT), 0)
 	POETRY_COMMAND_FLAG = -
 endif
 
-ifeq ($(PIP_STRICT),1)
+ifeq ($(PIP_STRICT), 1)
 	PIP_COMMAND_FLAG =
-else ifeq ($(PIP_STRICT),0)
+else ifeq ($(PIP_STRICT), 0)
 	PIP_COMMAND_FLAG = -
 endif
 
-ifeq ($(SAFETY_STRICT),1)
+ifeq ($(SAFETY_STRICT), 1)
 	SAFETY_COMMAND_FLAG =
-else ifeq ($SAFETY_STRICT),0)
+else ifeq ($SAFETY_STRICT), 0)
 	SAFETY_COMMAND_FLAG = -
 endif
 
-ifeq ($(BANDIT_STRICT),1)
+ifeq ($(BANDIT_STRICT), 1)
 	BANDIT_COMMAND_FLAG =
-else ifeq ($(BANDIT_STRICT),0)
+else ifeq ($(BANDIT_STRICT), 0)
 	BANDIT_COMMAND_FLAG = -
 endif
 
-ifeq ($(SECRETS_STRICT),1)
+ifeq ($(SECRETS_STRICT), 1)
 	SECRETS_COMMAND_FLAG =
-else ifeq ($(SECRETS_STRICT),0)
+else ifeq ($(SECRETS_STRICT), 0)
 	SECRETS_COMMAND_FLAG = -
 endif
 
-ifeq ($(BLACK_STRICT),1)
+ifeq ($(BLACK_STRICT), 1)
 	BLACK_COMMAND_FLAG =
-else ifeq ($(BLACK_STRICT),0)
+else ifeq ($(BLACK_STRICT), 0)
 	BLACK_COMMAND_FLAG = -
 endif
 
-ifeq ($(DARGLINT_STRICT),1)
+ifeq ($(DARGLINT_STRICT), 1)
 	DARGLINT_COMMAND_FLAG =
-else ifeq (DARGLINT_STRICT),0)
+else ifeq (DARGLINT_STRICT), 0)
 	DARGLINT_COMMAND_FLAG = -
 endif
 
-ifeq ($(ISORT_STRICT),1)
+ifeq ($(ISORT_STRICT), 1)
 	ISORT_COMMAND_FLAG =
-else ifeq ($(ISORT_STRICT),0)
+else ifeq ($(ISORT_STRICT), 0)
 	ISORT_COMMAND_FLAG = -
 endif
 
 
-ifeq ($(MYPY_STRICT),1)
+ifeq ($(MYPY_STRICT), 1)
 	MYPY_COMMAND_FLAG =
-else ifeq ($(MYPY_STRICT),0)
+else ifeq ($(MYPY_STRICT), 0)
 	MYPY_COMMAND_FLAG = -
 endif
 
@@ -93,7 +94,9 @@ download-poetry:
 install:
 	poetry lock -n
 	poetry install -n
+ifneq ($(NO_PRE_COMMIT), 1)
 	poetry run pre-commit install
+endif
 
 .PHONY: check-safety
 check-safety:
@@ -124,7 +127,7 @@ lint: test check-safety check-style
 # Example: make docker IMAGE=some_name VERSION={{ cookiecutter.version }}
 .PHONY: docker
 docker:
-	@echo `Building docker $(IMAGE):$(VERSION)` ...
+	@echo Building docker $(IMAGE):$(VERSION) ...
 	docker build \
 		-t $(IMAGE):$(VERSION) . \
 		-f ./docker/Dockerfile --no-cache
@@ -133,7 +136,7 @@ docker:
 # Example: make clean_docker IMAGE=some_name VERSION={{ cookiecutter.version }}
 .PHONY: clean_docker
 clean_docker:
-	@echo `Removing docker $(IMAGE):$(VERSION)` ...
+	@echo Removing docker $(IMAGE):$(VERSION) ...
 	docker rmi -f $(IMAGE):$(VERSION)
 
 .PHONY: clean_build
