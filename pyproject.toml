@@ -43,7 +43,7 @@ exclude = "({{ cookiecutter.project_name }}/|.eggs|.git|.hg|.mypy_cache|.nox|.to
 [tool.isort]
 # https://github.com/timothycrosley/isort/
 known_typing = "typing,types,typing_extensions,mypy,mypy_extensions"
-sections = "FUTURE,TYPING,STDLIB,FIRSTPARTY,THIRDPARTY,LOCALFOLDER"
+sections = "FUTURE,TYPING,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
 include_trailing_comma = true
 default_section = "FIRSTPARTY"
 multi_line_output = 3

@@ -13,7 +13,7 @@ LICENSE = "{{ cookiecutter.license }}"
 ORGANIZATION = "{{ cookiecutter.organization }}"
 
 # We need these values to generate github repository:
-GITHUB_USER = "{{ cookiecutter.git_name }}"
+GITHUB_USER = "{{ cookiecutter.github_name }}"
 
 licenses = {
     "MIT": "mit",
@@ -49,10 +49,14 @@ def print_futher_instuctions() -> None:
 
         $ make install
 
-    4) Upload initial code to GitHub:
+    4) Run codestyle (codestyle uses `pre-commit`; ensure you've run `make install`):
+
+        $ make codestyle
+
+    5) Upload initial code to GitHub:
 
         $ git add .
-        $ git commit -m "first commit"
+        $ git commit -m "init"
         $ git remote add origin https://github.com/{GITHUB_USER}/{PROJECT_NAME}.git
         $ git push -u origin master
     """

@@ -13,6 +13,8 @@ repos:
     rev: 4.3.21-2
     hooks:
       - id: isort
+        args: [--settings-path, ./pyproject.toml]
+        additional_dependencies: [tomlkit, toml]
         exclude: ^{{ cookiecutter.project_name }}/
 
   - repo: https://github.com/asottile/pyupgrade
@@ -26,4 +28,5 @@ repos:
     rev: stable
     hooks:
       - id: black
+        args: [--config, ./pyproject.toml]
         exclude: ^{{ cookiecutter.project_name }}/

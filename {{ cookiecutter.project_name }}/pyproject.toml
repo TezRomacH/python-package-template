@@ -13,8 +13,8 @@ authors = [
   "{{ cookiecutter.organization }} <{{ cookiecutter.email }}>"
 ]
 license = "{{ cookiecutter.license }}"
-repository = "https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}"
-homepage = "https://github.com/{{ cookiecutter.git_name }}/{{ cookiecutter.project_name }}"
+repository = "https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}"
+homepage = "https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}"
 
 # Keywords description https://python-poetry.org/docs/pyproject/#keywords
 keywords = []  # Update me
@@ -27,9 +27,14 @@ classifiers = [  # Update me
   "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 
+[tool.poetry.scripts]
+# Entry points for the package https://python-poetry.org/docs/pyproject/#scripts
+"{{ cookiecutter.project_name }}" = "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}.__main__:app"
+
 [tool.poetry.dependencies]
 python = "^3.7"
 typer = {extras = ["all"], version = "^0.2.1"}
+rich = "^1.0.0"
 
 [tool.poetry.dev-dependencies]
 darglint = "^1.3.0"
@@ -41,10 +46,6 @@ bandit = "^1.6.2"
 safety = "^1.9.0"
 pytest = "^5.4.1"
 
-[tool.poetry.scripts]
-# Entry points for the package https://python-poetry.org/docs/pyproject/#scripts
-"{{ cookiecutter.project_name }}" = "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}.__main__:app"
-
 [tool.black]
 # https://github.com/psf/black
 line-length = 80
@@ -53,7 +54,7 @@ target-version = ["py37"]
 [tool.isort]
 # https://github.com/timothycrosley/isort/
 known_typing = "typing,types,typing_extensions,mypy,mypy_extensions"
-sections = "FUTURE,TYPING,STDLIB,FIRSTPARTY,THIRDPARTY,LOCALFOLDER"
+sections = "FUTURE,TYPING,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
 include_trailing_comma = true
 default_section = "FIRSTPARTY"
 multi_line_output = 3
