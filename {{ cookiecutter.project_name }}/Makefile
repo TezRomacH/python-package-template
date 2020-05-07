@@ -103,7 +103,7 @@ check-safety:
 	$(POETRY_COMMAND_FLAG)poetry check
 	$(PIP_COMMAND_FLAG)pip check
 	$(SAFETY_COMMAND_FLAG)poetry run safety check --full-report
-	$(BANDIT_COMMAND_FLAG)poetry run bandit -r **/*.py
+	$(BANDIT_COMMAND_FLAG)poetry run bandit -ll -r {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}/
 
 .PHONY: check-style
 check-style:

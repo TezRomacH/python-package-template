@@ -9,7 +9,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Security: bandit](https://img.shields.io/badge/security-bandit-green.svg)](https://github.com/PyCQA/bandit)
 [![Semantic Versions](https://img.shields.io/badge/%F0%9F%9A%80-semantic%20versions-informational.svg)](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/releases)
-[![License](https://img.shields.io/github/license/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }})](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENCE)
+[![License](https://img.shields.io/github/license/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }})](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENSE)
 
 {{ cookiecutter.project_description }}
 </div>
@@ -36,13 +36,7 @@ make download-poetry
 make install
 ```
 
-4. Run codestyle (codestyle uses `pre-commit`; ensure you've run `make install`):
-
-```bash
-make codestyle
-```
-
-5. Upload initial code to `GitHub`:
+4. Upload initial code to GitHub (ensure you've run `make install` to use `pre-commit`):
 
 ```bash
 git add .
@@ -119,7 +113,7 @@ For building and deployment:
 For creating your open source community:
 
 - Ready-to-use [Pull Requests templates](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.github/PULL_REQUEST_TEMPLATE.md) and several [Issue templates](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/tree/master/.github/ISSUE_TEMPLATE).
-- Files such as: `LICENCE.md`, `CONTRIBUTING.md` and `CODE_OF_CONDUCT.md` are generated automatically.
+- Files such as: `LICENSE.md`, `CONTRIBUTING.md` and `CODE_OF_CONDUCT.md` are generated automatically.
 - [`Stale bot`](https://github.com/apps/stale) that closes abandoned issues after a period of inactivity. (You will only [need to setup free plan](https://github.com/marketplace/stale)). Configuration is [here](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.github/.stale.yml).
 - [Semantic Versions](https://semver.org/) specification with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter).
 
@@ -341,9 +335,9 @@ You can update it in [`release-drafter.yml`](https://github.com/{{ cookiecutter.
 
 ## 🛡 License
 
-[![License](https://img.shields.io/github/license/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }})](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENCE)
+[![License](https://img.shields.io/github/license/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }})](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENSE)
 
-This project is licensed under the terms of the `{{ cookiecutter.license }}` licence. See [LICENSE](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENCE) for more details.
+This project is licensed under the terms of the `{{ cookiecutter.license }}` licence. See [LICENSE](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENSE) for more details.
 
 ## 📃 Citation
 

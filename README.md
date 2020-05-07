@@ -9,7 +9,7 @@ Yet another [cookiecutter](https://github.com/cookiecutter/cookiecutter) templat
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Semantic Versions](https://img.shields.io/badge/%F0%9F%9A%80-semantic%20versions-informational.svg)](https://github.com/TezRomacH/python-package-template/releases)
-[![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/TezRomacH/python-package-template/blob/master/LICENCE)
+[![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/TezRomacH/python-package-template/blob/master/LICENSE)
 
 Your next Python package needs bleeding edge project structure.
 </div>
@@ -42,7 +42,7 @@ For building and deployment:
 For creating your open source community:
 
 - Ready-to-use [Pull Requests templates](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/PULL_REQUEST_TEMPLATE.md) and several [Issue templates](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/ISSUE_TEMPLATE).
-- Files such as: `LICENCE.md`, `CONTRIBUTING.md` and `CODE_OF_CONDUCT.md` are generated automatically.
+- Files such as: `LICENSE.md`, `CONTRIBUTING.md` and `CODE_OF_CONDUCT.md` are generated automatically.
 - [`Stale bot`](https://github.com/apps/stale) that closes abandoned issues after a period of inactivity. (You will only [need to setup free plan](https://github.com/marketplace/stale)). Configuration is [here](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/.stale.yml).
 - [Semantic Versions](https://semver.org/) specification with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter).
 
@@ -344,9 +344,9 @@ Here is a list of things that have yet to be implemented:
 
 ## 🛡 License
 
-[![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/TezRomacH/python-package-template/blob/master/LICENCE)
+[![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/TezRomacH/python-package-template/blob/master/LICENSE)
 
-This project is licensed under the terms of the `MIT` licence. See [LICENSE](https://github.com/TezRomacH/python-package-template/blob/master/LICENCE) for more details.
+This project is licensed under the terms of the `MIT` licence. See [LICENSE](https://github.com/TezRomacH/python-package-template/blob/master/LICENSE) for more details.
 
 ## 🏅 Credits
 

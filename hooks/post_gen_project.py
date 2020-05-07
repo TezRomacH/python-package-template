@@ -49,11 +49,7 @@ def print_futher_instuctions() -> None:
 
         $ make install
 
-    4) Run codestyle (codestyle uses `pre-commit`; ensure you've run `make install`):
-
-        $ make codestyle
-
-    5) Upload initial code to GitHub:
+    4) Upload initial code to GitHub (ensure you've run `make install` to use `pre-commit`):
 
         $ git add .
         $ git commit -m ":tada: Initial commit"
