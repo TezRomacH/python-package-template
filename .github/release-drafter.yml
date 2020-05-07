@@ -15,12 +15,14 @@ categories:
     labels: [breaking]
   - title: ":pencil: Documentation"
     labels: [documentation]
+  - title: ":arrow_up: Dependencies updates"
+    labels: [dependencies]
 
 template: |
-  ## What’s Changed
+  ## :fire: What’s Changed
 
   $CHANGES
 
-  ## List of contributors
+  ## :busts_in_silhouette: List of contributors
 
   $CONTRIBUTORS
