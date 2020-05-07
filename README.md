@@ -46,7 +46,7 @@ For creating your open source community:
 - [`Stale bot`](https://github.com/apps/stale) that closes abandoned issues after a period of inactivity. (You will only [need to setup free plan](https://github.com/marketplace/stale)). Configuration is [here](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/.stale.yml).
 - [Semantic Versions](https://semver.org/) specification with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter).
 
-## How to use it
+## 🤯 How to use it
 
 ### Installation
 
@@ -287,7 +287,7 @@ More information [here](https://github.com/TezRomacH/python-package-template/tre
 </p>
 </details>
 
-## What's next
+## 🎯 What's next
 
 Well, that's up to you. I can only recommend the packages and articles that helped me.
 
@@ -296,12 +296,13 @@ Packages:
 - [`Typer`](https://github.com/tiangolo/typer) is great for creating CLI applications.
 - [`Rich`](https://github.com/willmcgugan/rich) makes it easy to add  beautiful formatting in the terminal.
 - [`FastAPI`](https://github.com/tiangolo/fastapi) is a type-driven asynchronous web framework.
-- [`IceCream`](https://github.com/gruns/icecream) is a little library for sweet and creamy debugging
+- [`IceCream`](https://github.com/gruns/icecream) is a little library for sweet and creamy debugging.
 
 Articles:
 
-- [Open Source Guides](https://opensource.guide/)
-- [GitHub Actions Documentation](https://help.github.com/en/actions)
+- [Open Source Guides](https://opensource.guide/).
+- [GitHub Actions Documentation](https://help.github.com/en/actions).
+- Maybe you would like to add [gitmoji](https://gitmoji.carloscuesta.me/) to commit names. This is really funny. 😄
 
 ## 📈 Releases
 
