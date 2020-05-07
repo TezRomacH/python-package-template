@@ -119,6 +119,6 @@ test:
 .PHONY: lint
 lint: test check-safety check-style
 
-.PHONY: clean
+.PHONY: clean_build
 clean:
 	rm -rf build/
