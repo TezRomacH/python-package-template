@@ -91,6 +91,7 @@ Articles:
 
 - [Open Source Guides](https://opensource.guide/)
 - [GitHub Actions Documentation](https://help.github.com/en/actions)
+- Maybe you would like to add [gitmoji](https://gitmoji.carloscuesta.me/) to commit names. This is really funny. 😄
 
 ## 🚀 Features
 
