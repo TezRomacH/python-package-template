@@ -56,7 +56,7 @@ def print_futher_instuctions() -> None:
     5) Upload initial code to GitHub:
 
         $ git add .
-        $ git commit -m "init"
+        $ git commit -m ":tada: Initial commit"
         $ git remote add origin https://github.com/{GITHUB_USER}/{PROJECT_NAME}.git
         $ git push -u origin master
     """

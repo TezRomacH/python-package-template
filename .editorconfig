@@ -19,3 +19,6 @@ indent_style = tab
 
 [*.md]
 trim_trailing_whitespace = false
+
+[*.{diff,patch}]
+trim_trailing_whitespace = false

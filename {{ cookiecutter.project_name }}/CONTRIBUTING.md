@@ -1,9 +1,5 @@
 # How to contribute
 
-This is a how-to-contribute guide for the template itself.
-This guide is not about contributing to the project that is created
-using this template.
-
 ## Dependencies
 
 We use `poetry` to manage the [dependencies](https://github.com/python-poetry/poetry).
@@ -43,7 +39,6 @@ Before submitting your code please do the following steps:
 1. Add any changes you want
 1. Add tests for the new changes
 1. Edit documentation if you have changed something significant
-1. Update `CHANGELOG.md` with a quick summary of your changes
 1. Run `make codestyle` to format your changes.
 1. Run `STRICT=1 make check-style` to ensure that types and docs are correct
 1. Run `STRICT=1 make check-safety` to ensure that security of your code is correct
