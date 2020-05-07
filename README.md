@@ -8,7 +8,7 @@ Yet another [cookiecutter](https://github.com/cookiecutter/cookiecutter) templat
 [![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/TezRomacH/python-package-template/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Semantic Versions](https://img.shields.io/badge/%F0%9F%9A%80-semantic--versions-informational.svg)](https://github.com/TezRomacH/python-package-template/releases)
+[![Semantic Versions](https://img.shields.io/badge/%F0%9F%9A%80-semantic%20versions-informational.svg)](https://github.com/TezRomacH/python-package-template/releases)
 [![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/TezRomacH/python-package-template/blob/master/LICENCE)
 
 Your next Python package needs bleeding edge project structure.
@@ -310,6 +310,17 @@ You can see the list of available releases on the [GitHub Releases](https://gith
 
 We follow [Semantic Versions](https://semver.org/) specification.
 
+We use [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). As pull requests are merged, a draft release is kept up-to-date listing the changes, ready to publish when you’re ready. With the categories option you can categorize pull requests in release notes using labels.
+
+For Pull Request we configured this labels:
+
+- Features: `enhancement`, `feature`
+- Fixes & Refactoring: `bug`, `refactoring`, `bugfix`, `fix`, `hotfix`
+- Build System & CI/CD: `build`, `ci`, `testing`
+- Breaking Changes: `breaking`
+- Documentation: `documentation`
+- Dependencies updates: `dependencies`
+
 ## 🧪 TODOs
 
 This template will continue to develop and follow the bleeding edge new tools and best practices to improve the Python development experience.
@@ -318,13 +329,14 @@ Here is a list of things that have yet to be implemented:
 
 - Add examples of libraries created using this template.
 - Tests coverage reporting ([`Codecov`](https://github.com/marketplace/codecov) ?).
+- Builtin integration with [Code Climate](https://codeclimate.com/), [Deepsource](https://deepsource.io/) and [CodeFactor](https://www.codefactor.io/) (they are free for Open Source).
 - Auto uploading your package to [`PyPI`](https://pypi.org/).
 - Automatic creation and deployment of documentation to GitHub pages (I'm mostly looking at [`MkDocs`](https://www.mkdocs.org/)).
 - Code metrics with [`Radon`](https://github.com/rubik/radon).
+- `Dockerfile` linting with [`dockerfilelint`](https://github.com/replicatedhq/dockerfilelint).
 - Add `SECURITY.md` and `security_report.md` to issue templates. Add security checkbox in `pull_request_template.md`.
 - [Hall of fame](https://github.com/sourcerer-io/hall-of-fame) from `Sourcerer`.
-- Builtin integration with [Code Climate](https://codeclimate.com/), [Deepsource](https://deepsource.io/) and [CodeFactor](https://www.codefactor.io/) (they are free for Open Source).
-- Some advanced linting (?).
+- Some advanced Python linting (?).
 - Update `pre-commit` hooks to [locals](https://pre-commit.com/#repository-local-hooks) (?).
 - Refactor `Makefile`
 - Help text for all functions in `Makefile`.
@@ -332,7 +344,9 @@ Here is a list of things that have yet to be implemented:
 
 ## 🛡 License
 
-This project is licensed under the terms of the MIT licence. See [LICENSE](https://github.com/TezRomacH/python-package-template/blob/master/LICENCE) for more details.
+[![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/TezRomacH/python-package-template/blob/master/LICENCE)
+
+This project is licensed under the terms of the `MIT` licence. See [LICENSE](https://github.com/TezRomacH/python-package-template/blob/master/LICENCE) for more details.
 
 ## 🏅 Credits
 

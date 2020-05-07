@@ -19,7 +19,7 @@ categories:
     labels: [dependencies]
 
 template: |
-  ## :fire: What’s Changed
+  ## What’s Changed
 
   $CHANGES
 

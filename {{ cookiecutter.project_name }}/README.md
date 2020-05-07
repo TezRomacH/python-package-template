@@ -8,7 +8,7 @@
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Security: bandit](https://img.shields.io/badge/security-bandit-green.svg)](https://github.com/PyCQA/bandit)
-[![Semantic Versions](https://img.shields.io/badge/%F0%9F%9A%80-semantic--versions-informational.svg)](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/releases)
+[![Semantic Versions](https://img.shields.io/badge/%F0%9F%9A%80-semantic%20versions-informational.svg)](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/releases)
 [![License](https://img.shields.io/github/license/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }})](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENCE)
 
 {{ cookiecutter.project_description }}
@@ -326,9 +326,24 @@ You can see the list of available releases on the [GitHub Releases](https://gith
 
 We follow [Semantic Versions](https://semver.org/) specification.
 
+We use [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). As pull requests are merged, a draft release is kept up-to-date listing the changes, ready to publish when you’re ready. With the categories option you can categorize pull requests in release notes using labels.
+
+For Pull Request this labels are configured, by default:
+
+- Features: `enhancement`, `feature`
+- Fixes & Refactoring: `bug`, `refactoring`, `bugfix`, `fix`, `hotfix`
+- Build System & CI/CD: `build`, `ci`, `testing`
+- Breaking Changes: `breaking`
+- Documentation: `documentation`
+- Dependencies updates: `dependencies`
+
+You can update it in [`release-drafter.yml`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.github/release-drafter.yml).
+
 ## 🛡 License
 
-This project is licensed under the terms of the {{ cookiecutter.license }} licence. See [LICENSE](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENCE) for more details.
+[![License](https://img.shields.io/github/license/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }})](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENCE)
+
+This project is licensed under the terms of the `{{ cookiecutter.license }}` licence. See [LICENSE](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENCE) for more details.
 
 ## 📃 Citation
 
