@@ -11,12 +11,12 @@ Yet another [cookiecutter](https://github.com/cookiecutter/cookiecutter) templat
 [![Semantic Versions](https://img.shields.io/badge/%F0%9F%9A%80-semantic%20versions-informational.svg)](https://github.com/TezRomacH/python-package-template/releases)
 [![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/TezRomacH/python-package-template/blob/master/LICENSE)
 
-Your next Python package needs bleeding edge project structure.
+Your next Python package needs a bleeding-edge project structure.
 </div>
 
 ## 🚀 Features
 
-In this template we aimed to combine the most state-of-the-art libraries and best development practices for Python.
+In this template, we aimed to combine the most state-of-the-art libraries and best development practices for Python.
 
 For your development we've prepared:
 
@@ -37,12 +37,12 @@ For building and deployment:
 - [Dockerfile](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/docker/Dockerfile) for your package.
 - `Github Actions` with predefined [build workflow](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/workflows/build.yml) as the default CI/CD.
 - Always up-to-date dependencies with [`@dependabot`](https://dependabot.com/) (You will only [need to setup free plan](https://github.com/marketplace/dependabot-preview)).
-- Automatic drafts of new release with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). It creates a list of changes based on lables in merged `Pull Requests`. You can see labels (aka `categories`) in [`release-drafter.yml`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/release-drafter.yml). Works perfectly with [Semantic Versions](https://semver.org/) specification.
+- Automatic drafts of new releases with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). It creates a list of changes based on labels in merged `Pull Requests`. You can see labels (aka `categories`) in [`release-drafter.yml`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/release-drafter.yml). Works perfectly with [Semantic Versions](https://semver.org/) specification.
 
 For creating your open source community:
 
 - Ready-to-use [Pull Requests templates](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/PULL_REQUEST_TEMPLATE.md) and several [Issue templates](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/ISSUE_TEMPLATE).
-- Files such as: `LICENSE.md`, `CONTRIBUTING.md` and `CODE_OF_CONDUCT.md` are generated automatically.
+- Files such as: `LICENSE`, `CONTRIBUTING.md`, and `CODE_OF_CONDUCT.md` are generated automatically.
 - [`Stale bot`](https://github.com/apps/stale) that closes abandoned issues after a period of inactivity. (You will only [need to setup free plan](https://github.com/marketplace/stale)). Configuration is [here](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/.stale.yml).
 - [Semantic Versions](https://semver.org/) specification with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter).
 
@@ -66,7 +66,7 @@ cookiecutter gh:TezRomacH/python-package-template
 
 The `cookiecutter generator`  will ask you for some data, you might want to have at hand before generating the project.
 
-The input variables, with their default values (some auto generated) are:
+The input variables, with their default values (some auto-generated), are:
 
 - `project_name`: The name of the project. By default `python-project`. It might be a good idea to [check the availability of such name](http://ivantomic.com/projects/ospnc/) before creating the project.
 - `project_description`: Brief description of your project. By default, based on the `project_name`.
@@ -74,7 +74,7 @@ The input variables, with their default values (some auto generated) are:
 - `license`: Type of license. One of `MIT`, `BSD-3`, `GNU GPL v3.0` and `Apache Software License 2.0`.
 - `version`: Initial version of the package. Make sure it follows the [Semantic Versions](https://semver.org/) specification. By default `0.1.0`.
 - `github_name`: GitHub username where the package will be hosted. The cookiecutter will use this name to correctly configure the `README.md`, `pyproject.toml` and template files for GitHub. By default, based on the `organization`.
-- `email`: Email is needed for generating `CODE_OF_CONDUCT` file and to specify the ownership of the project in `pyproject.toml`.
+- `email`: Email is needed for generating the `CODE_OF_CONDUCT.md` file and to specify the ownership of the project in `pyproject.toml`.
 
 The entered values will be saved in the `cookiecutter-config-file.yml` file so that you don't lose them. 😉
 
@@ -84,13 +84,19 @@ After using this generator, your new project (the directory created) will contai
 
 ### Initial setting up
 
-#### Initialize `.git`, `poetry` and `pre-commit` by running `make install`
+#### Initialize `.git`, `poetry` and `pre-commit`
+
+By running `make install`
 
 After you run the cookiecutter command and the project appears in your directory, the console will display [a message about how to initialize the project](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D#very-first-steps).
 
-#### Poetry
+#### Package example
 
 All manipulations with dependencies are executed through Poetry. If you're new to it, look through [the documentation](https://python-poetry.org/docs/).
+
+<details>
+<summary>Notes about Poetry</summary>
+<p>
 
 Poetry's [commands](https://python-poetry.org/docs/cli/#commands) are very intuitive and easy to learn, like:
 
@@ -99,7 +105,8 @@ Poetry's [commands](https://python-poetry.org/docs/cli/#commands) are very intui
 - `poetry build`
 - etc
 
-#### Toy example
+</p>
+</details>
 
 The template comes with a cute little CLI application example. It uses [`Typer`](https://github.com/tiangolo/typer) to CLI and [`Rich`](https://github.com/willmcgugan/rich) for beautiful formatting in the terminal output.
 
@@ -162,7 +169,7 @@ make install NO_PRE_COMMIT=1
 make check-safety
 ```
 
-This command launches a `Poetry` and `Pip` integrity check as well as identifies security issues with `Safety` and `Bandit`. By default, the build will not crash if any of the items fails. But you can set `STRICT=1` for the entire build, or you can configure strictness for each item separately.
+This command launches a `Poetry` and `Pip` integrity check as well as identifies security issues with `Safety` and `Bandit`. By default, the build will not crash if any of the items fail. But you can set `STRICT=1` for the entire build, or you can configure strictness for each item separately.
 
 ```bash
 make check-safety STRICT=1
@@ -189,7 +196,7 @@ make check-safety PIP_STRICT=1 SAFETY_STRICT=1
 <summary>4. Check the codestyle</summary>
 <p>
 
-The command is similar to `check-safety` but to check the code style, obviously. It uses `Black`, `Darglint`, `Isort` and `Mypy` inside.
+The command is similar to `check-safety` but to check the code style, obviously. It uses `Black`, `Darglint`, `Isort`, and `Mypy` inside.
 
 ```bash
 make check-style
@@ -294,9 +301,11 @@ Well, that's up to you. I can only recommend the packages and articles that help
 Packages:
 
 - [`Typer`](https://github.com/tiangolo/typer) is great for creating CLI applications.
-- [`Rich`](https://github.com/willmcgugan/rich) makes it easy to add  beautiful formatting in the terminal.
+- [`Rich`](https://github.com/willmcgugan/rich) makes it easy to add beautiful formatting in the terminal.
 - [`FastAPI`](https://github.com/tiangolo/fastapi) is a type-driven asynchronous web framework.
 - [`IceCream`](https://github.com/gruns/icecream) is a little library for sweet and creamy debugging.
+- [`Returns`](https://github.com/dry-python/returns) makes you function's output meaningful, typed, and safe!
+- [`Pydantic`](https://github.com/samuelcolvin/pydantic/) – data validation and settings management using Python type hinting.
 
 Articles:
 
@@ -310,7 +319,7 @@ You can see the list of available releases on the [GitHub Releases](https://gith
 
 We follow [Semantic Versions](https://semver.org/) specification.
 
-We use [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). As pull requests are merged, a draft release is kept up-to-date listing the changes, ready to publish when you’re ready. With the categories option you can categorize pull requests in release notes using labels.
+We use [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). As pull requests are merged, a draft release is kept up-to-date listing the changes, ready to publish when you’re ready. With the categories option, you can categorize pull requests in release notes using labels.
 
 For Pull Request we configured this labels:
 
@@ -332,7 +341,9 @@ Here is a list of things that have yet to be implemented:
 - Builtin integration with [Code Climate](https://codeclimate.com/), [Deepsource](https://deepsource.io/) and [CodeFactor](https://www.codefactor.io/) (they are free for Open Source).
 - Auto uploading your package to [`PyPI`](https://pypi.org/).
 - Automatic creation and deployment of documentation to GitHub pages (I'm mostly looking at [`MkDocs`](https://www.mkdocs.org/)).
+- Make an `asciinema` video tutoial.
 - Code metrics with [`Radon`](https://github.com/rubik/radon).
+- Docstring coverage with [`interrogate`](https://github.com/econchick/interrogate)
 - `Dockerfile` linting with [`dockerfilelint`](https://github.com/replicatedhq/dockerfilelint).
 - Add `SECURITY.md` and `security_report.md` to issue templates. Add security checkbox in `pull_request_template.md`.
 - [Hall of fame](https://github.com/sourcerer-io/hall-of-fame) from `Sourcerer`.
@@ -340,13 +351,14 @@ Here is a list of things that have yet to be implemented:
 - Update `pre-commit` hooks to [locals](https://pre-commit.com/#repository-local-hooks) (?).
 - Refactor `Makefile`
 - Help text for all functions in `Makefile`.
+- Add the option to select the minimum version of Python: `3.7` or `3.8`
 - End-to-end testing and validation of the cookiecutter template.
 
 ## 🛡 License
 
 [![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/TezRomacH/python-package-template/blob/master/LICENSE)
 
-This project is licensed under the terms of the `MIT` licence. See [LICENSE](https://github.com/TezRomacH/python-package-template/blob/master/LICENSE) for more details.
+This project is licensed under the terms of the `MIT` license. See [LICENSE](https://github.com/TezRomacH/python-package-template/blob/master/LICENSE) for more details.
 
 ## 🏅 Credits
 
@@ -355,8 +367,9 @@ This template was inspired by those great packages and articles:
 - [`wemake-python-package`](https://github.com/wemake-services/wemake-python-package)
 - [Hypermodern Python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/)
 - [Ultimate Setup for Your Next Python Project](https://martinheinz.dev/blog/14)
-- [Audreyr's cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage)
+- [Audreyr's `cookiecutter-pypackage`](https://github.com/audreyr/cookiecutter-pypackage)
 - [Full Stack FastAPI and PostgreSQL - Base Project Generator](https://github.com/tiangolo/full-stack-fastapi-postgresql)
+- [Cookiecutter Data Science Template: `cdst`](https://github.com/crplab/cdst)
 
 Give them your ⭐️, these resources are amazing! 😉
 
