@@ -47,12 +47,16 @@ git push -u origin master
 
 ### Initial setting up
 
-- Set up [Dependabot](https://github.com/marketplace/dependabot-preview) to enshure you have latest dependencies.
+- Set up [Dependabot](https://github.com/marketplace/dependabot-preview) to ensure you have the latest dependencies.
 - Set up [Stale bot](https://github.com/apps/stale) for automatic issue closing.
 
 ### Poetry
 
 All manipulations with dependencies are executed through Poetry. If you're new to it, look through [the documentation](https://python-poetry.org/docs/).
+
+<details>
+<summary>Notes about Poetry</summary>
+<p>
 
 Poetry's [commands](https://python-poetry.org/docs/cli/#commands) are very intuitive and easy to learn, like:
 
@@ -60,6 +64,9 @@ Poetry's [commands](https://python-poetry.org/docs/cli/#commands) are very intui
 - `poetry run pytest`
 - `poetry build`
 - etc
+
+</p>
+</details>
 
 ### Building your package
 
@@ -77,7 +84,7 @@ Well, that's up to you. I can only recommend the packages and articles that help
 Packages:
 
 - [`Typer`](https://github.com/tiangolo/typer) is great for creating CLI applications.
-- [`Rich`](https://github.com/willmcgugan/rich) makes it easy to add  beautiful formatting in the terminal.
+- [`Rich`](https://github.com/willmcgugan/rich) makes it easy to add beautiful formatting in the terminal.
 - [`FastAPI`](https://github.com/tiangolo/fastapi) is a type-driven asynchronous web framework.
 - [`IceCream`](https://github.com/gruns/icecream) is a little library for sweet and creamy debugging
 
@@ -108,12 +115,12 @@ For building and deployment:
 - [Dockerfile](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/docker/Dockerfile) for your package.
 - `Github Actions` with predefined [build workflow](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.github/workflows/build.yml) as the default CI/CD.
 - Always up-to-date dependencies with [`@dependabot`](https://dependabot.com/) (You will only [need to setup free plan](https://github.com/marketplace/dependabot-preview)).
-- Automatic drafts of new release with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). It creates a list of changes based on lables in merged `Pull Requests`. You can see labels (aka `categories`) in [`release-drafter.yml`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.github/release-drafter.yml). Works perfectly with [Semantic Versions](https://semver.org/) specification.
+- Automatic drafts of new releases with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). It creates a list of changes based on labels in merged `Pull Requests`. You can see labels (aka `categories`) in [`release-drafter.yml`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.github/release-drafter.yml). Works perfectly with [Semantic Versions](https://semver.org/) specification.
 
 For creating your open source community:
 
 - Ready-to-use [Pull Requests templates](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.github/PULL_REQUEST_TEMPLATE.md) and several [Issue templates](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/tree/master/.github/ISSUE_TEMPLATE).
-- Files such as: `LICENSE.md`, `CONTRIBUTING.md` and `CODE_OF_CONDUCT.md` are generated automatically.
+- Files such as: `LICENSE`, `CONTRIBUTING.md`, and `CODE_OF_CONDUCT.md` are generated automatically.
 - [`Stale bot`](https://github.com/apps/stale) that closes abandoned issues after a period of inactivity. (You will only [need to setup free plan](https://github.com/marketplace/stale)). Configuration is [here](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.github/.stale.yml).
 - [Semantic Versions](https://semver.org/) specification with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter).
 
@@ -189,7 +196,7 @@ make install NO_PRE_COMMIT=1
 make check-safety
 ```
 
-This command launches a `Poetry` and `Pip` integrity check as well as identifies security issues with `Safety` and `Bandit`. By default, the build will not crash if any of the items fails. But you can set `STRICT=1` for the entire build, or you can configure strictness for each item separately.
+This command launches a `Poetry` and `Pip` integrity check as well as identifies security issues with `Safety` and `Bandit`. By default, the build will not crash if any of the items fail. But you can set `STRICT=1` for the entire build, or you can configure strictness for each item separately.
 
 ```bash
 make check-safety STRICT=1
@@ -216,7 +223,7 @@ make check-safety PIP_STRICT=1 SAFETY_STRICT=1
 <summary>4. Check the codestyle</summary>
 <p>
 
-The command is similar to `check-safety` but to check the code style, obviously. It uses `Black`, `Darglint`, `Isort` and `Mypy` inside.
+The command is similar to `check-safety` but to check the code style, obviously. It uses `Black`, `Darglint`, `Isort`, and `Mypy` inside.
 
 ```bash
 make check-style
@@ -320,7 +327,7 @@ You can see the list of available releases on the [GitHub Releases](https://gith
 
 We follow [Semantic Versions](https://semver.org/) specification.
 
-We use [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). As pull requests are merged, a draft release is kept up-to-date listing the changes, ready to publish when you’re ready. With the categories option you can categorize pull requests in release notes using labels.
+We use [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). As pull requests are merged, a draft release is kept up-to-date listing the changes, ready to publish when you’re ready. With the categories option, you can categorize pull requests in release notes using labels.
 
 For Pull Request this labels are configured, by default:
 
@@ -337,7 +344,7 @@ You can update it in [`release-drafter.yml`](https://github.com/{{ cookiecutter.
 
 [![License](https://img.shields.io/github/license/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }})](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENSE)
 
-This project is licensed under the terms of the `{{ cookiecutter.license }}` licence. See [LICENSE](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENSE) for more details.
+This project is licensed under the terms of the `{{ cookiecutter.license }}` license. See [LICENSE](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENSE) for more details.
 
 ## 📃 Citation
 
@@ -345,7 +352,7 @@ This project is licensed under the terms of the `{{ cookiecutter.license }}` lic
 {% raw %}@misc{{% endraw %}{{ cookiecutter.project_name }},
   author = {% raw %}{{% endraw %}{{ cookiecutter.organization }}{% raw %}}{% endraw %},
   title = {% raw %}{{% endraw %}{{ cookiecutter.project_description }}{% raw %}}{% endraw %},
-  year = {2020},
+  year = {% raw %}{{% endraw %}{% now 'utc', '%Y' %}{% raw %}}{% endraw %},
   publisher = {GitHub},
   journal = {GitHub repository},
   howpublished = {\url{https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}{% raw %}}}{% endraw %}
