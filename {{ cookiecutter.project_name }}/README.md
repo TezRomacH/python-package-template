@@ -107,7 +107,7 @@ For your development we've prepared:
 - Testing with [`pytest`](https://docs.pytest.org/en/latest/).
 - Docstring checks with [`darglint`](https://github.com/terrencepreilly/darglint).
 - Security checks with [`safety`](https://github.com/pyupio/safety) and [`bandit`](https://github.com/PyCQA/bandit).
-- Well-made [`.editorconfig`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.editorconfig) and [`.gitignore`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.gitignore). You don't have to worry about those things.
+- Well-made [`.editorconfig`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.editorconfig), [`.dockerignore`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.dockerignore), and [`.gitignore`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.gitignore). You don't have to worry about those things.
 
 For building and deployment:
 
