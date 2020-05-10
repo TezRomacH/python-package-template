@@ -15,6 +15,7 @@
 - [ ] 🥂 Improvement (non-breaking change which improves an existing feature)
 - [ ] 🚀 New feature (non-breaking change which adds functionality)
 - [ ] 💥 Breaking change (fix or feature that would cause existing functionality to change)
+- [ ] 🔐 Security fix
 
 ## Checklist
 

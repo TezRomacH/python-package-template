@@ -49,7 +49,7 @@ For building and deployment:
 For creating your open source community:
 
 - Ready-to-use [Pull Requests templates](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/PULL_REQUEST_TEMPLATE.md) and several [Issue templates](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/ISSUE_TEMPLATE).
-- Files such as: `LICENSE`, `CONTRIBUTING.md`, and `CODE_OF_CONDUCT.md` are generated automatically.
+- Files such as: `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, and `SECURITY.md` are generated automatically.
 - [`Stale bot`](https://github.com/apps/stale) that closes abandoned issues after a period of inactivity. (You will only [need to setup free plan](https://github.com/marketplace/stale)). Configuration is [here](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/.stale.yml).
 - [Semantic Versions](https://semver.org/) specification with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter).
 
@@ -354,7 +354,6 @@ Here is a list of things that have yet to be implemented:
 - Code metrics with [`Radon`](https://github.com/rubik/radon).
 - Docstring coverage with [`interrogate`](https://github.com/econchick/interrogate)
 - `Dockerfile` linting with [`dockerfilelint`](https://github.com/replicatedhq/dockerfilelint).
-- Add `SECURITY.md` and `security_report.md` to issue templates. Add security checkbox in `pull_request_template.md`.
 - [Hall of fame](https://github.com/sourcerer-io/hall-of-fame) from `Sourcerer`.
 - Some advanced Python linting (?).
 - Update `pre-commit` hooks to [locals](https://pre-commit.com/#repository-local-hooks) (?).
