@@ -15,6 +15,12 @@ Yet another [cookiecutter](https://github.com/cookiecutter/cookiecutter) templat
 Your next Python package needs a bleeding-edge project structure.
 </div>
 
+## TL;DR
+
+```bash
+cookiecutter gh:TezRomacH/python-package-template
+```
+
 ## 🚀 Features
 
 In this template, we aimed to combine the most state-of-the-art libraries and best development practices for Python.
@@ -29,7 +35,7 @@ For your development we've prepared:
 - Testing with [`pytest`](https://docs.pytest.org/en/latest/).
 - Docstring checks with [`darglint`](https://github.com/terrencepreilly/darglint).
 - Security checks with [`safety`](https://github.com/pyupio/safety) and [`bandit`](https://github.com/PyCQA/bandit).
-- Well-made [`.editorconfig`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.editorconfig) and [`.gitignore`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.gitignore). You don't have to worry about those things.
+- Well-made [`.editorconfig`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.editorconfig), [`.dockerignore`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.dockerignore), and [`.gitignore`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.gitignore). You don't have to worry about those things.
 
 For building and deployment:
 
