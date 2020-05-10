@@ -1,0 +1,24 @@
+# Configuration: https://dependabot.com/docs/config-file/
+# TODO: version 2 https://github.com/dependabot/dependabot-core/blob/master/.github/dependabot.yml
+
+version: 1
+
+update_configs:
+
+  - package_manager: "python"
+    directory: "/"
+    update_schedule: "daily"
+    allowed_updates:
+      - match:
+          update_type: "all"
+    commit_message:
+      prefix: ":arrow_up:"
+
+  - package_manager: "github_actions"
+    directory: "/"
+    update_schedule: "daily"
+    allowed_updates:
+      - match:
+          update_type: "all"
+    commit_message:
+      prefix: ":arrow_up:"
