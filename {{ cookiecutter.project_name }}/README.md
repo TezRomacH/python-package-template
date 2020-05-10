@@ -8,6 +8,7 @@
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Security: bandit](https://img.shields.io/badge/security-bandit-green.svg)](https://github.com/PyCQA/bandit)
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.pre-commit-config.yaml)
 [![Semantic Versions](https://img.shields.io/badge/%F0%9F%9A%80-semantic%20versions-informational.svg)](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/releases)
 [![License](https://img.shields.io/github/license/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }})](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENSE)
 
@@ -331,14 +332,18 @@ We use [`Release Drafter`](https://github.com/marketplace/actions/release-drafte
 
 For Pull Request this labels are configured, by default:
 
-- Features: `enhancement`, `feature`
-- Fixes & Refactoring: `bug`, `refactoring`, `bugfix`, `fix`, `hotfix`
-- Build System & CI/CD: `build`, `ci`, `testing`
-- Breaking Changes: `breaking`
-- Documentation: `documentation`
-- Dependencies updates: `dependencies`
+|               **Label**               |  **Title in Releases**  |
+|:-------------------------------------:|:----------------------:|
+| `enhancement`, `feature`              | 🚀 Features             |
+| `bug`, `refactoring`, `bugfix`, `fix` | 🔧 Fixes & Refactoring  |
+| `build`, `ci`, `testing`              | 📦 Build System & CI/CD |
+| `breaking`                            | 💥 Breaking Changes     |
+| `documentation`                       | 📝 Documentation        |
+| `dependencies`                        | ⬆️ Dependencies updates |
 
 You can update it in [`release-drafter.yml`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.github/release-drafter.yml).
+
+GitHub creates the `bug`, `enhancement`, and `documentation` labels for you. Dependabot creates the `dependencies` label. Create the remaining labels on the Issues tab of your GitHub repository, when you need them.
 
 ## 🛡 License
 

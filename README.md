@@ -8,6 +8,7 @@ Yet another [cookiecutter](https://github.com/cookiecutter/cookiecutter) templat
 [![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/TezRomacH/python-package-template/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/TezRomacH/python-package-template/blob/master/.pre-commit-config.yaml)
 [![Semantic Versions](https://img.shields.io/badge/%F0%9F%9A%80-semantic%20versions-informational.svg)](https://github.com/TezRomacH/python-package-template/releases)
 [![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/TezRomacH/python-package-template/blob/master/LICENSE)
 
@@ -120,7 +121,7 @@ poetry run <project_name> --help
 poetry run <project_name> --name Roman
 ```
 
-### Building your package
+### Building and releasing your package
 
 Building a new version of the application contains steps:
 
@@ -323,12 +324,14 @@ We use [`Release Drafter`](https://github.com/marketplace/actions/release-drafte
 
 For Pull Request we configured this labels:
 
-- Features: `enhancement`, `feature`
-- Fixes & Refactoring: `bug`, `refactoring`, `bugfix`, `fix`, `hotfix`
-- Build System & CI/CD: `build`, `ci`, `testing`
-- Breaking Changes: `breaking`
-- Documentation: `documentation`
-- Dependencies updates: `dependencies`
+|               **Label**               |  **Title in Releases**  |
+|:-------------------------------------:|:----------------------:|
+| `enhancement`, `feature`              | 🚀 Features             |
+| `bug`, `refactoring`, `bugfix`, `fix` | 🔧 Fixes & Refactoring  |
+| `build`, `ci`, `testing`              | 📦 Build System & CI/CD |
+| `breaking`                            | 💥 Breaking Changes     |
+| `documentation`                       | 📝 Documentation        |
+| `dependencies`                        | ⬆️ Dependencies updates |
 
 ## 🧪 TODOs
 
