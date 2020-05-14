@@ -75,13 +75,15 @@ The `cookiecutter generator`  will ask you for some data, you might want to have
 
 The input variables, with their default values (some auto-generated), are:
 
-- `project_name`: The name of the project. By default `python-project`. It might be a good idea to [check the availability of such name](http://ivantomic.com/projects/ospnc/) before creating the project.
-- `project_description`: Brief description of your project. By default, based on the `project_name`.
-- `organization`: Name of the organization. This is needed to generate the license file and to specify the ownership of the project in `pyproject.toml`.
-- `license`: Type of license. One of `MIT`, `BSD-3`, `GNU GPL v3.0` and `Apache Software License 2.0`.
-- `version`: Initial version of the package. Make sure it follows the [Semantic Versions](https://semver.org/) specification. By default `0.1.0`.
-- `github_name`: GitHub username where the package will be hosted. The cookiecutter will use this name to correctly configure the `README.md`, `pyproject.toml` and template files for GitHub. By default, based on the `organization`.
-- `email`: Email is needed for generating the `CODE_OF_CONDUCT.md` file and to specify the ownership of the project in `pyproject.toml`.
+|     **Parameter**     |      **Default value**      | **Description**                                                                                                                                                               |
+|:---------------------:|:---------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `project_name`        | `python-project`            | The name of the project. It might be a good idea to  [check the availability of such name](http://ivantomic.com/projects/ospnc/) before creating the project.                 |
+| `project_description` | based on the `project_name` | Brief description of your project.                                                                                                                                            |
+| `organization`        | based on the `project_name` | Name of the organization. This is needed to generate the license file and to specify the ownership of the project in `pyproject.toml`.                                        |
+| `license`             | `MIT`                       | Type of license. One of `MIT`, `BSD-3`, `GNU GPL v3.0` and `Apache Software License 2.0`.                                                                                     |
+| `version`             | `0.1.0`                     | An initial version of the package. Make sure it follows the [Semantic Versions](https://semver.org/) specification.                                                           |
+| `github_name`         | based on the `organization` | GitHub username where the package will be hosted. The cookiecutter will use this name to correctly configure the `README.md`, `pyproject.toml` and template files for GitHub. |
+| `email`               | based on the `organization` | Email is needed for generating the `CODE_OF_CONDUCT.md`, `SECURITY.md` files and to specify the ownership of the project in `pyproject.toml`.                                 |
 
 The entered values will be saved in the `cookiecutter-config-file.yml` file so that you don't lose them. 😉
 
@@ -349,7 +351,7 @@ Here is a list of things that have yet to be implemented:
 - Tests coverage reporting ([`Codecov`](https://github.com/marketplace/codecov) ?).
 - Builtin integration with [Code Climate](https://codeclimate.com/), [Deepsource](https://deepsource.io/) and [CodeFactor](https://www.codefactor.io/) (they are free for Open Source).
 - Auto uploading your package to [`PyPI`](https://pypi.org/).
-- Automatic creation and deployment of documentation to GitHub pages (I'm mostly looking at [`MkDocs`](https://www.mkdocs.org/)).
+- Automatic creation and deployment of documentation to GitHub pages (I'm mostly looking at [`MkDocs`](https://www.mkdocs.org/) with [Material Design theme](https://github.com/squidfunk/mkdocs-material) and [`mkdocstrings`](https://github.com/pawamoy/mkdocstrings)).
 - Make an `asciinema` video tutoial.
 - Code metrics with [`Radon`](https://github.com/rubik/radon).
 - Docstring coverage with [`interrogate`](https://github.com/econchick/interrogate)
