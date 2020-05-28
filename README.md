@@ -87,6 +87,10 @@ The input variables, with their default values (some auto-generated), are:
 
 The entered values will be saved in the `cookiecutter-config-file.yml` file so that you don't lose them. 😉
 
+### Demo
+
+[![Demo](https://asciinema.org/a/VSwEeZZWn9YkfV1ne2Oe8VxF3.svg)](https://asciinema.org/a/VSwEeZZWn9YkfV1ne2Oe8VxF3?autoplay=1)
+
 ### More details
 
 After using this generator, your new project (the directory created) will contain an extensive `README.md` with instructions for development, deployment, etc. You can pre-read [the project `README.md` template here](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D) too.
