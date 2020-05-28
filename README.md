@@ -87,6 +87,10 @@ The input variables, with their default values (some auto-generated), are:
 
 The entered values will be saved in the `cookiecutter-config-file.yml` file so that you don't lose them. 😉
 
+### Demo
+
+[![Demo](https://asciinema.org/a/VSwEeZZWn9YkfV1ne2Oe8VxF3.svg)](https://asciinema.org/a/VSwEeZZWn9YkfV1ne2Oe8VxF3?autoplay=1)
+
 ### More details
 
 After using this generator, your new project (the directory created) will contain an extensive `README.md` with instructions for development, deployment, etc. You can pre-read [the project `README.md` template here](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D) too.
@@ -352,7 +356,6 @@ Here is a list of things that have yet to be implemented:
 - Builtin integration with [Code Climate](https://codeclimate.com/), [Deepsource](https://deepsource.io/) and [CodeFactor](https://www.codefactor.io/) (they are free for Open Source).
 - Auto uploading your package to [`PyPI`](https://pypi.org/).
 - Automatic creation and deployment of documentation to GitHub pages (I'm mostly looking at [`MkDocs`](https://www.mkdocs.org/) with [Material Design theme](https://github.com/squidfunk/mkdocs-material) and [`mkdocstrings`](https://github.com/pawamoy/mkdocstrings)).
-- Make an `asciinema` video tutoial.
 - Code metrics with [`Radon`](https://github.com/rubik/radon).
 - Docstring coverage with [`interrogate`](https://github.com/econchick/interrogate)
 - `Dockerfile` linting with [`dockerfilelint`](https://github.com/replicatedhq/dockerfilelint).
