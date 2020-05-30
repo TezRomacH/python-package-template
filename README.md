@@ -1,7 +1,5 @@
 # Python Packages Project Generator
 
-Yet another [cookiecutter](https://github.com/cookiecutter/cookiecutter) template for Python packages.
-
 <div align="center">
 
 [![Build status](https://github.com/TezRomacH/python-package-template/workflows/build/badge.svg?branch=master&event=push)](https://github.com/TezRomacH/python-package-template/actions?query=workflow%3Abuild)
@@ -23,7 +21,7 @@ cookiecutter gh:TezRomacH/python-package-template
 
 ## 🚀 Features
 
-In this template, we aimed to combine the most state-of-the-art libraries and best development practices for Python.
+In this [cookiecutter](https://github.com/cookiecutter/cookiecutter) template, we aimed to combine the most state-of-the-art libraries and best development practices for Python.
 
 For your development we've prepared:
 
@@ -89,7 +87,7 @@ The entered values will be saved in the `cookiecutter-config-file.yml` file so t
 
 ### Demo
 
-[![Demo](https://asciinema.org/a/VSwEeZZWn9YkfV1ne2Oe8VxF3.svg)](https://asciinema.org/a/VSwEeZZWn9YkfV1ne2Oe8VxF3?autoplay=1)
+[![Demo](https://asciinema.org/a/1QEnZDbyb8R4sPrb37l6wlHpi.svg)](https://asciinema.org/a/1QEnZDbyb8R4sPrb37l6wlHpi?autoplay=1)
 
 ### More details
 
@@ -373,13 +371,18 @@ Here is a list of things that have yet to be implemented:
 
 This project is licensed under the terms of the `MIT` license. See [LICENSE](https://github.com/TezRomacH/python-package-template/blob/master/LICENSE) for more details.
 
-## 🏅 Credits
+## 🏅 Acknowledgements
 
-This template was inspired by those great packages and articles:
+This template was inspired by those great articles:
 
-- [`wemake-python-package`](https://github.com/wemake-services/wemake-python-package)
 - [Hypermodern Python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/)
 - [Ultimate Setup for Your Next Python Project](https://martinheinz.dev/blog/14)
+- [Nine simple steps for better-looking python code](https://towardsdatascience.com/nine-simple-steps-for-better-looking-python-code-87e5d9d3b1cf)
+
+and repositories:
+
+- [`Cookiecutter`](https://github.com/cookiecutter/cookiecutter)
+- [`wemake-python-package`](https://github.com/wemake-services/wemake-python-package)
 - [Audreyr's `cookiecutter-pypackage`](https://github.com/audreyr/cookiecutter-pypackage)
 - [Full Stack FastAPI and PostgreSQL - Base Project Generator](https://github.com/tiangolo/full-stack-fastapi-postgresql)
 - [Cookiecutter Data Science Template: `cdst`](https://github.com/crplab/cdst)
