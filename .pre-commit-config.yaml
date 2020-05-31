@@ -1,6 +1,8 @@
 default_language_version:
   python: python3.7
 
+default_stages: [commit, push]
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.5.0
@@ -9,24 +11,29 @@ repos:
         exclude: ^{{ cookiecutter.project_name }}/.github/
       - id: end-of-file-fixer
 
-  - repo: https://github.com/timothycrosley/isort
-    rev: 4.3.21-2
+  - repo: local
     hooks:
       - id: isort
-        args: [--settings-path, ./pyproject.toml]
-        additional_dependencies: [tomlkit, toml]
+        name: isort
+        entry: poetry run isort -y --settings-path pyproject.toml
         exclude: ^{{ cookiecutter.project_name }}/
+        types: [python]
+        language: system
 
-  - repo: https://github.com/asottile/pyupgrade
-    rev: v2.4.4
+  - repo: local
     hooks:
       - id: pyupgrade
+        name: pyupgrade
+        entry: poetry run pyupgrade --py37-plus
         exclude: ^{{ cookiecutter.project_name }}/
-        args: [--py37-plus]
+        types: [python]
+        language: system
 
-  - repo: https://github.com/psf/black
-    rev: stable
+  - repo: local
     hooks:
       - id: black
-        args: [--config, ./pyproject.toml]
+        name: black
+        entry: poetry run black --config pyproject.toml
         exclude: ^{{ cookiecutter.project_name }}/
+        types: [python]
+        language: system
