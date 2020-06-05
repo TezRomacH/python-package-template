@@ -33,6 +33,8 @@ mypy = "^0.780"
 bandit = "^1.6.2"
 safety = "^1.9.0"
 pytest = "^5.4.3"
+pylint = "^2.5.2"
+pydocstyle = "^5.0.2"
 
 [tool.black]
 # https://github.com/psf/black
