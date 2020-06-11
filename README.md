@@ -87,7 +87,7 @@ The entered values will be saved in the `cookiecutter-config-file.yml` file so t
 
 ### Demo
 
-[![Demo](https://asciinema.org/a/1QEnZDbyb8R4sPrb37l6wlHpi.svg)](https://asciinema.org/a/1QEnZDbyb8R4sPrb37l6wlHpi?autoplay=1)
+[![Demo](https://asciinema.org/a/338346.svg)](https://asciinema.org/a/338346?autoplay=1)
 
 ### More details
 
