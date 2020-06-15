@@ -25,7 +25,7 @@ lice = "^0.6"
 pre-commit = "^2.5.1"
 
 [tool.poetry.dev-dependencies]
-darglint = "^1.4.0"
+darglint = "^1.4.1"
 isort = {extras = ["pyproject"], version = "^4.3.21"}
 pyupgrade = "^2.6.1"
 black = "^19.10b0"
