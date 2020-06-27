@@ -1,4 +1,4 @@
-# THis file contains values from Cookiecutter
+# This file contains values from Cookiecutter
 
 default_context:
   project_name: "{{ cookiecutter.project_name }}"
