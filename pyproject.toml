@@ -22,7 +22,7 @@ classifiers = []
 python = "^3.7"
 cookiecutter = "^1.7.2"
 lice = "^0.6"
-pre-commit = "^2.5.1"
+pre-commit = "^2.6.0"
 
 [tool.poetry.dev-dependencies]
 darglint = "^1.4.1"
