@@ -97,7 +97,7 @@ endif
 .PHONY: check-safety
 check-safety:
 	$(POETRY_COMMAND_FLAG)poetry check
-	$(PIP_COMMAND_FLAG)pip check
+	$(PIP_COMMAND_FLAG)poetry run pip check
 	$(SAFETY_COMMAND_FLAG)poetry run safety check --full-report
 	$(BANDIT_COMMAND_FLAG)poetry run bandit -r **/*.py
 
