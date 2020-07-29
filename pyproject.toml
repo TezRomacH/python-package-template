@@ -27,7 +27,7 @@ pre-commit = "^2.6.0"
 [tool.poetry.dev-dependencies]
 darglint = "^1.5.1"
 isort = {extras = ["pyproject"], version = "^4.3.21"}
-pyupgrade = "^2.7.0"
+pyupgrade = "^2.7.2"
 black = "^19.10b0"
 mypy = "^0.782"
 bandit = "^1.6.2"
