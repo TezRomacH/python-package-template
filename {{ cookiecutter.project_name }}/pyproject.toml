@@ -62,6 +62,7 @@ sections = "FUTURE,TYPING,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
 include_trailing_comma = true
 default_section = "FIRSTPARTY"
 multi_line_output = 3
+indent = 4
 force_grid_wrap = 0
 use_parentheses = true
 line_length = 80
