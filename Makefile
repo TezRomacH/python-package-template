@@ -110,7 +110,9 @@ check-style:
 
 .PHONY: codestyle
 codestyle:
-	poetry run pre-commit run --all-files
+	-poetry run pyupgrade --py37-plus **/*.py
+	poetry run isort --settings-path pyproject.toml **/*.py
+	poetry run black --config pyproject.toml ./
 
 .PHONY: test
 test:

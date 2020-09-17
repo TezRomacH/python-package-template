@@ -12,17 +12,17 @@ repos:
 
   - repo: local
     hooks:
-      - id: isort
-        name: isort
-        entry: poetry run isort -y --settings-path pyproject.toml
+      - id: pyupgrade
+        name: pyupgrade
+        entry: poetry run pyupgrade --py37-plus
         types: [python]
         language: system
 
   - repo: local
     hooks:
-      - id: pyupgrade
-        name: pyupgrade
-        entry: poetry run pyupgrade --py37-plus
+      - id: isort
+        name: isort
+        entry: poetry run isort -y --settings-path pyproject.toml
         types: [python]
         language: system
 
