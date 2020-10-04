@@ -25,7 +25,7 @@ lice = "^0.6"
 
 [tool.poetry.dev-dependencies]
 darglint = "^1.5.4"
-isort = {extras = ["pyproject"], version = "^5.5.2"}
+isort = "^5.5.4"
 pyupgrade = "^2.6.1"
 black = "^20.8b1"
 mypy = "^0.782"
