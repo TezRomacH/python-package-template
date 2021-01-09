@@ -43,7 +43,7 @@ endif
 
 ifeq ($(SAFETY_STRICT), 1)
 	SAFETY_COMMAND_FLAG =
-else ifeq ($SAFETY_STRICT), 0)
+else ifeq ($(SAFETY_STRICT), 0)
 	SAFETY_COMMAND_FLAG = -
 endif
 
@@ -67,7 +67,7 @@ endif
 
 ifeq ($(DARGLINT_STRICT), 1)
 	DARGLINT_COMMAND_FLAG =
-else ifeq (DARGLINT_STRICT), 0)
+else ifeq ($(DARGLINT_STRICT), 0)
 	DARGLINT_COMMAND_FLAG = -
 endif
 
