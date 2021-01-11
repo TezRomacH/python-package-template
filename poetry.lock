@@ -673,7 +673,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
 name = "virtualenv"
-version = "20.2.1"
+version = "20.3.0"
 description = "Virtual Python Environment builder"
 category = "dev"
 optional = false
@@ -688,7 +688,7 @@ six = ">=1.9.0,<2"
 
 [package.extras]
 docs = ["proselint (>=0.10.2)", "sphinx (>=3)", "sphinx-argparse (>=0.2.5)", "sphinx-rtd-theme (>=0.4.3)", "towncrier (>=19.9.0rc1)"]
-testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", "pytest (>=4)", "pytest-env (>=0.6.2)", "pytest-freezegun (>=0.4.1)", "pytest-mock (>=2)", "pytest-randomly (>=1)", "pytest-timeout (>=1)", "pytest-xdist (>=1.31.0)", "packaging (>=20.0)", "xonsh (>=0.9.16)"]
+testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", "pytest (>=4)", "pytest-env (>=0.6.2)", "pytest-freezegun (>=0.4.1)", "pytest-mock (>=2)", "pytest-randomly (>=1)", "pytest-timeout (>=1)", "packaging (>=20.0)", "xonsh (>=0.9.16)"]
 
 [[package]]
 name = "wrapt"
@@ -1103,8 +1103,8 @@ urllib3 = [
     {file = "urllib3-1.26.2.tar.gz", hash = "sha256:19188f96923873c92ccb987120ec4acaa12f0461fa9ce5d3d0772bc965a39e08"},
 ]
 virtualenv = [
-    {file = "virtualenv-20.2.1-py2.py3-none-any.whl", hash = "sha256:07cff122e9d343140366055f31be4dcd61fd598c69d11cd33a9d9c8df4546dd7"},
-    {file = "virtualenv-20.2.1.tar.gz", hash = "sha256:e0aac7525e880a429764cefd3aaaff54afb5d9f25c82627563603f5d7de5a6e5"},
+    {file = "virtualenv-20.3.0-py2.py3-none-any.whl", hash = "sha256:205a7577275dd0d9223c730dd498e21a8910600085c3dee97412b041fc4b853b"},
+    {file = "virtualenv-20.3.0.tar.gz", hash = "sha256:7992b8de87e544a4ab55afc2240bf8388c4e3b5765d03784dad384bfdf9097ee"},
 ]
 wrapt = [
     {file = "wrapt-1.12.1.tar.gz", hash = "sha256:b62ffa81fb85f4332a4f609cab4ac40709470da05643a082ec1eb88e6d9b97d7"},
