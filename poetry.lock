@@ -673,7 +673,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
 name = "virtualenv"
-version = "20.3.0"
+version = "20.3.1"
 description = "Virtual Python Environment builder"
 category = "dev"
 optional = false
@@ -1103,8 +1103,8 @@ urllib3 = [
     {file = "urllib3-1.26.2.tar.gz", hash = "sha256:19188f96923873c92ccb987120ec4acaa12f0461fa9ce5d3d0772bc965a39e08"},
 ]
 virtualenv = [
-    {file = "virtualenv-20.3.0-py2.py3-none-any.whl", hash = "sha256:205a7577275dd0d9223c730dd498e21a8910600085c3dee97412b041fc4b853b"},
-    {file = "virtualenv-20.3.0.tar.gz", hash = "sha256:7992b8de87e544a4ab55afc2240bf8388c4e3b5765d03784dad384bfdf9097ee"},
+    {file = "virtualenv-20.3.1-py2.py3-none-any.whl", hash = "sha256:14b34341e742bdca219e10708198e704e8a7064dd32f474fc16aca68ac53a306"},
+    {file = "virtualenv-20.3.1.tar.gz", hash = "sha256:0c111a2236b191422b37fe8c28b8c828ced39aab4bf5627fa5c331aeffb570d9"},
 ]
 wrapt = [
     {file = "wrapt-1.12.1.tar.gz", hash = "sha256:b62ffa81fb85f4332a4f609cab4ac40709470da05643a082ec1eb88e6d9b97d7"},
