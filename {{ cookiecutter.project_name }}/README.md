@@ -13,6 +13,7 @@
 [![License](https://img.shields.io/github/license/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }})](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENSE)
 
 {{ cookiecutter.project_description }}
+
 </div>
 
 ## Very first steps
@@ -42,8 +43,9 @@ make install
 ```bash
 git add .
 git commit -m ":tada: Initial commit"
+git branch -M main
 git remote add origin https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}.git
-git push -u origin master
+git push -u origin main
 ```
 
 ### Initial setting up
@@ -128,7 +130,7 @@ For creating your open source community:
 ## Installation
 
 ```bash
-pip install {{ cookiecutter.project_name }}
+pip install -U {{ cookiecutter.project_name }}
 ```
 
 or install with `Poetry`
@@ -333,13 +335,13 @@ We use [`Release Drafter`](https://github.com/marketplace/actions/release-drafte
 For Pull Request this labels are configured, by default:
 
 |               **Label**               |  **Title in Releases**  |
-|:-------------------------------------:|:----------------------:|
-| `enhancement`, `feature`              | 🚀 Features             |
+| :-----------------------------------: | :---------------------: |
+|       `enhancement`, `feature`        |       🚀 Features       |
 | `bug`, `refactoring`, `bugfix`, `fix` | 🔧 Fixes & Refactoring  |
-| `build`, `ci`, `testing`              | 📦 Build System & CI/CD |
-| `breaking`                            | 💥 Breaking Changes     |
-| `documentation`                       | 📝 Documentation        |
-| `dependencies`                        | ⬆️ Dependencies updates |
+|       `build`, `ci`, `testing`        | 📦 Build System & CI/CD |
+|              `breaking`               |   💥 Breaking Changes   |
+|            `documentation`            |    📝 Documentation     |
+|            `dependencies`             | ⬆️ Dependencies updates |
 
 You can update it in [`release-drafter.yml`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.github/release-drafter.yml).
 
