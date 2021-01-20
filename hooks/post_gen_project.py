@@ -57,8 +57,9 @@ def print_futher_instuctions() -> None:
 
         $ git add .
         $ git commit -m ":tada: Initial commit"
+        $ git branch -M main
         $ git remote add origin https://github.com/{GITHUB_USER}/{PROJECT_NAME}.git
-        $ git push -u origin master
+        $ git push -u origin main
     """
     print(textwrap.dedent(message))
 
