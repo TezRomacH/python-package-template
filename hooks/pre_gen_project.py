@@ -3,7 +3,7 @@ from typing import Callable, List
 import re
 import sys
 
-MODULE_REGEX = r"^[a-z][a-z0-9\-]+[a-z0-9]$"
+MODULE_REGEX = r"^[a-z][a-z0-9\-\_]+[a-z0-9]$"
 module_name = "{{ cookiecutter.project_name }}"
 
 
