@@ -1,8 +1,8 @@
 # Poetry pyproject.toml: https://python-poetry.org/docs/pyproject/
 
 [build-system]
-requires = ["poetry>=1.0"]
-build-backend = "poetry.masonry.api"
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "{{ cookiecutter.project_name }}"
