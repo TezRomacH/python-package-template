@@ -31,10 +31,10 @@ black = "^20.8b1"
 mypy = "^0.800"
 bandit = "^1.7.0"
 safety = "^1.10.3"
-pytest = "^6.2.1"
+pytest = "^6.2.2"
 pylint = "^2.5.3"
 pydocstyle = "^5.0.2"
-pre-commit = "^2.9.3"
+pre-commit = "^2.10.1"
 
 [tool.black]
 # https://github.com/psf/black
