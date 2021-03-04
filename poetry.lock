@@ -223,7 +223,7 @@ gitdb = ">=4.0.1,<5"
 
 [[package]]
 name = "identify"
-version = "2.0.0"
+version = "2.1.0"
 description = "File identification library for Python"
 category = "dev"
 optional = false
@@ -798,8 +798,8 @@ gitpython = [
     {file = "GitPython-3.1.13.tar.gz", hash = "sha256:8621a7e777e276a5ec838b59280ba5272dd144a18169c36c903d8b38b99f750a"},
 ]
 identify = [
-    {file = "identify-2.0.0-py2.py3-none-any.whl", hash = "sha256:9cdd81e5d2b6e76c3006d5226316dd947bd6324fbeebb881bec489202fa09d3a"},
-    {file = "identify-2.0.0.tar.gz", hash = "sha256:b99aa309329c4fea679463eb35d169f3fbe13e66e9dd6162ad1856cbeb03dcbd"},
+    {file = "identify-2.1.0-py2.py3-none-any.whl", hash = "sha256:2a5fdf2f5319cc357eda2550bea713a404392495961022cf2462624ce62f0f46"},
+    {file = "identify-2.1.0.tar.gz", hash = "sha256:2179e7359471ab55729f201b3fdf7dc2778e221f868410fedcb0987b791ba552"},
 ]
 idna = [
     {file = "idna-2.10-py2.py3-none-any.whl", hash = "sha256:b97d804b1e9b523befed77c48dacec60e6dcb0b5391d57af6a65a312a90648c0"},
