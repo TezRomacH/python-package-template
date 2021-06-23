@@ -9,3 +9,4 @@ default_context:
   github_name: "{{ cookiecutter.github_name }}"
   email: "{{ cookiecutter.email }}"
   version: "{{ cookiecutter.version }}"
+  line_length: "{{ cookiecutter.line_length }}"

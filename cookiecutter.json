@@ -7,6 +7,7 @@
   "github_name": "{{ cookiecutter.organization.lower().replace(' ', '_').replace('-', '_') }}",
   "email": "hello@{{ cookiecutter.organization.lower().replace(' ', '-') }}.com",
   "version": "0.1.0",
+  "line_length": 88,
 
   "_copy_without_render": [
     "poetry.lock"

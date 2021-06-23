@@ -57,6 +57,7 @@ exclude = '''
 
 [tool.isort]
 # https://github.com/timothycrosley/isort/
+py_version = 37
 known_typing = "typing,types,typing_extensions,mypy,mypy_extensions"
 sections = "FUTURE,TYPING,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
 include_trailing_comma = true
