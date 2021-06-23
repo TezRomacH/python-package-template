@@ -19,15 +19,15 @@ install:
 	poetry run mypy --install-types --non-interactive
 
 .PHONY: pre-commit-install
-install:
+pre-commit-install:
 	poetry run pre-commit install
 
 #* Formatters
 .PHONY: codestyle
 codestyle:
 	-poetry run pyupgrade --py37-plus **/*.py
-	poetry run isort --settings-path pyproject.toml **/*.py
-	poetry run black --config pyproject.toml ./
+	poetry run isort --settings-path pyproject.toml hooks tests
+	poetry run black --config pyproject.toml hooks tests
 
 .PHONY: formatting
 formatting: codestyle
@@ -39,20 +39,20 @@ test:
 
 .PHONY: check-codestyle
 check-codestyle:
-	poetry run isort --settings-path pyproject.toml --check-only ./
-	poetry run black --config pyproject.toml --diff --check ./
-	poetry run darglint -v 2 ./
+	poetry run isort --settings-path pyproject.toml --check-only hooks tests
+	poetry run black --config pyproject.toml --diff --check hooks tests
+	poetry run darglint -v 2 hooks tests
 
 .PHONY: mypy
 mypy:
-	poetry run mypy --show-traceback --config-file pyproject.toml ./
+	poetry run mypy --show-traceback --config-file pyproject.toml hooks tests
 
 .PHONY: check-safety
 check-safety:
 	poetry check
 	poetry run pip check
 	poetry run safety check --full-report
-	poetry run bandit -r ./
+	poetry run bandit -r hooks tests
 
 .PHONY: lint
 lint: test check-codestyle mypy check-safety

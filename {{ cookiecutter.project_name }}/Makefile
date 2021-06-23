@@ -23,7 +23,7 @@ install:
 	poetry run mypy --install-types --non-interactive
 
 .PHONY: pre-commit-install
-install:
+pre-commit-install:
 	poetry run pre-commit install
 
 #* Formatters
