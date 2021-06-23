@@ -29,13 +29,14 @@ git init
 2. If you don't have `Poetry` installed run:
 
 ```bash
-make download-poetry
+make poetry-download
 ```
 
 3. Initialize poetry and install `pre-commit` hooks:
 
 ```bash
 make install
+make pre-commit-install
 ```
 
 4. Upload initial code to GitHub (ensure you've run `make install` to use `pre-commit`):
@@ -168,7 +169,7 @@ poetry run {{ cookiecutter.project_name }} --name Roman
 <p>
 
 ```bash
-make download-poetry
+make poetry-download
 ```
 
 </p>
@@ -180,6 +181,7 @@ make download-poetry
 
 ```bash
 make install
+make pre-commit-install
 ```
 
 If you do not want to install pre-commit hooks, run the command with the NO_PRE_COMMIT flag:
@@ -229,16 +231,8 @@ make check-safety PIP_STRICT=1 SAFETY_STRICT=1
 The command is similar to `check-safety` but to check the code style, obviously. It uses `Black`, `Darglint`, `Isort`, and `Mypy` inside.
 
 ```bash
-make check-style
+make check-codestyle
 ```
-
-It may also contain the `STRICT` flag.
-
-```bash
-make check-style STRICT=1
-```
-
-> List of flags for `check-style` (can be set to `1` or `0`): `STRICT`, `BLACK_STRICT`, `DARGLINT_STRICT`, `ISORT_STRICT`, `MYPY_STRICT`.
 
 </p>
 </details>
@@ -278,7 +272,7 @@ make lint
 the same as:
 
 ```bash
-make test && make check-safety && make check-style
+make test && make check-codestyle && make mypy && make check-safety
 ```
 
 > List of flags for `lint` (can be set to `1` or `0`): `STRICT`, `POETRY_STRICT`, `PIP_STRICT`, `SAFETY_STRICT`, `BANDIT_STRICT`, `BLACK_STRICT`, `DARGLINT_STRICT`, `ISORT_STRICT`, `MYPY_STRICT`.

@@ -4,15 +4,15 @@ import os
 import textwrap
 from pathlib import Path
 
-# Get the root project directory:
+# Project root directory
 PROJECT_DIRECTORY = Path.cwd().absolute()
 PROJECT_NAME = "{{ cookiecutter.project_name }}"
 
-# We need these values to generate correct license:
+# Values to generate correct license
 LICENSE = "{{ cookiecutter.license }}"
 ORGANIZATION = "{{ cookiecutter.organization }}"
 
-# We need these values to generate github repository:
+# Values to generate github repository
 GITHUB_USER = "{{ cookiecutter.github_name }}"
 
 licenses = {
@@ -24,7 +24,7 @@ licenses = {
 
 
 def generate_license() -> None:
-    """Generates license file for the project."""
+    """Generate license file for the project."""
     license_result = os.system(
         f"lice {licenses[LICENSE]} -o '{ORGANIZATION}' -p {PROJECT_NAME} > {PROJECT_DIRECTORY}/LICENSE"
     )
@@ -33,7 +33,7 @@ def generate_license() -> None:
 
 
 def print_futher_instuctions() -> None:
-    """Shows user what to do next after project creation."""
+    """Show user what to do next after project creation."""
     message = f"""
     Your project {PROJECT_NAME} is created.
 
@@ -43,11 +43,12 @@ def print_futher_instuctions() -> None:
 
     2) If you don't have Poetry installed run:
 
-        $ make download-poetry
+        $ make poetry-download
 
     3) Initialize poetry and install pre-commit hooks:
 
         $ make install
+        $ make pre-commit-install
 
     4) Run codestyle:
 
