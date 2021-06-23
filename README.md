@@ -76,15 +76,16 @@ The input variables, with their default values (some auto-generated), are:
 
 |     **Parameter**     |      **Default value**      | **Description**                                                                                                                                                               |
 |:---------------------:|:---------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `project_name`        | `python-project`            | The name of the project. It might be a good idea to  [check the availability of such name](http://ivantomic.com/projects/ospnc/) before creating the project.                 |
-| `project_description` | based on the `project_name` | Brief description of your project.                                                                                                                                            |
-| `organization`        | based on the `project_name` | Name of the organization. This is needed to generate the license file and to specify the ownership of the project in `pyproject.toml`.                                        |
-| `license`             | `MIT`                       | Type of license. One of `MIT`, `BSD-3`, `GNU GPL v3.0` and `Apache Software License 2.0`.                                                                                     |
-| `version`             | `0.1.0`                     | An initial version of the package. Make sure it follows the [Semantic Versions](https://semver.org/) specification.                                                           |
-| `github_name`         | based on the `organization` | GitHub username where the package will be hosted. The cookiecutter will use this name to correctly configure the `README.md`, `pyproject.toml` and template files for GitHub. |
-| `email`               | based on the `organization` | Email is needed for generating the `CODE_OF_CONDUCT.md`, `SECURITY.md` files and to specify the ownership of the project in `pyproject.toml`.                                 |
+| `project_name`           | `python-project`            | The name of the project. It might be a good idea to  [check the availability of such name](http://ivantomic.com/projects/ospnc/) before creating the project.                 |
+| `project_description`    | based on the `project_name` | Brief description of your project.                                                                                                                                            |
+| `organization`          | based on the `project_name` | Name of the organization. This is needed to generate the license file and to specify the ownership of the project in `pyproject.toml`.                                        |
+| `license`                | `MIT`                       | Type of license. One of `MIT`, `BSD-3`, `GNU GPL v3.0` and `Apache Software License 2.0`.                                                                                     |
+| `minimal_python_version` | `3.7`                       | Minimal Python version for your project. One of `3.7`, `3.8` and `3.9`.                                                                                     |
+| `github_name`            | based on the `organization` | GitHub username where the package will be hosted. The cookiecutter will use this name to correctly configure the `README.md`, `pyproject.toml` and template files for GitHub. |
+| `email`                  | based on the `organization` | Email is needed for generating the `CODE_OF_CONDUCT.md`, `SECURITY.md` files and to specify the ownership of the project in `pyproject.toml`.                                 |
+| `version`                | `0.1.0`                     | An initial version of the package. Make sure it follows the [Semantic Versions](https://semver.org/) specification.                                                           |
 
-The entered values will be saved in the `cookiecutter-config-file.yml` file so that you don't lose them. 😉
+The entered values will be saved in the `cookiecutter-config-file.yml` file so that you won't lose them. 😉
 
 ### Demo
 
