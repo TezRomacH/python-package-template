@@ -29,7 +29,7 @@ pre-commit-install:
 #* Formatters
 .PHONY: codestyle
 codestyle:
-	-poetry run pyupgrade --py37-plus **/*.py
+	-poetry run pyupgrade --py{{ cookiecutter.minimal_python_version.replace('.', '') }}-plus **/*.py
 	poetry run isort --settings-path pyproject.toml ./
 	poetry run black --config pyproject.toml ./
 

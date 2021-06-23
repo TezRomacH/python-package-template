@@ -1,5 +1,5 @@
 default_language_version:
-  python: python3.7
+  python: python{{ cookiecutter.minimal_python_version }}
 
 default_stages: [commit, push]
 
@@ -14,7 +14,7 @@ repos:
     hooks:
       - id: pyupgrade
         name: pyupgrade
-        entry: poetry run pyupgrade --py37-plus
+        entry: poetry run pyupgrade --py{{ cookiecutter.minimal_python_version.replace('.', '') }}-plus
         types: [python]
         language: system
 

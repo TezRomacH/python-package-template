@@ -31,11 +31,11 @@ classifiers = [  #! Update me
 "{{ cookiecutter.project_name }}" = "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}.__main__:app"
 
 [tool.poetry.dependencies]
-python = "^3.7"
-importlib_metadata = {version = "^4.5.0", python = "<3.8"}
+python = "^{{ cookiecutter.minimal_python_version }}"
 typer = {extras = ["all"], version = "^0.3.2"}
 rich = "^10.4.0"
-
+{%+ if cookiecutter.minimal_python_version == '3.7' +%}importlib_metadata = {version = "^4.5.0", python = "<3.8"}
+{% endif %}
 [tool.poetry.dev-dependencies]
 darglint = "^1.8.0"
 isort = "^5.9.1"
@@ -52,7 +52,7 @@ pre-commit = "^2.13.0"
 [tool.black]
 # https://github.com/psf/black
 line-length = 100
-target-version = ["py37"]
+target-version = ["py{{ cookiecutter.minimal_python_version.replace('.', '') }}"]
 exclude = '''
 /(
     \.git
@@ -83,7 +83,7 @@ line_length = 100
 
 [tool.mypy]
 # mypy configurations: https://mypy.readthedocs.io/en/latest/config_file.html#using-a-pyproject-toml-file
-python_version = 3.7
+python_version = {{ cookiecutter.minimal_python_version }}
 pretty = true
 allow_redefinition = false
 check_untyped_defs = true
