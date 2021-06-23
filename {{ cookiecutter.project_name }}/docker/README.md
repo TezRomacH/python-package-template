@@ -5,13 +5,13 @@
 To create Docker you need to run:
 
 ```bash
-make docker
+make docker-build
 ```
 
 which is equivalent to:
 
 ```bash
-make docker VERSION=latest
+make docker-build VERSION=latest
 ```
 
 You could also provide name and version for the image itself.
@@ -19,7 +19,7 @@ Default name is `IMAGE := {{ cookiecutter.project_name.lower().replace(' ', '_')
 Default version is `VERSION := latest`.
 
 ```bash
-make docker IMAGE=some_name VERSION={{ cookiecutter.version }}
+make docker-build IMAGE=some_name VERSION={{ cookiecutter.version }}
 ```
 
 ## Usage
@@ -32,16 +32,16 @@ docker run -it --rm \
 
 ## How to clean up
 
-To uninstall docker image run `make clean_docker` with `VERSION`:
+To uninstall docker image run `make docker-remove` with `VERSION`:
 
 ```bash
-make clean_docker VERSION={{ cookiecutter.version }}
+make docker-remove VERSION={{ cookiecutter.version }}
 ```
 
 like in installation, you can also choose the image name
 
 ```bash
-make clean_docker IMAGE=some_name VERSION=latest
+make docker-remove IMAGE=some_name VERSION=latest
 ```
 
-If you want to clean all, including `build` run `make clean`
+If you want to clean all, including `build` run `make clean-all`

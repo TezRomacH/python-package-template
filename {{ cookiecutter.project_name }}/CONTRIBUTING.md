@@ -28,10 +28,8 @@ make codestyle
 
 ### Checks
 
-Many checks are configured for this project. Command `make check-codestyle` will run black diffs, darglint docstring style and mypy.
+Many checks are configured for this project. Command `make check-codestyle` will check black, isort and darglint.
 The `make check-safety` command will look at the security of your code.
-
-You can also use `STRICT=1` flag to make the check be strict.
 
 ### Before submitting
 

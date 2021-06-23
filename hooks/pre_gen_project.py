@@ -1,3 +1,5 @@
+"""This module is called before project is created."""
+
 from typing import Callable, List
 
 import re
@@ -8,7 +10,7 @@ module_name = "{{ cookiecutter.project_name }}"
 
 
 def validate_project_name() -> None:
-    """This validator is used to ensure that `project_name` is valid.
+    """Ensure that `project_name` parameter is valid.
 
     Valid inputs starts with the lowercase letter.
     Followed by any lowercase letters, numbers or underscores.
