@@ -4,6 +4,7 @@
 
 [![Build status](https://github.com/TezRomacH/python-package-template/workflows/build/badge.svg?branch=master&event=push)](https://github.com/TezRomacH/python-package-template/actions?query=workflow%3Abuild)
 [![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/TezRomacH/python-package-template/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
+[![🚀 Your next Python package needs a bleeding-edge project structure.](https://img.shields.io/badge/python--package--template-%F0%9F%9A%80-brightgreen)](https://github.com/TezRomacH/python-package-template)
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/TezRomacH/python-package-template/blob/master/.pre-commit-config.yaml)
@@ -29,7 +30,7 @@ For your development we've prepared:
 - [`Poetry`](https://python-poetry.org/) as the dependencies manager. See configuration in [`pyproject.toml`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/pyproject.toml) and [`setup.cfg`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/setup.cfg).
 - Power of [`black`](https://github.com/psf/black), [`isort`](https://github.com/timothycrosley/isort) and [`pyupgrade`](https://github.com/asottile/pyupgrade) formatters.
 - Ready-to-use [`pre-commit`](https://pre-commit.com/) hooks with formatters above.
-- Type checks with the configured [`mypy`](https://mypy.readthedocs.io).
+- Type checks with the pre-configured [`mypy`](https://mypy.readthedocs.io).
 - Testing with [`pytest`](https://docs.pytest.org/en/latest/).
 - Docstring checks with [`darglint`](https://github.com/terrencepreilly/darglint).
 - Security checks with [`safety`](https://github.com/pyupio/safety) and [`bandit`](https://github.com/PyCQA/bandit).
@@ -95,7 +96,7 @@ After using this generator, your new project (the directory created) will contai
 
 ### Initial setting up
 
-#### Initialize `.git`, `poetry` and `pre-commit`
+#### Initialize `poetry` and `pre-commit`
 
 By running `make install`
 
@@ -111,7 +112,7 @@ All manipulations with dependencies are executed through Poetry. If you're new t
 
 Poetry's [commands](https://python-poetry.org/docs/cli/#commands) are very intuitive and easy to learn, like:
 
-- `poetry add numpy`
+- `poetry add numpy@latest`
 - `poetry run pytest`
 - `poetry build`
 - etc
@@ -149,7 +150,7 @@ Building a new version of the application contains steps:
 <p>
 
 ```bash
-make download-poetry
+make poetry-download
 ```
 
 </p>
@@ -161,12 +162,7 @@ make download-poetry
 
 ```bash
 make install
-```
-
-If you do not want to install pre-commit hooks, run the command with the NO_PRE_COMMIT flag:
-
-```bash
-make install NO_PRE_COMMIT=1
+make pre-commit-install
 ```
 
 </p>
@@ -180,25 +176,11 @@ make install NO_PRE_COMMIT=1
 make check-safety
 ```
 
-This command launches a `Poetry` and `Pip` integrity check as well as identifies security issues with `Safety` and `Bandit`. By default, the build will not crash if any of the items fail. But you can set `STRICT=1` for the entire build, or you can configure strictness for each item separately.
+This command launches a `Poetry` and `Pip` integrity check as well as identifies security issues with `Safety` and `Bandit`. By default, the build will not crash if any of the items fail.
 
 ```bash
-make check-safety STRICT=1
+make check-safety
 ```
-
-or only for `safety`:
-
-```bash
-make check-safety SAFETY_STRICT=1
-```
-
-multiple
-
-```bash
-make check-safety PIP_STRICT=1 SAFETY_STRICT=1
-```
-
-> List of flags for `check-safety` (can be set to `1` or `0`): `STRICT`, `POETRY_STRICT`, `PIP_STRICT`, `SAFETY_STRICT`, `BANDIT_STRICT`.
 
 </p>
 </details>
@@ -210,16 +192,8 @@ make check-safety PIP_STRICT=1 SAFETY_STRICT=1
 The command is similar to `check-safety` but to check the code style, obviously. It uses `Black`, `Darglint`, `Isort`, and `Mypy` inside.
 
 ```bash
-make check-style
+make check-codestyle
 ```
-
-It may also contain the `STRICT` flag.
-
-```bash
-make check-style STRICT=1
-```
-
-> List of flags for `check-style` (can be set to `1` or `0`): `STRICT`, `BLACK_STRICT`, `DARGLINT_STRICT`, `ISORT_STRICT`, `MYPY_STRICT`.
 
 </p>
 </details>
@@ -228,7 +202,7 @@ make check-style STRICT=1
 <summary>5. Run all the codestyle formaters</summary>
 <p>
 
-Codestyle uses `pre-commit` hooks, so ensure you've run `make install` before.
+Ensure you've run `make install` before.
 
 ```bash
 make codestyle
@@ -259,10 +233,8 @@ make lint
 the same as:
 
 ```bash
-make test && make check-safety && make check-style
+make test && make check-codestyle && make mypy && make check-safety
 ```
-
-> List of flags for `lint` (can be set to `1` or `0`): `STRICT`, `POETRY_STRICT`, `PIP_STRICT`, `SAFETY_STRICT`, `BANDIT_STRICT`, `BLACK_STRICT`, `DARGLINT_STRICT`, `ISORT_STRICT`, `MYPY_STRICT`.
 
 </p>
 </details>
@@ -272,36 +244,48 @@ make test && make check-safety && make check-style
 <p>
 
 ```bash
-make docker
+make docker-build
 ```
 
 which is equivalent to:
 
 ```bash
-make docker VERSION=latest
+make docker-build VERSION=latest
 ```
 
-More information [here](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/docker).
+More information [about docker](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/docker).
 
 </p>
 </details>
 
 <details>
-<summary>9. Cleanup docker</summary>
+<summary>9. Cleanup</summary>
 <p>
+Remove docker image with
 
 ```bash
-make clean_docker
+make docker-remove
 ```
 
-or to remove all build
+More information [about docker](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/docker).
+
+Delete pycache files
 
 ```bash
-make clean
+make pycache-remove
 ```
 
-More information [here](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/docker).
+Remove package build
 
+```bash
+make build-remove
+```
+
+Or to remove all of this
+
+```bash
+make clean-all
+```
 </p>
 </details>
 
@@ -309,14 +293,16 @@ More information [here](https://github.com/TezRomacH/python-package-template/tre
 
 Well, that's up to you. I can only recommend the packages and articles that helped me.
 
-Packages:
-
 - [`Typer`](https://github.com/tiangolo/typer) is great for creating CLI applications.
 - [`Rich`](https://github.com/willmcgugan/rich) makes it easy to add beautiful formatting in the terminal.
-- [`FastAPI`](https://github.com/tiangolo/fastapi) is a type-driven asynchronous web framework.
-- [`IceCream`](https://github.com/gruns/icecream) is a little library for sweet and creamy debugging.
-- [`Returns`](https://github.com/dry-python/returns) makes you function's output meaningful, typed, and safe!
 - [`Pydantic`](https://github.com/samuelcolvin/pydantic/) – data validation and settings management using Python type hinting.
+- [`Loguru`](https://github.com/Delgan/loguru) makes logging (stupidly) simple.
+- [`tqdm`](https://github.com/tqdm/tqdm) – fast, extensible progress bar for Python and CLI.
+- [`IceCream`](https://github.com/gruns/icecream) is a little library for sweet and creamy debugging.
+- [`orjson`](https://github.com/ijl/orjson) – ultra fast JSON parsing library.
+- [`Returns`](https://github.com/dry-python/returns) makes you function's output meaningful, typed, and safe!
+- [`Hydra`](https://github.com/facebookresearch/hydra) is a framework for elegantly configuring complex applications.
+- [`FastAPI`](https://github.com/tiangolo/fastapi) is a type-driven asynchronous web framework.
 
 Articles:
 
@@ -351,7 +337,6 @@ Here is a list of things that have yet to be implemented:
 
 - Add examples of libraries created using this template.
 - Tests coverage reporting ([`Codecov`](https://github.com/marketplace/codecov) ?).
-- Builtin integration with [Code Climate](https://codeclimate.com/), [Deepsource](https://deepsource.io/) and [CodeFactor](https://www.codefactor.io/) (they are free for Open Source).
 - Auto uploading your package to [`PyPI`](https://pypi.org/).
 - Automatic creation and deployment of documentation to GitHub pages (I'm mostly looking at [`MkDocs`](https://www.mkdocs.org/) with [Material Design theme](https://github.com/squidfunk/mkdocs-material) and [`mkdocstrings`](https://github.com/pawamoy/mkdocstrings)).
 - Code metrics with [`Radon`](https://github.com/rubik/radon).
@@ -359,7 +344,6 @@ Here is a list of things that have yet to be implemented:
 - `Dockerfile` linting with [`dockerfilelint`](https://github.com/replicatedhq/dockerfilelint).
 - [Hall of fame](https://github.com/sourcerer-io/hall-of-fame) from `Sourcerer`.
 - Some advanced Python linting (?).
-- Refactor `Makefile`
 - Help text for all functions in `Makefile`.
 - Add the option to select the minimum version of Python: `3.7` or `3.8`
 - End-to-end testing and validation of the cookiecutter template.
@@ -390,7 +374,7 @@ Give them your ⭐️, these resources are amazing! 😉
 
 ## 📃 Citation
 
-```
+```bibtex
 @misc{python-package-template,
   author = {Roman Tezikov},
   title = {Python Packages Project Generator},
@@ -399,4 +383,10 @@ Give them your ⭐️, these resources are amazing! 😉
   journal = {GitHub repository},
   howpublished = {\url{https://github.com/TezRomacH/python-package-template}}
 }
+```
+
+Markdown source for the badge [![🚀 Your next Python package needs a bleeding-edge project structure.](https://img.shields.io/badge/python--package--template-%F0%9F%9A%80-brightgreen)](https://github.com/TezRomacH/python-package-template)
+
+```markdown
+[![🚀 Your next Python package needs a bleeding-edge project structure.](https://img.shields.io/badge/python--package--template-%F0%9F%9A%80-brightgreen)](https://github.com/TezRomacH/python-package-template)
 ```

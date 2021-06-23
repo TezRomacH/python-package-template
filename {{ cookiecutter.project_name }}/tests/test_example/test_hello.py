@@ -1,3 +1,5 @@
+"""Tests for hello function."""
+
 import pytest
 
 from {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}.example import hello

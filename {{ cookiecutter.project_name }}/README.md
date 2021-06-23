@@ -23,22 +23,29 @@
 1. Initialize `git` inside your repo:
 
 ```bash
-git init
+cd {{ cookiecutter.project_name }} && git init
 ```
 
 2. If you don't have `Poetry` installed run:
 
 ```bash
-make download-poetry
+make poetry-download
 ```
 
 3. Initialize poetry and install `pre-commit` hooks:
 
 ```bash
 make install
+make pre-commit-install
 ```
 
-4. Upload initial code to GitHub (ensure you've run `make install` to use `pre-commit`):
+4. Run the codestyle:
+
+```bash
+make codestyle
+```
+
+5. Upload initial code to GitHub:
 
 ```bash
 git add .
@@ -63,7 +70,7 @@ All manipulations with dependencies are executed through Poetry. If you're new t
 
 Poetry's [commands](https://python-poetry.org/docs/cli/#commands) are very intuitive and easy to learn, like:
 
-- `poetry add numpy`
+- `poetry add numpy@latest`
 - `poetry run pytest`
 - `poetry build`
 - etc
@@ -84,12 +91,16 @@ Building a new version of the application contains steps:
 
 Well, that's up to you. I can only recommend the packages and articles that helped me.
 
-Packages:
-
 - [`Typer`](https://github.com/tiangolo/typer) is great for creating CLI applications.
 - [`Rich`](https://github.com/willmcgugan/rich) makes it easy to add beautiful formatting in the terminal.
+- [`Pydantic`](https://github.com/samuelcolvin/pydantic/) – data validation and settings management using Python type hinting.
+- [`Loguru`](https://github.com/Delgan/loguru) makes logging (stupidly) simple.
+- [`tqdm`](https://github.com/tqdm/tqdm) – fast, extensible progress bar for Python and CLI.
+- [`IceCream`](https://github.com/gruns/icecream) is a little library for sweet and creamy debugging.
+- [`orjson`](https://github.com/ijl/orjson) – ultra fast JSON parsing library.
+- [`Returns`](https://github.com/dry-python/returns) makes you function's output meaningful, typed, and safe!
+- [`Hydra`](https://github.com/facebookresearch/hydra) is a framework for elegantly configuring complex applications.
 - [`FastAPI`](https://github.com/tiangolo/fastapi) is a type-driven asynchronous web framework.
-- [`IceCream`](https://github.com/gruns/icecream) is a little library for sweet and creamy debugging
 
 Articles:
 
@@ -99,13 +110,11 @@ Articles:
 
 ## 🚀 Features
 
-For your development we've prepared:
-
 - Supports for `Python 3.7` and higher.
 - [`Poetry`](https://python-poetry.org/) as the dependencies manager. See configuration in [`pyproject.toml`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/pyproject.toml) and [`setup.cfg`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/setup.cfg).
 - Power of [`black`](https://github.com/psf/black), [`isort`](https://github.com/timothycrosley/isort) and [`pyupgrade`](https://github.com/asottile/pyupgrade) formatters.
 - Ready-to-use [`pre-commit`](https://pre-commit.com/) hooks with formatters above.
-- Type checks with the configured [`mypy`](https://mypy.readthedocs.io).
+- Type checks with the pre-configured [`mypy`](https://mypy.readthedocs.io).
 - Testing with [`pytest`](https://docs.pytest.org/en/latest/).
 - Docstring checks with [`darglint`](https://github.com/terrencepreilly/darglint).
 - Security checks with [`safety`](https://github.com/pyupio/safety) and [`bandit`](https://github.com/PyCQA/bandit).
@@ -145,18 +154,10 @@ Then you can run
 {{ cookiecutter.project_name }} --help
 ```
 
-```bash
-{{ cookiecutter.project_name }} --name Roman
-```
-
-or if installed with `Poetry`:
+or with `Poetry`:
 
 ```bash
 poetry run {{ cookiecutter.project_name }} --help
-```
-
-```bash
-poetry run {{ cookiecutter.project_name }} --name Roman
 ```
 
 ### Makefile usage
@@ -168,7 +169,7 @@ poetry run {{ cookiecutter.project_name }} --name Roman
 <p>
 
 ```bash
-make download-poetry
+make poetry-download
 ```
 
 </p>
@@ -180,12 +181,7 @@ make download-poetry
 
 ```bash
 make install
-```
-
-If you do not want to install pre-commit hooks, run the command with the NO_PRE_COMMIT flag:
-
-```bash
-make install NO_PRE_COMMIT=1
+make pre-commit-install
 ```
 
 </p>
@@ -199,25 +195,11 @@ make install NO_PRE_COMMIT=1
 make check-safety
 ```
 
-This command launches a `Poetry` and `Pip` integrity check as well as identifies security issues with `Safety` and `Bandit`. By default, the build will not crash if any of the items fail. But you can set `STRICT=1` for the entire build, or you can configure strictness for each item separately.
+This command launches a `Poetry` and `Pip` integrity check as well as identifies security issues with `Safety` and `Bandit`. By default, the build will not crash if any of the items fail.
 
 ```bash
-make check-safety STRICT=1
+make check-safety
 ```
-
-or only for `safety`:
-
-```bash
-make check-safety SAFETY_STRICT=1
-```
-
-multiple
-
-```bash
-make check-safety PIP_STRICT=1 SAFETY_STRICT=1
-```
-
-> List of flags for `check-safety` (can be set to `1` or `0`): `STRICT`, `POETRY_STRICT`, `PIP_STRICT`, `SAFETY_STRICT`, `BANDIT_STRICT`.
 
 </p>
 </details>
@@ -229,16 +211,8 @@ make check-safety PIP_STRICT=1 SAFETY_STRICT=1
 The command is similar to `check-safety` but to check the code style, obviously. It uses `Black`, `Darglint`, `Isort`, and `Mypy` inside.
 
 ```bash
-make check-style
+make check-codestyle
 ```
-
-It may also contain the `STRICT` flag.
-
-```bash
-make check-style STRICT=1
-```
-
-> List of flags for `check-style` (can be set to `1` or `0`): `STRICT`, `BLACK_STRICT`, `DARGLINT_STRICT`, `ISORT_STRICT`, `MYPY_STRICT`.
 
 </p>
 </details>
@@ -247,7 +221,7 @@ make check-style STRICT=1
 <summary>5. Run all the codestyle formaters</summary>
 <p>
 
-Codestyle uses `pre-commit` hooks, so ensure you've run `make install` before.
+Ensure you've run `make install` before.
 
 ```bash
 make codestyle
@@ -278,10 +252,8 @@ make lint
 the same as:
 
 ```bash
-make test && make check-safety && make check-style
+make test && make check-codestyle && make mypy && make check-safety
 ```
-
-> List of flags for `lint` (can be set to `1` or `0`): `STRICT`, `POETRY_STRICT`, `PIP_STRICT`, `SAFETY_STRICT`, `BANDIT_STRICT`, `BLACK_STRICT`, `DARGLINT_STRICT`, `ISORT_STRICT`, `MYPY_STRICT`.
 
 </p>
 </details>
@@ -291,16 +263,16 @@ make test && make check-safety && make check-style
 <p>
 
 ```bash
-make docker
+make docker-build
 ```
 
 which is equivalent to:
 
 ```bash
-make docker VERSION=latest
+make docker-build VERSION=latest
 ```
 
-More information [here](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/tree/master/docker).
+More information [about docker](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/tree/master/docker).
 
 </p>
 </details>
@@ -308,19 +280,31 @@ More information [here](https://github.com/{{ cookiecutter.github_name }}/{{ coo
 <details>
 <summary>9. Cleanup docker</summary>
 <p>
+Remove docker image with
 
 ```bash
-make clean_docker
+make docker-remove
 ```
 
-or to remove all build
+More information [about docker](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/tree/master/docker).
+
+Delete pycache files
 
 ```bash
-make clean
+make pycache-remove
 ```
 
-More information [here](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/tree/master/docker).
+Remove package build
 
+```bash
+make build-remove
+```
+
+Or to remove all of this
+
+```bash
+make clean-all
+```
 </p>
 </details>
 
@@ -355,7 +339,7 @@ This project is licensed under the terms of the `{{ cookiecutter.license }}` lic
 
 ## 📃 Citation
 
-```
+```bibtex
 {% raw %}@misc{{% endraw %}{{ cookiecutter.project_name }},
   author = {% raw %}{{% endraw %}{{ cookiecutter.organization }}{% raw %}}{% endraw %},
   title = {% raw %}{{% endraw %}{{ cookiecutter.project_description }}{% raw %}}{% endraw %},
@@ -366,6 +350,6 @@ This project is licensed under the terms of the `{{ cookiecutter.license }}` lic
 }
 ```
 
-## Credits
+## Credits [![🚀 Your next Python package needs a bleeding-edge project structure.](https://img.shields.io/badge/python--package--template-%F0%9F%9A%80-brightgreen)](https://github.com/TezRomacH/python-package-template)
 
-This project was generated with [`python-package-template`](https://github.com/TezRomacH/python-package-template).
+This project was generated with [`python-package-template`](https://github.com/TezRomacH/python-package-template) 

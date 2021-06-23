@@ -1,5 +1,4 @@
 # Poetry pyproject.toml: https://python-poetry.org/docs/pyproject/
-
 [build-system]
 requires = ["poetry_core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
@@ -17,10 +16,10 @@ repository = "https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.
 homepage = "https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}"
 
 # Keywords description https://python-poetry.org/docs/pyproject/#keywords
-keywords = []  # Update me
+keywords = []  #! Update me
 
 # Pypi classifiers: https://pypi.org/classifiers/
-classifiers = [  # Update me
+classifiers = [  #! Update me
   "Development Status :: 3 - Alpha",
   "Intended Audience :: Developers",
   "Operating System :: OS Independent",
@@ -33,27 +32,42 @@ classifiers = [  # Update me
 
 [tool.poetry.dependencies]
 python = "^3.7"
-importlib_metadata = {version = "^1.6.0", python = "<3.8"}
+importlib_metadata = {version = "^4.5.0", python = "<3.8"}
 typer = {extras = ["all"], version = "^0.3.2"}
-rich = "^9.8.2"
+rich = "^10.4.0"
 
 [tool.poetry.dev-dependencies]
-darglint = "^1.5.8"
-isort = "^5.7.0"
-pyupgrade = "^2.7.4"
-black = "^20.8b1"
-mypy = "^0.790"
+darglint = "^1.8.0"
+isort = "^5.9.1"
+pyupgrade = "^2.19.4"
+black = "^21.6b0"
+mypy = "^0.910"
 bandit = "^1.7.0"
 safety = "^1.10.3"
-pytest = "^6.2.1"
-pylint = "^2.6.0"
-pydocstyle = "^5.1.1"
-pre-commit = "^2.9.3"
+pytest = "^6.2.4"
+pylint = "^2.8.3"
+pydocstyle = "^6.1.1"
+pre-commit = "^2.13.0"
 
 [tool.black]
 # https://github.com/psf/black
-line-length = 80
+line-length = 100
 target-version = ["py37"]
+exclude = '''
+/(
+    \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+    | env
+    | venv
+)/
+'''
 
 [tool.isort]
 # https://github.com/timothycrosley/isort/
@@ -65,4 +79,27 @@ multi_line_output = 3
 indent = 4
 force_grid_wrap = 0
 use_parentheses = true
-line_length = 80
+line_length = 100
+
+[tool.mypy]
+# mypy configurations: https://mypy.readthedocs.io/en/latest/config_file.html#using-a-pyproject-toml-file
+python_version = 3.7
+pretty = true
+allow_redefinition = false
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_incomplete_defs = true
+ignore_missing_imports = true
+implicit_reexport = false
+strict_optional = true
+strict_equality = true
+no_implicit_optional = true
+warn_no_return = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+warn_return_any = true
+warn_unreachable = true
+show_error_codes = true
+show_column_numbers = true
+show_error_context = true

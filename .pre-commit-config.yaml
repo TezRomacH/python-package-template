@@ -13,18 +13,18 @@ repos:
 
   - repo: local
     hooks:
-      - id: isort
-        name: isort
-        entry: poetry run isort --settings-path pyproject.toml
+      - id: pyupgrade
+        name: pyupgrade
+        entry: poetry run pyupgrade --py37-plus
         exclude: ^{{ cookiecutter.project_name }}/
         types: [python]
         language: system
 
   - repo: local
     hooks:
-      - id: pyupgrade
-        name: pyupgrade
-        entry: poetry run pyupgrade --py37-plus
+      - id: isort
+        name: isort
+        entry: poetry run isort --settings-path pyproject.toml
         exclude: ^{{ cookiecutter.project_name }}/
         types: [python]
         language: system
