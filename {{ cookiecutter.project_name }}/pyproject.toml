@@ -51,7 +51,7 @@ pre-commit = "^2.13.0"
 
 [tool.black]
 # https://github.com/psf/black
-line-length = 100
+line-length = {{ cookiecutter.line_length }}
 target-version = ["py{{ cookiecutter.minimal_python_version.replace('.', '') }}"]
 exclude = '''
 /(
@@ -71,6 +71,7 @@ exclude = '''
 
 [tool.isort]
 # https://github.com/timothycrosley/isort/
+py_version = {{ cookiecutter.minimal_python_version.replace('.', '') }}
 known_typing = "typing,types,typing_extensions,mypy,mypy_extensions"
 sections = "FUTURE,TYPING,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
 include_trailing_comma = true
@@ -79,7 +80,7 @@ multi_line_output = 3
 indent = 4
 force_grid_wrap = 0
 use_parentheses = true
-line_length = 100
+line_length = {{ cookiecutter.line_length }}
 
 [tool.mypy]
 # mypy configurations: https://mypy.readthedocs.io/en/latest/config_file.html#using-a-pyproject-toml-file
