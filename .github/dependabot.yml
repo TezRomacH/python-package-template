@@ -12,6 +12,8 @@ updates:
       - dependency-type: "all"
     commit-message:
       prefix: ":arrow_up:"
+    open-pull-requests-limit: 50
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -20,3 +22,4 @@ updates:
       - dependency-type: "all"
     commit-message:
       prefix: ":arrow_up:"
+    open-pull-requests-limit: 50
