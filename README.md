@@ -346,8 +346,6 @@ Here is a list of things that have yet to be implemented:
 - `Dockerfile` linting with [`dockerfilelint`](https://github.com/replicatedhq/dockerfilelint).
 - [Hall of fame](https://github.com/sourcerer-io/hall-of-fame) from `Sourcerer`.
 - Some advanced Python linting (?).
-- Help text for all functions in `Makefile`.
-- Add the option to select the minimum version of Python: `3.7` or `3.8`
 - End-to-end testing and validation of the cookiecutter template.
 
 ## 🛡 License
