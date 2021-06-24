@@ -15,9 +15,7 @@ name = "{{ cookiecutter.project_name }}"
 version = "{{ cookiecutter.version }}"
 description = "{{ cookiecutter.project_description }}"
 readme = "README.md"
-authors = [
-  "{{ cookiecutter.organization }} <{{ cookiecutter.email }}>"
-]
+authors = ["{{ cookiecutter.organization }} <{{ cookiecutter.email }}>"]
 license = "{{ cookiecutter.license }}"
 repository = "https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}"
 homepage = "https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}"
@@ -86,7 +84,6 @@ py_version = {{ cookiecutter.minimal_python_version.replace('.', '') }}
 known_typing = "typing,types,typing_extensions,mypy,mypy_extensions"
 sections = "FUTURE,TYPING,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
 include_trailing_comma = true
-default_section = "FIRSTPARTY"
 multi_line_output = 3
 indent = 4
 force_grid_wrap = 0

@@ -29,7 +29,7 @@ pre-commit-install:
 #* Formatters
 .PHONY: codestyle
 codestyle:
-	-poetry run pyupgrade --py{{ cookiecutter.minimal_python_version.replace('.', '') }}-plus **/*.py
+	poetry run pyupgrade --exit-zero-even-if-changed --py{{ cookiecutter.minimal_python_version.replace('.', '') }}-plus **/*.py
 	poetry run isort --settings-path pyproject.toml ./
 	poetry run black --config pyproject.toml ./
 
@@ -43,7 +43,7 @@ test:
 
 .PHONY: check-codestyle
 check-codestyle:
-	poetry run isort --settings-path pyproject.toml --check-only ./
+	poetry run isort --diff --settings-path pyproject.toml --check-only ./
 	poetry run black --config pyproject.toml --diff --check ./
 	poetry run darglint -v 2 **/*.py
 
