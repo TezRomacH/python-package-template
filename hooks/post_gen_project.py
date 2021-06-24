@@ -1,8 +1,8 @@
 """This module is called after project is created."""
 
-import os
 import textwrap
 from pathlib import Path
+from shutil import move, rmtree
 
 # Project root directory
 PROJECT_DIRECTORY = Path.cwd().absolute()
@@ -25,11 +25,8 @@ licenses = {
 
 def generate_license() -> None:
     """Generate license file for the project."""
-    license_result = os.system(
-        f"lice {licenses[LICENSE]} -o '{ORGANIZATION}' -p {PROJECT_NAME} > {PROJECT_DIRECTORY}/LICENSE"
-    )
-    if license_result:  # it means that return code is not 0, print exception
-        print(license_result)
+    move(f"{PROJECT_DIRECTORY}/_licences/{licenses[LICENSE]}.txt", f"{PROJECT_DIRECTORY}/LICENSE")
+    rmtree(f"{PROJECT_DIRECTORY}/_licences/")
 
 
 def print_futher_instuctions() -> None:

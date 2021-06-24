@@ -56,10 +56,10 @@ For creating your open source community:
 
 ### Installation
 
-Before creating a new project from this template, you need to install the dependencies:
+Before creating a new project from this template, you need to install the dependency:
 
 ```bash
-pip install -U cookiecutter lice
+pip install -U cookiecutter
 ```
 
 Go to the directory where you want to create your project and run:
