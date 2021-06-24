@@ -20,9 +20,11 @@ Your next Python package needs a bleeding-edge project structure.
 cookiecutter gh:TezRomacH/python-package-template
 ```
 
+> All you need is the last version of cookiecutter 😉.
+
 ## 🚀 Features
 
-In this [cookiecutter 🍪](https://github.com/cookiecutter/cookiecutter) template we combine state-of-the-art libraries and best development practices for Python. Note, that this template doesn't have any aditional dependencies 😉.
+In this [cookiecutter 🍪](https://github.com/cookiecutter/cookiecutter) template we combine state-of-the-art libraries and best development practices for Python.
 
 ### Development features
 
