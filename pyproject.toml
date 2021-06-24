@@ -20,7 +20,6 @@ classifiers = []
 [tool.poetry.dependencies]
 python = "^3.7"
 cookiecutter = "^1.7.3"
-lice = "^0.6"
 
 [tool.poetry.dev-dependencies]
 darglint = "^1.8.0"
