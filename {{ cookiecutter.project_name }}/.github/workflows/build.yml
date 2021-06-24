@@ -35,4 +35,8 @@ jobs:
 
     - name: Run tests
       run: |
-        make test{% endraw %}
+        make test
+
+    - name: Run safety checks
+      run: |
+        make check-safety{% endraw %}

@@ -36,3 +36,7 @@ jobs:
     - name: Run tests
       run: |
         make test
+
+    - name: Run safety checks
+      run: |
+        make check-safety

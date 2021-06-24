@@ -53,7 +53,6 @@ mypy:
 .PHONY: check-safety
 check-safety:
 	poetry check
-	poetry run pip check
 	poetry run safety check --full-report
 	poetry run bandit -r ./
 
