@@ -10,6 +10,7 @@ repos:
       - id: check-yaml
         exclude: ^{{ cookiecutter.project_name }}/.github/
       - id: end-of-file-fixer
+        exclude: LICENSE
 
   - repo: local
     hooks:

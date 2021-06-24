@@ -9,6 +9,7 @@ repos:
     hooks:
       - id: check-yaml
       - id: end-of-file-fixer
+        exclude: LICENSE
 
   - repo: local
     hooks:
