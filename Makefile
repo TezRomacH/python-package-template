@@ -16,7 +16,6 @@ poetry-remove:
 install:
 	poetry lock -n && poetry export --without-hashes > requirements.txt
 	poetry install -n
-	poetry run mypy --install-types --non-interactive
 
 .PHONY: pre-commit-install
 pre-commit-install:
@@ -26,7 +25,7 @@ pre-commit-install:
 .PHONY: codestyle
 codestyle:
 	poetry run pyupgrade --exit-zero-even-if-changed --py37-plus **/*.py
-	poetry run isort --diff --settings-path pyproject.toml hooks tests
+	poetry run isort --settings-path pyproject.toml hooks tests
 	poetry run black --config pyproject.toml hooks tests
 
 .PHONY: formatting
@@ -39,13 +38,13 @@ test:
 
 .PHONY: check-codestyle
 check-codestyle:
-	poetry run isort --settings-path pyproject.toml --check-only hooks tests
-	poetry run black --config pyproject.toml --diff --check hooks tests
+	poetry run isort --diff --check-only --settings-path pyproject.toml hooks tests
+	poetry run black --diff --check --config pyproject.toml hooks tests
 	poetry run darglint -v 2 hooks tests
 
 .PHONY: mypy
 mypy:
-	poetry run mypy --show-traceback --config-file pyproject.toml hooks tests
+	poetry run mypy  --install-types --non-interactive --show-traceback --config-file pyproject.toml ./
 
 .PHONY: check-safety
 check-safety:
