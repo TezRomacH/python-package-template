@@ -8,7 +8,7 @@
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/TezRomacH/python-package-template/blob/master/.pre-commit-config.yaml)
-[![Semantic Versions](https://img.shields.io/badge/%F0%9F%9A%80-semantic%20versions-informational.svg)](https://github.com/TezRomacH/python-package-template/releases)
+[![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/TezRomacH/python-package-template/releases)
 [![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/TezRomacH/python-package-template/blob/master/LICENSE)
 
 Your next Python package needs a bleeding-edge project structure.
@@ -22,30 +22,28 @@ cookiecutter gh:TezRomacH/python-package-template
 
 ## 🚀 Features
 
-In this [cookiecutter 🍪](https://github.com/cookiecutter/cookiecutter) template, we aimed to combine the most state-of-the-art libraries and best development practices for Python.
+In this [cookiecutter 🍪](https://github.com/cookiecutter/cookiecutter) template we combine state-of-the-art libraries and best development practices for Python. Note, that this template doesn't have any aditional dependencies 😉.
 
-For your development we've prepared:
+### Development features
 
-- Supports for `Python 3.7` and higher.
-- [`Poetry`](https://python-poetry.org/) as the dependencies manager. See configuration in [`pyproject.toml`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/pyproject.toml) and [`setup.cfg`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/setup.cfg).
-- Power of [`black`](https://github.com/psf/black), [`isort`](https://github.com/timothycrosley/isort) and [`pyupgrade`](https://github.com/asottile/pyupgrade) formatters.
-- Ready-to-use [`pre-commit`](https://pre-commit.com/) hooks with formatters above.
-- Type checks with the pre-configured [`mypy`](https://mypy.readthedocs.io).
+- Supports `Python 3.7` and higher.
+- [`Poetry`](https://python-poetry.org/) as a dependencies manager. See configuration in [`pyproject.toml`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/pyproject.toml) and [`setup.cfg`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/setup.cfg).
+- Automatic codestyle with [`black`](https://github.com/psf/black), [`isort`](https://github.com/timothycrosley/isort) and [`pyupgrade`](https://github.com/asottile/pyupgrade).
+- Ready-to-use [`pre-commit`](https://pre-commit.com/) hooks with code-formatting.
+- Type checks with [`mypy`](https://mypy.readthedocs.io); docstring checks with [`darglint`](https://github.com/terrencepreilly/darglint); security checks with [`safety`](https://github.com/pyupio/safety) and [`bandit`](https://github.com/PyCQA/bandit)
 - Testing with [`pytest`](https://docs.pytest.org/en/latest/).
-- Docstring checks with [`darglint`](https://github.com/terrencepreilly/darglint).
-- Security checks with [`safety`](https://github.com/pyupio/safety) and [`bandit`](https://github.com/PyCQA/bandit).
-- Well-made [`.editorconfig`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.editorconfig), [`.dockerignore`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.dockerignore), and [`.gitignore`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.gitignore). You don't have to worry about those things.
+- Ready-to-use [`.editorconfig`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.editorconfig), [`.dockerignore`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.dockerignore), and [`.gitignore`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.gitignore). You don't have to worry about those things.
 
-For building and deployment:
+### Deployment features
 
-- `GitHub` integration.
-- [`Makefile`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/Makefile#L89) for building routines. Everything is already set up for security checks, codestyle checks, code formatting, testing, linting, docker builds, etc. More details at [Makefile summary](#makefile-usage)).
-- [Dockerfile](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/docker/Dockerfile) for your package.
+- `GitHub` integration: issue and pr templates.
 - `Github Actions` with predefined [build workflow](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/workflows/build.yml) as the default CI/CD.
-- Always up-to-date dependencies with [`@dependabot`](https://dependabot.com/) (You will only [enable it](https://docs.github.com/en/github/administering-a-repository/enabling-and-disabling-version-updates#enabling-github-dependabot-version-updates)).
-- Automatic drafts of new releases with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). It creates a list of changes based on labels in merged `Pull Requests`. You can see labels (aka `categories`) in [`release-drafter.yml`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/release-drafter.yml). Works perfectly with [Semantic Versions](https://semver.org/) specification.
+- Everything is already set up for security checks, codestyle checks, code formatting, testing, linting, docker builds, etc with [`Makefile`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/Makefile#L89). More details in [makefile-usage](#makefile-usage).
+- [Dockerfile](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/docker/Dockerfile) for your package.
+- Always up-to-date dependencies with [`@dependabot`](https://dependabot.com/). You only need to [enable it](https://docs.github.com/en/github/administering-a-repository/enabling-and-disabling-version-updates#enabling-github-dependabot-version-updates).
+- Automatic release notes with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). You may see the list of labels in [`release-drafter.yml`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/release-drafter.yml). Works perfectly with [Semantic Versions](https://semver.org/) specification.
 
-For creating your open source community:
+### Open source community features
 
 - Ready-to-use [Pull Requests templates](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/PULL_REQUEST_TEMPLATE.md) and several [Issue templates](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/ISSUE_TEMPLATE).
 - Files such as: `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, and `SECURITY.md` are generated automatically.
@@ -56,13 +54,13 @@ For creating your open source community:
 
 ### Installation
 
-Before creating a new project from this template, you need to install the dependency:
+To begin using the template consider updating `cookiecutter`
 
 ```bash
 pip install -U cookiecutter
 ```
 
-Go to the directory where you want to create your project and run:
+then go to a directory where you want to create your project and run:
 
 ```bash
 cookiecutter gh:TezRomacH/python-package-template
@@ -70,59 +68,66 @@ cookiecutter gh:TezRomacH/python-package-template
 
 ### Input variables
 
-The `cookiecutter generator`  will ask you for some data, you might want to have at hand before generating the project.
+Template generator will ask you to fill some variables.
 
-The input variables, with their default values (some auto-generated), are:
+The input variables, with their default values:
 
 |     **Parameter**     |      **Default value**      | **Description**                                                                                                                                                               |
 |:---------------------:|:---------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `project_name`           | `python-project`            | The name of the project. It might be a good idea to  [check the availability of such name](http://ivantomic.com/projects/ospnc/) before creating the project. |
+| `project_name`           | `python-project`            | [Check the availability of possible name](http://ivantomic.com/projects/ospnc/) before creating the project. |
 | `project_description`    | based on the `project_name` | Brief description of your project. |
-| `organization`           | based on the `project_name` | Name of the organization. This is needed to generate the license file and to specify the ownership of the project in `pyproject.toml`. |
-| `license`                | `MIT`                       | Type of license. One of `MIT`, `BSD-3`, `GNU GPL v3.0` and `Apache Software License 2.0`. |
-| `minimal_python_version` | `3.7`                       | Minimal Python version for your project. One of `3.7`, `3.8` and `3.9`. Used for builds, GitHub workflow and formatters (`black`, `isort` and `pyupgrade`). |
-| `github_name`            | based on the `organization` | GitHub username where the package will be hosted. The cookiecutter will use this name to correctly configure the `README.md`, `pyproject.toml` and template files for GitHub. |
-| `email`                  | based on the `organization` | Email is needed for generating the `CODE_OF_CONDUCT.md`, `SECURITY.md` files and to specify the ownership of the project in `pyproject.toml`. |
-| `version`                | `0.1.0`                     | An initial version of the package. Make sure it follows the [Semantic Versions](https://semver.org/) specification. |
-| `line_length`             | 88                         | The max length per line (used for autoformatting with `black` and `isort`). NOTE: This value must be between 50 and 300. |
+| `organization`           | based on the `project_name` | Name of the organization. We need to generate LICENCE and to specify ownership in `pyproject.toml`. |
+| `license`                | `MIT`                       | One of `MIT`, `BSD-3`, `GNU GPL v3.0` and `Apache Software License 2.0`. |
+| `minimal_python_version` | `3.7`                       | Minimal Python version. One of `3.7`, `3.8` and `3.9`. It is used for builds, GitHub workflow and formatters (`black`, `isort` and `pyupgrade`). |
+| `github_name`            | based on the `organization` | GitHub username for hosting. Also used to set up `README.md`, `pyproject.toml` and template files for GitHub. |
+| `email`                  | based on the `organization` | Email for `CODE_OF_CONDUCT.md`, `SECURITY.md` files and to specify the ownership of the project in `pyproject.toml`. |
+| `version`                | `0.1.0`                     | Initial version of the package. Make sure it follows the [Semantic Versions](https://semver.org/) specification. |
+| `line_length`            | 88                         | The max length per line (used for codestyle with `black` and `isort`). NOTE: This value must be between 50 and 300. |
+| `create_example_template` | `cli`                      | If `cli` is chosen generator will create simple CLI application with [`Typer`](https://github.com/tiangolo/typer) and [`Rich`](https://github.com/willmcgugan/rich) libraries. One of `cli`, `none` |
 
-The entered values will be saved in the `cookiecutter-config-file.yml` file so that you won't lose them. 😉
+All input values will be saved in the `cookiecutter-config-file.yml` file so that you won't lose them. 😉
 
 #### Demo
 
 [![Demo of github.com/TezRomacH/python-package-template](https://asciinema.org/a/422052.svg)](https://asciinema.org/a/422052)
 
-#### More details
+### More details
 
-After using this generator, your new project (the directory created) will contain an extensive `README.md` with instructions for development, deployment, etc. You can read [the project `README.md` template](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D) before.
+Your project will contain `README.md` file with instructions for development, deployment, etc. You can read [the project README.md template](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D) before.
 
-### Initial setting up
+### Initial set up
 
-#### Initialize `poetry` and `pre-commit`
+#### Initialize `poetry`
 
 By running `make install`
 
-After you run the cookiecutter command and the project appears in your directory, the console will display [a message about how to initialize the project](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D#very-first-steps).
+After you create a project, it will appear in your directory, and will display [a message about how to initialize the project](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D#very-first-steps).
 
-#### Package example
+#### Initialize `pre-commit`
 
-All manipulations with dependencies are executed through Poetry. If you're new to it, look through [the documentation](https://python-poetry.org/docs/).
+By running `make pre-commit-install`. Make sure to set up git first via `git init`.
+
+### Package example
+
+Want to know more about Poetry? Check [its documentation](https://python-poetry.org/docs/).
 
 <details>
-<summary>Notes about Poetry</summary>
+<summary>Details about Poetry</summary>
 <p>
 
 Poetry's [commands](https://python-poetry.org/docs/cli/#commands) are very intuitive and easy to learn, like:
 
 - `poetry add numpy@latest`
 - `poetry run pytest`
-- `poetry build`
-- etc
+- `publish --build`
 
+etc
 </p>
 </details>
 
-The template comes with a cute little CLI application example. It uses [`Typer`](https://github.com/tiangolo/typer) to CLI and [`Rich`](https://github.com/willmcgugan/rich) for beautiful formatting in the terminal output.
+#### CLI example
+
+If you set `create_example_template` to be `cli` the template comes with a cute little CLI application example. It utilises [`Typer`](https://github.com/tiangolo/typer) and [`Rich`](https://github.com/willmcgugan/rich) for CLI input validation and beautiful formatting in the terminal.
 
 After installation via `make install` (preferred) or `poetry install` you can try to play with the example:
 
@@ -145,14 +150,22 @@ Building a new version of the application contains steps:
 
 ### Makefile usage
 
-[`Makefile`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/Makefile) contains many functions for fast assembling and convenient work.
+[`Makefile`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/Makefile) contains a lot of functions for faster development.
 
 <details>
-<summary>1. Download Poetry</summary>
+<summary>1. Download and remove Poetry</summary>
 <p>
+
+To download and install Poetry run:
 
 ```bash
 make poetry-download
+```
+
+To uninstall
+
+```bash
+make poetry-remove
 ```
 
 </p>
@@ -162,8 +175,15 @@ make poetry-download
 <summary>2. Install all dependencies and pre-commit hooks</summary>
 <p>
 
+Install requirements:
+
 ```bash
 make install
+```
+
+Pre-commit hooks coulb be installed after `git init` via
+
+```bash
 make pre-commit-install
 ```
 
@@ -171,51 +191,64 @@ make pre-commit-install
 </details>
 
 <details>
-<summary>3. Check the security of your code</summary>
+<summary>3. Codestyle</summary>
 <p>
 
-```bash
-make check-safety
-```
-
-This command launches a `Poetry` and `Pip` integrity check as well as identifies security issues with `Safety` and `Bandit`. By default, the build will not crash if any of the items fail.
+Automatic formatting uses `pyupgrade`, `isort` and `black`.
 
 ```bash
-make check-safety
+make codestyle
+
+# or use synonym
+make formatting
 ```
 
-</p>
-</details>
-
-<details>
-<summary>4. Check the codestyle</summary>
-<p>
-
-The command is similar to `check-safety` but to check the code style, obviously. It uses `Black`, `Darglint`, `Isort`, and `Mypy` inside.
+Codestyle checks only, without rewriting files:
 
 ```bash
 make check-codestyle
 ```
 
+> Note: `check-codestyle` uses `isort`, `black` and `darglint` library
+
+<details>
+<summary>4. Code security</summary>
+<p>
+
+```bash
+make check-safety
+```
+
+This command launches `Poetry` integrity checks as well as identifies security issues with `Safety` and `Bandit`.
+
+```bash
+make check-safety
+```
+
+</p>
+</details>
+
 </p>
 </details>
 
 <details>
-<summary>5. Run all the codestyle formaters</summary>
+<summary>5. Type checks</summary>
 <p>
 
-Ensure you've run `make install` before.
+Run `mypy` static type checker
 
 ```bash
-make codestyle
+make mypy
 ```
 
 </p>
 </details>
 
 <details>
-<summary>6. Run tests</summary>
+<summary>6. Tests</summary>
 <p>
+
+Run `pytest`
 
 ```bash
 make test
@@ -225,8 +258,10 @@ make test
 </details>
 
 <details>
-<summary>7. Run all the linters</summary>
+<summary>7. All linters</summary>
 <p>
+
+Of course there is a command to ~~rule~~ run all linters in one:
 
 ```bash
 make lint
@@ -242,7 +277,7 @@ make test && make check-codestyle && make mypy && make check-safety
 </details>
 
 <details>
-<summary>8. Build docker</summary>
+<summary>8. Docker</summary>
 <p>
 
 ```bash
@@ -255,14 +290,6 @@ which is equivalent to:
 make docker-build VERSION=latest
 ```
 
-More information [about docker](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/docker).
-
-</p>
-</details>
-
-<details>
-<summary>9. Cleanup</summary>
-<p>
 Remove docker image with
 
 ```bash
@@ -271,6 +298,12 @@ make docker-remove
 
 More information [about docker](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/docker).
 
+</p>
+</details>
+
+<details>
+<summary>9. Cleanup</summary>
+<p>
 Delete pycache files
 
 ```bash
@@ -283,17 +316,18 @@ Remove package build
 make build-remove
 ```
 
-Or to remove all of this
+Or to remove pycache, build and docker image run:
 
 ```bash
 make clean-all
 ```
+
 </p>
 </details>
 
 ## 🎯 What's next
 
-Well, that's up to you. I can only recommend the packages and articles that helped me.
+Well, that's up to you 💪🏻. I can only recommend the packages and articles that helped me.
 
 - [`Typer`](https://github.com/tiangolo/typer) is great for creating CLI applications.
 - [`Rich`](https://github.com/willmcgugan/rich) makes it easy to add beautiful formatting in the terminal.
@@ -320,7 +354,7 @@ We follow [Semantic Versions](https://semver.org/) specification.
 
 We use [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). As pull requests are merged, a draft release is kept up-to-date listing the changes, ready to publish when you’re ready. With the categories option, you can categorize pull requests in release notes using labels.
 
-For Pull Request we configured this labels:
+### List of labels and corresponding titles
 
 |               **Label**               |  **Title in Releases**  |
 |:-------------------------------------:|:----------------------:|
@@ -337,16 +371,17 @@ This template will continue to develop and follow the bleeding edge new tools an
 
 Here is a list of things that have yet to be implemented:
 
-- Add examples of libraries created using this template.
 - Tests coverage reporting ([`Codecov`](https://github.com/marketplace/codecov) ?).
-- Auto uploading your package to [`PyPI`](https://pypi.org/).
-- Automatic creation and deployment of documentation to GitHub pages (I'm mostly looking at [`MkDocs`](https://www.mkdocs.org/) with [Material Design theme](https://github.com/squidfunk/mkdocs-material) and [`mkdocstrings`](https://github.com/pawamoy/mkdocstrings)).
+- Auto uploading your package to [`PyPI`](https://pypi.org/) when new GitHub release is created.
+- Automatic creation and deployment of documentation to GitHub pages. I look at [`MkDocs`](https://www.mkdocs.org/) with [Material Design theme](https://github.com/squidfunk/mkdocs-material) and [`mkdocstrings`](https://github.com/pawamoy/mkdocstrings).
 - Code metrics with [`Radon`](https://github.com/rubik/radon).
 - Docstring coverage with [`interrogate`](https://github.com/econchick/interrogate)
 - `Dockerfile` linting with [`dockerfilelint`](https://github.com/replicatedhq/dockerfilelint).
 - [Hall of fame](https://github.com/sourcerer-io/hall-of-fame) from `Sourcerer`.
 - Some advanced Python linting (?).
 - End-to-end testing and validation of the cookiecutter template.
+- Add [`Invoke`](http://www.pyinvoke.org/)
+- Add [`Earthly`](https://earthly.dev/)
 
 ## 🛡 License
 
@@ -356,7 +391,7 @@ This project is licensed under the terms of the `MIT` license. See [LICENSE](htt
 
 ## 🏅 Acknowledgements
 
-This template was inspired by those great articles:
+This template was inspired by several great articles:
 
 - [Hypermodern Python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/)
 - [Ultimate Setup for Your Next Python Project](https://martinheinz.dev/blog/14)

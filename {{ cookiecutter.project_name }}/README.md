@@ -9,7 +9,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Security: bandit](https://img.shields.io/badge/security-bandit-green.svg)](https://github.com/PyCQA/bandit)
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.pre-commit-config.yaml)
-[![Semantic Versions](https://img.shields.io/badge/%F0%9F%9A%80-semantic%20versions-informational.svg)](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/releases)
+[![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/releases)
 [![License](https://img.shields.io/github/license/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }})](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENSE)
 
 {{ cookiecutter.project_description }}
@@ -18,7 +18,7 @@
 
 ## Very first steps
 
-### Initial
+### Initialize your code
 
 1. Initialize `git` inside your repo:
 
@@ -55,30 +55,30 @@ git remote add origin https://github.com/{{ cookiecutter.github_name }}/{{ cooki
 git push -u origin main
 ```
 
-### Initial setting up
+### Set up bots
 
 - Set up [Dependabot](https://docs.github.com/en/github/administering-a-repository/enabling-and-disabling-version-updates#enabling-github-dependabot-version-updates) to ensure you have the latest dependencies.
 - Set up [Stale bot](https://github.com/apps/stale) for automatic issue closing.
 
 ### Poetry
 
-All manipulations with dependencies are executed through Poetry. If you're new to it, look through [the documentation](https://python-poetry.org/docs/).
+Want to know more about Poetry? Check [its documentation](https://python-poetry.org/docs/).
 
 <details>
-<summary>Notes about Poetry</summary>
+<summary>Details about Poetry</summary>
 <p>
 
 Poetry's [commands](https://python-poetry.org/docs/cli/#commands) are very intuitive and easy to learn, like:
 
 - `poetry add numpy@latest`
 - `poetry run pytest`
-- `poetry build`
-- etc
+- `publish --build`
 
+etc
 </p>
 </details>
 
-### Building your package
+### Building and releasing your package
 
 Building a new version of the application contains steps:
 
@@ -87,9 +87,9 @@ Building a new version of the application contains steps:
 - Create a `GitHub release`.
 - And... publish 🙂 `poetry publish --build`
 
-## What's next
+## 🎯 What's next
 
-Well, that's up to you. I can only recommend the packages and articles that helped me.
+Well, that's up to you 💪🏻. I can only recommend the packages and articles that helped me.
 
 - [`Typer`](https://github.com/tiangolo/typer) is great for creating CLI applications.
 - [`Rich`](https://github.com/willmcgugan/rich) makes it easy to add beautiful formatting in the terminal.
@@ -104,32 +104,32 @@ Well, that's up to you. I can only recommend the packages and articles that help
 
 Articles:
 
-- [Open Source Guides](https://opensource.guide/)
-- [GitHub Actions Documentation](https://help.github.com/en/actions)
+- [Open Source Guides](https://opensource.guide/).
+- [GitHub Actions Documentation](https://help.github.com/en/actions).
 - Maybe you would like to add [gitmoji](https://gitmoji.carloscuesta.me/) to commit names. This is really funny. 😄
 
 ## 🚀 Features
 
+### Development features
+
 - Supports for `Python {{ cookiecutter.minimal_python_version }}` and higher.
 - [`Poetry`](https://python-poetry.org/) as the dependencies manager. See configuration in [`pyproject.toml`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/pyproject.toml) and [`setup.cfg`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/setup.cfg).
-- Power of [`black`](https://github.com/psf/black), [`isort`](https://github.com/timothycrosley/isort) and [`pyupgrade`](https://github.com/asottile/pyupgrade) formatters.
-- Ready-to-use [`pre-commit`](https://pre-commit.com/) hooks with formatters above.
-- Type checks with the pre-configured [`mypy`](https://mypy.readthedocs.io).
+- Automatic codestyle with [`black`](https://github.com/psf/black), [`isort`](https://github.com/timothycrosley/isort) and [`pyupgrade`](https://github.com/asottile/pyupgrade).
+- Ready-to-use [`pre-commit`](https://pre-commit.com/) hooks with code-formatting.
+- Type checks with [`mypy`](https://mypy.readthedocs.io); docstring checks with [`darglint`](https://github.com/terrencepreilly/darglint); security checks with [`safety`](https://github.com/pyupio/safety) and [`bandit`](https://github.com/PyCQA/bandit)
 - Testing with [`pytest`](https://docs.pytest.org/en/latest/).
-- Docstring checks with [`darglint`](https://github.com/terrencepreilly/darglint).
-- Security checks with [`safety`](https://github.com/pyupio/safety) and [`bandit`](https://github.com/PyCQA/bandit).
-- Well-made [`.editorconfig`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.editorconfig), [`.dockerignore`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.dockerignore), and [`.gitignore`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.gitignore). You don't have to worry about those things.
+- Ready-to-use [`.editorconfig`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.editorconfig), [`.dockerignore`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.dockerignore), and [`.gitignore`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.gitignore). You don't have to worry about those things.
 
-For building and deployment:
+### Deployment features
 
-- `GitHub` integration.
-- [`Makefile`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/Makefile#L89) for building routines. Everything is already set up for security checks, codestyle checks, code formatting, testing, linting, docker builds, etc. More details at [Makefile summary](#makefile-usage)).
-- [Dockerfile](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/docker/Dockerfile) for your package.
+- `GitHub` integration: issue and pr templates.
 - `Github Actions` with predefined [build workflow](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.github/workflows/build.yml) as the default CI/CD.
-- Always up-to-date dependencies with [`@dependabot`](https://dependabot.com/) (You will only [enable it](https://docs.github.com/en/github/administering-a-repository/enabling-and-disabling-version-updates#enabling-github-dependabot-version-updates)).
-- Automatic drafts of new releases with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). It creates a list of changes based on labels in merged `Pull Requests`. You can see labels (aka `categories`) in [`release-drafter.yml`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.github/release-drafter.yml). Works perfectly with [Semantic Versions](https://semver.org/) specification.
+- Everything is already set up for security checks, codestyle checks, code formatting, testing, linting, docker builds, etc with [`Makefile`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/Makefile#L89). More details in [makefile-usage](#makefile-usage).
+- [Dockerfile](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/docker/Dockerfile) for your package.
+- Always up-to-date dependencies with [`@dependabot`](https://dependabot.com/). You will only [enable it](https://docs.github.com/en/github/administering-a-repository/enabling-and-disabling-version-updates#enabling-github-dependabot-version-updates).
+- Automatic drafts of new releases with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). You may see the list of labels in [`release-drafter.yml`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.github/release-drafter.yml). Works perfectly with [Semantic Versions](https://semver.org/) specification.
 
-For creating your open source community:
+### Open source community features
 
 - Ready-to-use [Pull Requests templates](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.github/PULL_REQUEST_TEMPLATE.md) and several [Issue templates](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/tree/master/.github/ISSUE_TEMPLATE).
 - Files such as: `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, and `SECURITY.md` are generated automatically.
@@ -148,7 +148,7 @@ or install with `Poetry`
 poetry add {{ cookiecutter.project_name }}
 ```
 
-Then you can run
+{% if cookiecutter.create_example_template == 'cli' -%}Then you can run
 
 ```bash
 {{ cookiecutter.project_name }} --help
@@ -158,18 +158,26 @@ or with `Poetry`:
 
 ```bash
 poetry run {{ cookiecutter.project_name }} --help
-```
+```{%- endif %}
 
 ### Makefile usage
 
-[`Makefile`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/Makefile) contains many functions for fast assembling and convenient work.
+[`Makefile`](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/Makefile) contains a lot of functions for faster development.
 
 <details>
-<summary>1. Download Poetry</summary>
+<summary>1. Download and remove Poetry</summary>
 <p>
+
+To download and install Poetry run:
 
 ```bash
 make poetry-download
+```
+
+To uninstall
+
+```bash
+make poetry-remove
 ```
 
 </p>
@@ -179,8 +187,15 @@ make poetry-download
 <summary>2. Install all dependencies and pre-commit hooks</summary>
 <p>
 
+Install requirements:
+
 ```bash
 make install
+```
+
+Pre-commit hooks coulb be installed after `git init` via
+
+```bash
 make pre-commit-install
 ```
 
@@ -188,51 +203,64 @@ make pre-commit-install
 </details>
 
 <details>
-<summary>3. Check the security of your code</summary>
+<summary>3. Codestyle</summary>
 <p>
 
-```bash
-make check-safety
-```
-
-This command launches a `Poetry` and `Pip` integrity check as well as identifies security issues with `Safety` and `Bandit`. By default, the build will not crash if any of the items fail.
+Automatic formatting uses `pyupgrade`, `isort` and `black`.
 
 ```bash
-make check-safety
+make codestyle
+
+# or use synonym
+make formatting
 ```
 
-</p>
-</details>
-
-<details>
-<summary>4. Check the codestyle</summary>
-<p>
-
-The command is similar to `check-safety` but to check the code style, obviously. It uses `Black`, `Darglint`, `Isort`, and `Mypy` inside.
+Codestyle checks only, without rewriting files:
 
 ```bash
 make check-codestyle
 ```
 
+> Note: `check-codestyle` uses `isort`, `black` and `darglint` library
+
+<details>
+<summary>4. Code security</summary>
+<p>
+
+```bash
+make check-safety
+```
+
+This command launches `Poetry` integrity checks as well as identifies security issues with `Safety` and `Bandit`.
+
+```bash
+make check-safety
+```
+
+</p>
+</details>
+
 </p>
 </details>
 
 <details>
-<summary>5. Run all the codestyle formaters</summary>
+<summary>5. Type checks</summary>
 <p>
 
-Ensure you've run `make install` before.
+Run `mypy` static type checker
 
 ```bash
-make codestyle
+make mypy
 ```
 
 </p>
 </details>
 
 <details>
-<summary>6. Run tests</summary>
+<summary>6. Tests</summary>
 <p>
+
+Run `pytest`
 
 ```bash
 make test
@@ -242,8 +270,10 @@ make test
 </details>
 
 <details>
-<summary>7. Run all the linters</summary>
+<summary>7. All linters</summary>
 <p>
+
+Of course there is a command to ~~rule~~ run all linters in one:
 
 ```bash
 make lint
@@ -259,7 +289,7 @@ make test && make check-codestyle && make mypy && make check-safety
 </details>
 
 <details>
-<summary>8. Build docker</summary>
+<summary>8. Docker</summary>
 <p>
 
 ```bash
@@ -272,14 +302,6 @@ which is equivalent to:
 make docker-build VERSION=latest
 ```
 
-More information [about docker](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/tree/master/docker).
-
-</p>
-</details>
-
-<details>
-<summary>9. Cleanup docker</summary>
-<p>
 Remove docker image with
 
 ```bash
@@ -288,6 +310,12 @@ make docker-remove
 
 More information [about docker](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/tree/master/docker).
 
+</p>
+</details>
+
+<details>
+<summary>9. Cleanup</summary>
+<p>
 Delete pycache files
 
 ```bash
@@ -300,11 +328,12 @@ Remove package build
 make build-remove
 ```
 
-Or to remove all of this
+Or to remove pycache, build and docker image run:
 
 ```bash
 make clean-all
 ```
+
 </p>
 </details>
 
@@ -316,7 +345,7 @@ We follow [Semantic Versions](https://semver.org/) specification.
 
 We use [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). As pull requests are merged, a draft release is kept up-to-date listing the changes, ready to publish when you’re ready. With the categories option, you can categorize pull requests in release notes using labels.
 
-For Pull Request this labels are configured, by default:
+### List of labels and corresponding titles
 
 |               **Label**               |  **Title in Releases**  |
 | :-----------------------------------: | :---------------------: |

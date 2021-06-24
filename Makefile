@@ -40,7 +40,7 @@ test:
 check-codestyle:
 	poetry run isort --diff --check-only --settings-path pyproject.toml hooks tests
 	poetry run black --diff --check --config pyproject.toml hooks tests
-	poetry run darglint -v 2 hooks tests
+	poetry run darglint --verbosity 2 hooks tests
 
 .PHONY: mypy
 mypy:
@@ -50,7 +50,7 @@ mypy:
 check-safety:
 	poetry check
 	poetry run safety check --full-report
-	poetry run bandit -r hooks tests
+	poetry run bandit -ll --recursive hooks
 
 .PHONY: lint
 lint: test check-codestyle mypy check-safety
