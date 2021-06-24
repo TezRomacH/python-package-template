@@ -22,7 +22,7 @@ cookiecutter gh:TezRomacH/python-package-template
 
 ## 🚀 Features
 
-In this [cookiecutter](https://github.com/cookiecutter/cookiecutter) template, we aimed to combine the most state-of-the-art libraries and best development practices for Python.
+In this [cookiecutter 🍪](https://github.com/cookiecutter/cookiecutter) template, we aimed to combine the most state-of-the-art libraries and best development practices for Python.
 
 For your development we've prepared:
 
