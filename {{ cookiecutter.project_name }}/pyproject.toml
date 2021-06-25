@@ -47,22 +47,23 @@ typer = {extras = ["all"], version = "^0.3.2"}
 rich = "^10.4.0"
 {% endif %}
 [tool.poetry.dev-dependencies]
+bandit = "^1.7.0"
+black = "^21.6b0"
 darglint = "^1.8.0"
 isort = "^5.9.1"
-pyupgrade = "^2.19.4"
-black = "^21.6b0"
 mypy = "^0.910"
-bandit = "^1.7.0"
-safety = "^1.10.3"
-pytest = "^6.2.4"
-pylint = "^2.8.3"
-pydocstyle = "^6.1.1"
 pre-commit = "^2.13.0"
+pydocstyle = "^6.1.1"
+pylint = "^2.8.3"
+pytest = "^6.2.4"
+pyupgrade = "^2.19.4"
+safety = "^1.10.3"
 
 [tool.black]
 # https://github.com/psf/black
-line-length = {{ cookiecutter.line_length }}
 target-version = ["py{{ cookiecutter.minimal_python_version.replace('.', '') }}"]
+line-length = {{ cookiecutter.line_length }}
+
 exclude = '''
 /(
     \.git
@@ -82,6 +83,8 @@ exclude = '''
 [tool.isort]
 # https://github.com/timothycrosley/isort/
 py_version = {{ cookiecutter.minimal_python_version.replace('.', '') }}
+line_length = {{ cookiecutter.line_length }}
+
 known_typing = "typing,types,typing_extensions,mypy,mypy_extensions"
 sections = "FUTURE,TYPING,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
 include_trailing_comma = true
@@ -89,27 +92,27 @@ multi_line_output = 3
 indent = 4
 force_grid_wrap = 0
 use_parentheses = true
-line_length = {{ cookiecutter.line_length }}
 
 [tool.mypy]
 # mypy configurations: https://mypy.readthedocs.io/en/latest/config_file.html#using-a-pyproject-toml-file
 python_version = {{ cookiecutter.minimal_python_version }}
 pretty = true
+
 allow_redefinition = false
 check_untyped_defs = true
 disallow_any_generics = true
 disallow_incomplete_defs = true
 ignore_missing_imports = true
 implicit_reexport = false
-strict_optional = true
-strict_equality = true
 no_implicit_optional = true
+show_column_numbers = true
+show_error_codes = true
+show_error_context = true
+strict_equality = true
+strict_optional = true
 warn_no_return = true
-warn_unused_ignores = true
 warn_redundant_casts = true
-warn_unused_configs = true
 warn_return_any = true
 warn_unreachable = true
-show_error_codes = true
-show_column_numbers = true
-show_error_context = true
+warn_unused_configs = true
+warn_unused_ignores = true
