@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "python-package-template"
-version = "1.0.1"
+version = "1.0.2"
 description = "Cookiecutter template for Python cli/packages"
 readme = "README.md"
 authors = ["Roman Tezikov <tez.romach@gmail.com>"]
@@ -50,6 +50,7 @@ safety = "^1.10.3"
 # https://github.com/psf/black
 target-version = ["py37"]
 line-length = 100
+color = true
 
 exclude = '''
 /(
@@ -72,13 +73,14 @@ exclude = '''
 py_version = 37
 line_length = 100
 
-known_typing = "typing,types,typing_extensions,mypy,mypy_extensions"
-sections = "FUTURE,TYPING,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
+known_typing = ["typing", "types", "typing_extensions", "mypy", "mypy_extensions"]
+sections = ["FUTURE", "TYPING", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+profile = "black"
 include_trailing_comma = true
 multi_line_output = 3
 indent = 4
-force_grid_wrap = 0
-use_parentheses = true
+color_output = true
+
 
 [tool.mypy]
 # mypy configurations: https://mypy.readthedocs.io/en/latest/config_file.html#using-a-pyproject-toml-file

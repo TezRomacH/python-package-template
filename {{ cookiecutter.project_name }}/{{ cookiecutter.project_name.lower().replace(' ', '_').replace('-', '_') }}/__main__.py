@@ -1,13 +1,13 @@
 # type: ignore[attr-defined]
 from typing import Optional
 
-import random
 from enum import Enum
+from random import choice
 
 import typer
 from rich.console import Console
 
-from {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }} import __version__
+from {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }} import version
 from {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}.example import hello
 
 
@@ -28,10 +28,10 @@ app = typer.Typer(
 console = Console()
 
 
-def version_callback(value: bool):
+def version_callback(print_version: bool) -> None:
     """Print the version of the package."""
-    if value:
-        console.print(f"[yellow]{{ cookiecutter.project_name }}[/] version: [bold blue]{__version__}[/]")
+    if print_version:
+        console.print(f"[yellow]{{ cookiecutter.project_name }}[/] version: [bold blue]{version}[/]")
         raise typer.Exit()
 
 
@@ -46,7 +46,7 @@ def main(
         case_sensitive=False,
         help="Color for print. If not specified then choice will be random.",
     ),
-    version: bool = typer.Option(
+    print_version: bool = typer.Option(
         None,
         "-v",
         "--version",
@@ -54,11 +54,10 @@ def main(
         is_eager=True,
         help="Prints the version of the {{ cookiecutter.project_name }} package.",
     ),
-):
+) -> None:
     """Print a greeting with a giving name."""
     if color is None:
-        # If no color specified use random value from `Color` class
-        color = random.choice(list(Color.__members__.values()))
+        color = choice(list(Color))
 
     greeting: str = hello(name)
     console.print(f"[bold {color}]{greeting}[/]")

@@ -17,7 +17,7 @@ Your next Python package needs a bleeding-edge project structure.
 ## TL;DR
 
 ```bash
-cookiecutter gh:TezRomacH/python-package-template
+cookiecutter gh:TezRomacH/python-package-template --checkout v1.0.2
 ```
 
 > All you need is the last version of cookiecutter 😉
@@ -345,6 +345,7 @@ Well, that's up to you 💪🏻. I can only recommend the packages and articles 
 Articles:
 
 - [Open Source Guides](https://opensource.guide/).
+- [A handy guide to financial support for open source](https://github.com/nayafia/lemonade-stand)
 - [GitHub Actions Documentation](https://help.github.com/en/actions).
 - Maybe you would like to add [gitmoji](https://gitmoji.carloscuesta.me/) to commit names. This is really funny. 😄
 
@@ -398,6 +399,7 @@ This template was inspired by several great articles:
 - [Hypermodern Python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/)
 - [Ultimate Setup for Your Next Python Project](https://martinheinz.dev/blog/14)
 - [Nine simple steps for better-looking python code](https://towardsdatascience.com/nine-simple-steps-for-better-looking-python-code-87e5d9d3b1cf)
+- [Modern Python developer's toolkit](https://pycon.switowski.com/)
 
 and repositories:
 

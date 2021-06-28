@@ -1,4 +1,4 @@
-"""We use this file as an example for some module."""
+"""Example of code."""
 
 
 def hello(name: str) -> str:
@@ -17,6 +17,3 @@ def hello(name: str) -> str:
             'Hello Roman!'
     """
     return f"Hello {name}!"
-
-
-__all__ = ["hello"]

@@ -105,6 +105,7 @@ Well, that's up to you 💪🏻. I can only recommend the packages and articles 
 Articles:
 
 - [Open Source Guides](https://opensource.guide/).
+- [A handy guide to financial support for open source](https://github.com/nayafia/lemonade-stand)
 - [GitHub Actions Documentation](https://help.github.com/en/actions).
 - Maybe you would like to add [gitmoji](https://gitmoji.carloscuesta.me/) to commit names. This is really funny. 😄
 
