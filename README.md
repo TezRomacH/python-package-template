@@ -65,7 +65,7 @@ pip install -U cookiecutter
 then go to a directory where you want to create your project and run:
 
 ```bash
-cookiecutter gh:TezRomacH/python-package-template
+cookiecutter gh:TezRomacH/python-package-template --checkout v1.0.2
 ```
 
 ### Input variables
@@ -121,7 +121,7 @@ Poetry's [commands](https://python-poetry.org/docs/cli/#commands) are very intui
 
 - `poetry add numpy@latest`
 - `poetry run pytest`
-- `publish --build`
+- `poetry publish --build`
 
 etc
 </p>
