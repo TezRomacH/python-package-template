@@ -20,7 +20,7 @@ Your next Python package needs a bleeding-edge project structure.
 cookiecutter gh:TezRomacH/python-package-template --checkout v1.0.2
 ```
 
-> All you need is the last version of cookiecutter 😉
+> All you need is the latest version of cookiecutter 😉
 
 ## 🚀 Features
 
