@@ -35,7 +35,7 @@ cookiecutter = "^1.7.3"
 
 [tool.poetry.dev-dependencies]
 bandit = "^1.7.0"
-black = "^21.6b0"
+black = {version = "^21.6b0", allow-prereleases = true}
 darglint = "^1.8.0"
 isort = {extras = ["colors"], version = "^5.9.1"}
 mypy = "^0.910"
@@ -43,7 +43,7 @@ pre-commit = "^2.13.0"
 pydocstyle = "^6.1.1"
 pylint = "^2.9.3"
 pytest = "^6.2.4"
-pyupgrade = "^2.19.4"
+pyupgrade = "^2.20.0"
 safety = "^1.10.3"
 
 [tool.black]
