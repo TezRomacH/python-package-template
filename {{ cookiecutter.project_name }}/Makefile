@@ -54,7 +54,7 @@ mypy:
 check-safety:
 	poetry check
 	poetry run safety check --full-report
-	poetry run bandit --exclude tests/**/*.py -ll --recursive ./
+	poetry run bandit -ll --recursive {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }} tests
 
 .PHONY: lint
 lint: test check-codestyle mypy check-safety
