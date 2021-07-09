@@ -50,7 +50,7 @@ rich = "^10.4.0"
 bandit = "^1.7.0"
 black = {version = "^21.6b0", allow-prereleases = true}
 darglint = "^1.8.0"
-isort = {extras = ["colors"], version = "^5.9.1"}
+isort = {extras = ["colors"], version = "^5.9.2"}
 mypy = "^0.910"
 pre-commit = "^2.13.0"
 pydocstyle = "^6.1.1"
