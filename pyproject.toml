@@ -87,6 +87,8 @@ color_output = true
 # mypy configurations: https://mypy.readthedocs.io/en/latest/config_file.html#using-a-pyproject-toml-file
 python_version = 3.7
 pretty = true
+show_traceback = true
+color_output = true
 
 allow_redefinition = false
 check_untyped_defs = true
