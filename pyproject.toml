@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "python-package-template"
-version = "1.0.8"
+version = "1.0.9"
 description = "Cookiecutter template for Python cli/packages"
 readme = "README.md"
 authors = ["Roman Tezikov <tez.romach@gmail.com>"]
