@@ -213,6 +213,9 @@ make check-codestyle
 
 > Note: `check-codestyle` uses `isort`, `black` and `darglint` library
 
+</p>
+</details>
+
 <details>
 <summary>4. Code security</summary>
 <p>
@@ -226,9 +229,6 @@ This command launches `Poetry` integrity checks as well as identifies security i
 ```bash
 make check-safety
 ```
-
-</p>
-</details>
 
 </p>
 </details>
