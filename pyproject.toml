@@ -44,7 +44,7 @@ pre-commit = "^2.13.0"
 pydocstyle = "^6.1.1"
 pylint = "^2.9.6"
 pytest = "^6.2.4"
-pyupgrade = "^2.23.3"
+pyupgrade = "^2.24.0"
 safety = "^1.10.3"
 
 [tool.black]
