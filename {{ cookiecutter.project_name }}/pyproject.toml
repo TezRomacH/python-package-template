@@ -44,7 +44,7 @@ python = "^{{ cookiecutter.minimal_python_version }}"
 {% if cookiecutter.minimal_python_version == '3.7' -%}importlib_metadata = {version = "^4.5.0", python = "<3.8"}{%- endif -%}
 {%+ if cookiecutter.create_example_template == 'cli' %}
 typer = {extras = ["all"], version = "^0.3.2"}
-rich = "^10.6.0"
+rich = "^10.7.0"
 {% endif %}
 [tool.poetry.dev-dependencies]
 bandit = "^1.7.0"
@@ -53,11 +53,11 @@ darglint = "^1.8.0"
 isort = {extras = ["colors"], version = "^5.9.3"}
 mypy = "^0.910"
 mypy-extensions = "^0.4.3"
-pre-commit = "^2.13.0"
+pre-commit = "^2.14.0"
 pydocstyle = "^6.1.1"
-pylint = "^2.9.6"
+pylint = "^2.10.2"
 pytest = "^6.2.4"
-pyupgrade = "^2.23.3"
+pyupgrade = "^2.24.0"
 safety = "^1.10.3"
 
 [tool.black]
@@ -96,7 +96,7 @@ indent = 4
 color_output = true
 
 [tool.mypy]
-# mypy configurations: https://mypy.readthedocs.io/en/latest/config_file.html#using-a-pyproject-toml-file
+# https://mypy.readthedocs.io/en/latest/config_file.html#using-a-pyproject-toml-file
 python_version = {{ cookiecutter.minimal_python_version }}
 pretty = true
 show_traceback = true
@@ -120,3 +120,18 @@ warn_return_any = true
 warn_unreachable = true
 warn_unused_configs = true
 warn_unused_ignores = true
+
+
+[tool.pytest.ini_options]
+# https://docs.pytest.org/en/6.2.x/customize.html#pyproject-toml
+# Directories that are not visited by pytest collector:
+norecursedirs =["hooks", "*.egg", ".eggs", "dist", "build", "docs", ".tox", ".git", "__pycache__"]
+doctest_optionflags = ["NUMBER", "NORMALIZE_WHITESPACE", "IGNORE_EXCEPTION_DETAIL"]
+
+# Extra options:
+addopts = [
+  "--strict-markers",
+  "--tb=short",
+  "--doctest-modules",
+  "--doctest-continue-on-failure",
+]
