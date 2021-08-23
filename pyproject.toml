@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "python-package-template"
-version = "1.0.11"
+version = "1.1.0"
 description = "Cookiecutter template for Python cli/packages"
 readme = "README.md"
 authors = ["Roman Tezikov <tez.romach@gmail.com>"]
@@ -40,11 +40,11 @@ darglint = "^1.8.0"
 isort = {extras = ["colors"], version = "^5.9.3"}
 mypy = "^0.910"
 mypy-extensions = "^0.4.3"
-pre-commit = "^2.13.0"
+pre-commit = "^2.14.0"
 pydocstyle = "^6.1.1"
-pylint = "^2.9.6"
+pylint = "^2.10.2"
 pytest = "^6.2.4"
-pyupgrade = "^2.23.3"
+pyupgrade = "^2.24.0"
 safety = "^1.10.3"
 
 [tool.black]
@@ -84,7 +84,7 @@ color_output = true
 
 
 [tool.mypy]
-# mypy configurations: https://mypy.readthedocs.io/en/latest/config_file.html#using-a-pyproject-toml-file
+# https://mypy.readthedocs.io/en/latest/config_file.html#using-a-pyproject-toml-file
 python_version = 3.7
 pretty = true
 show_traceback = true
@@ -108,3 +108,18 @@ warn_return_any = true
 warn_unreachable = true
 warn_unused_configs = true
 warn_unused_ignores = true
+
+
+[tool.pytest.ini_options]
+# https://docs.pytest.org/en/6.2.x/customize.html#pyproject-toml
+# Directories that are not visited by pytest collector:
+norecursedirs =["{{ cookiecutter.project_name }}", "hooks", "*.egg", ".eggs", "dist", "build", "docs", ".tox", ".git", "__pycache__"]
+doctest_optionflags = ["NUMBER", "NORMALIZE_WHITESPACE", "IGNORE_EXCEPTION_DETAIL"]
+
+# Extra options:
+addopts = [
+  "--strict-markers",
+  "--tb=short",
+  "--doctest-modules",
+  "--doctest-continue-on-failure",
+]

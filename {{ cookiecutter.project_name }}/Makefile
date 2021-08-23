@@ -39,7 +39,7 @@ formatting: codestyle
 #* Linting
 .PHONY: test
 test:
-	poetry run pytest
+	poetry run pytest -c pyproject.toml
 
 .PHONY: check-codestyle
 check-codestyle:
