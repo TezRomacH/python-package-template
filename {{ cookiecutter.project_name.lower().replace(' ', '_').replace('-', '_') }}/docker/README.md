@@ -44,4 +44,4 @@ you may also choose the image name
 make docker-remove IMAGE=some_name VERSION=latest
 ```
 
-If you want to clean all, including `build` and `pycache` run `make clean-all`
+If you want to clean all, including `build` and `pycache` run `make cleanup`

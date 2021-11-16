@@ -10,6 +10,7 @@
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/TezRomacH/python-package-template/blob/master/.pre-commit-config.yaml)
 [![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/TezRomacH/python-package-template/releases)
 [![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/TezRomacH/python-package-template/blob/master/LICENSE)
+![Coverage Report](assets/images/coverage.svg)
 
 Your next Python package needs a bleeding-edge project structure.
 </div>
@@ -17,7 +18,7 @@ Your next Python package needs a bleeding-edge project structure.
 ## TL;DR
 
 ```bash
-cookiecutter gh:TezRomacH/python-package-template --checkout v1.1.0
+cookiecutter gh:TezRomacH/python-package-template --checkout v1.1.1
 ```
 
 > All you need is the latest version of cookiecutter 😉
@@ -65,7 +66,7 @@ pip install -U cookiecutter
 then go to a directory where you want to create your project and run:
 
 ```bash
-cookiecutter gh:TezRomacH/python-package-template --checkout v1.1.0
+cookiecutter gh:TezRomacH/python-package-template --checkout v1.1.1
 ```
 
 ### Input variables
@@ -213,6 +214,12 @@ make check-codestyle
 
 > Note: `check-codestyle` uses `isort`, `black` and `darglint` library
 
+Update all dev libraries to the latest version using one comand
+
+```bash
+make update-dev-deps
+```
+
 </p>
 </details>
 
@@ -247,7 +254,7 @@ make mypy
 </details>
 
 <details>
-<summary>6. Tests</summary>
+<summary>6. Tests with coverage badges</summary>
 <p>
 
 Run `pytest`
@@ -318,10 +325,22 @@ Remove package build
 make build-remove
 ```
 
-Or to remove pycache, build and docker image run:
+Delete .DS_STORE files
 
 ```bash
-make clean-all
+make dsstore-remove
+```
+
+Remove .mypycache
+
+```bash
+make mypycache-remove
+```
+
+Or to remove all above run:
+
+```bash
+make cleanup
 ```
 
 </p>

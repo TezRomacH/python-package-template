@@ -43,22 +43,26 @@ classifiers = [  #! Update me
 python = "^{{ cookiecutter.minimal_python_version }}"
 {% if cookiecutter.minimal_python_version == '3.7' -%}importlib_metadata = {version = "^4.5.0", python = "<3.8"}{%- endif -%}
 {%+ if cookiecutter.create_example_template == 'cli' %}
-typer = {extras = ["all"], version = "^0.3.2"}
-rich = "^10.7.0"
+typer = {extras = ["all"], version = "^0.4.0"}
+rich = "^10.14.0"
 {% endif %}
 [tool.poetry.dev-dependencies]
-bandit = "^1.7.0"
-black = {version = "^21.7b0", allow-prereleases = true}
-darglint = "^1.8.0"
-isort = {extras = ["colors"], version = "^5.9.3"}
+bandit = "^1.7.1"
+black = {version = "^21.10b0", allow-prereleases = true}
+darglint = "^1.8.1"
+isort = {extras = ["colors"], version = "^5.10.1"}
 mypy = "^0.910"
 mypy-extensions = "^0.4.3"
-pre-commit = "^2.14.0"
+pre-commit = "^2.15.0"
 pydocstyle = "^6.1.1"
-pylint = "^2.10.2"
-pytest = "^6.2.4"
-pyupgrade = "^2.24.0"
+pylint = "^2.11.1"
+pytest = "^6.2.5"
+pyupgrade = "^2.29.1"
 safety = "^1.10.3"
+coverage = "^6.1.2"
+coverage-badge = "^1.1.0"
+pytest-html = "^3.1.1"
+pytest-cov = "^3.0.0"
 
 [tool.black]
 # https://github.com/psf/black
@@ -135,3 +139,16 @@ addopts = [
   "--doctest-modules",
   "--doctest-continue-on-failure",
 ]
+
+[tool.coverage.run]
+source = ["tests"]
+
+[coverage.paths]
+source = "{{ cookiecutter.project_name }}"
+
+[coverage.run]
+branch = true
+
+[coverage.report]
+fail_under = 50
+show_missing = true
