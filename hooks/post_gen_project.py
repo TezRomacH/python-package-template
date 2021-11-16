@@ -1,6 +1,5 @@
 """This module is called after project is created."""
-
-from typing import Callable, List
+from typing import List
 
 import textwrap
 from pathlib import Path
@@ -19,7 +18,7 @@ ORGANIZATION = "{{ cookiecutter.organization }}"
 # Values to generate github repository
 GITHUB_USER = "{{ cookiecutter.github_name }}"
 
-licenses = {
+licences_dict = {
     "MIT": "mit",
     "BSD-3": "bsd3",
     "GNU GPL v3.0": "gpl3",
@@ -27,34 +26,34 @@ licenses = {
 }
 
 
-def generate_license() -> None:
+def generate_license(directory: Path, licence: str) -> None:
     """Generate license file for the project."""
-    move(f"{PROJECT_DIRECTORY}/_licences/{licenses[LICENSE]}.txt", f"{PROJECT_DIRECTORY}/LICENSE")
-    rmtree(f"{PROJECT_DIRECTORY}/_licences/")
+    move(str(directory / "_licences" / f"{licence}.txt"), str(directory / "LICENSE"))
+    rmtree(str(directory / "_licences"))
 
 
-def remove_unused_files() -> None:
+def remove_unused_files(directory: Path, module_name: str, need_to_remove_cli: bool) -> None:
     """Remove unused files."""
     files_to_delete: List[Path] = []
 
     def _cli_specific_files() -> List[Path]:
-        return [Path(f"{PROJECT_DIRECTORY}/{PROJECT_MODULE}/__main__.py")]
+        return [directory / module_name / "__main__.py"]
 
-    if CREATE_EXAMPLE_TEMPLATE != "cli":
+    if need_to_remove_cli:
         files_to_delete.extend(_cli_specific_files())
 
     for path in files_to_delete:
         path.unlink()
 
 
-def print_futher_instuctions() -> None:
+def print_futher_instuctions(project_name: str, github: str) -> None:
     """Show user what to do next after project creation."""
     message = f"""
-    Your project {PROJECT_NAME} is created.
+    Your project {project_name} is created.
 
     1) Now you can start working on it:
 
-        $ cd {PROJECT_NAME} && git init
+        $ cd {project_name} && git init
 
     2) If you don't have Poetry installed run:
 
@@ -74,17 +73,21 @@ def print_futher_instuctions() -> None:
         $ git add .
         $ git commit -m ":tada: Initial commit"
         $ git branch -M main
-        $ git remote add origin https://github.com/{GITHUB_USER}/{PROJECT_NAME}.git
+        $ git remote add origin https://github.com/{github}/{project_name}.git
         $ git push -u origin main
     """
     print(textwrap.dedent(message))
 
 
-post_functions: List[Callable[[], None]] = [
-    generate_license,
-    remove_unused_files,
-    print_futher_instuctions,
-]
+def main() -> None:
+    generate_license(directory=PROJECT_DIRECTORY, licence=licences_dict[LICENSE])
+    remove_unused_files(
+        directory=PROJECT_DIRECTORY,
+        module_name=PROJECT_MODULE,
+        need_to_remove_cli=CREATE_EXAMPLE_TEMPLATE != "cli",
+    )
+    print_futher_instuctions(project_name=PROJECT_NAME, github=GITHUB_USER)
 
-for fn in post_functions:
-    fn()
+
+if __name__ == "__main__":
+    main()
