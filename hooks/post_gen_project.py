@@ -27,13 +27,24 @@ licences_dict = {
 
 
 def generate_license(directory: Path, licence: str) -> None:
-    """Generate license file for the project."""
+    """Generate license file for the project.
+
+    Args:
+        directory: path to the project directory
+        licence: chosen licence
+    """
     move(str(directory / "_licences" / f"{licence}.txt"), str(directory / "LICENSE"))
     rmtree(str(directory / "_licences"))
 
 
 def remove_unused_files(directory: Path, module_name: str, need_to_remove_cli: bool) -> None:
-    """Remove unused files."""
+    """Remove unused files.
+
+    Args:
+        directory: path to the project directory
+        module_name: project module name
+        need_to_remove_cli: flag for removing CLI related files
+    """
     files_to_delete: List[Path] = []
 
     def _cli_specific_files() -> List[Path]:
@@ -47,7 +58,12 @@ def remove_unused_files(directory: Path, module_name: str, need_to_remove_cli: b
 
 
 def print_futher_instuctions(project_name: str, github: str) -> None:
-    """Show user what to do next after project creation."""
+    """Show user what to do next after project creation.
+
+    Args:
+        project_name: current project name
+        github: GitHub username
+    """
     message = f"""
     Your project {project_name} is created.
 

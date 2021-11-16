@@ -37,6 +37,9 @@ def validate_project_name(project_name: str) -> None:
     Valid inputs starts with the lowercase letter.
     Followed by any lowercase letters, numbers or underscores.
 
+    Args:
+        project_name: current project name
+
     Raises:
         ValueError: If project_name is not a valid Python module name
     """
@@ -48,6 +51,9 @@ def validate_project_name(project_name: str) -> None:
 def validate_semver(version: str) -> None:
     """Ensure version in semver notation.
 
+    Args:
+        version: string version. For example 0.1.2 or 1.2.4
+
     Raises:
         ValueError: If version is not in semver notation
     """
@@ -58,6 +64,9 @@ def validate_semver(version: str) -> None:
 
 def validate_line_length(line_length: int) -> None:
     """Validate line_length parameter. Length should be between 50 and 300.
+
+    Args:
+        line_length: integer paramenter for isort and black formatters
 
     Raises:
         ValueError: If line_length isn't between 50 and 300
