@@ -225,6 +225,12 @@ make check-codestyle
 
 > Note: `check-codestyle` uses `isort`, `black` and `darglint` library
 
+Update all dev libraries to the latest version using one comand
+
+```bash
+make update-dev-deps
+```
+
 <details>
 <summary>4. Code security</summary>
 <p>
@@ -259,7 +265,7 @@ make mypy
 </details>
 
 <details>
-<summary>6. Tests</summary>
+<summary>6. Tests with coverage badges</summary>
 <p>
 
 Run `pytest`
@@ -330,10 +336,22 @@ Remove package build
 make build-remove
 ```
 
-Or to remove pycache, build and docker image run:
+Delete .DS_STORE files
 
 ```bash
-make clean-all
+make dsstore-remove
+```
+
+Remove .mypycache
+
+```bash
+make mypycache-remove
+```
+
+Or to remove all above run:
+
+```bash
+make cleanup
 ```
 
 </p>

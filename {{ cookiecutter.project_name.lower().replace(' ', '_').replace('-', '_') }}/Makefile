@@ -68,8 +68,8 @@ update-dev-deps:
 	poetry add -D --allow-prereleases black@latest
 
 #* Docker
-# Example: make docker VERSION=latest
-# Example: make docker IMAGE=some_name VERSION={{ cookiecutter.version }}
+# Example: make docker-build VERSION=latest
+# Example: make docker-build IMAGE=some_name VERSION={{ cookiecutter.version }}
 .PHONY: docker-build
 docker-build:
 	@echo Building docker $(IMAGE):$(VERSION) ...
@@ -77,8 +77,8 @@ docker-build:
 		-t $(IMAGE):$(VERSION) . \
 		-f ./docker/Dockerfile --no-cache
 
-# Example: make clean_docker VERSION=latest
-# Example: make clean_docker IMAGE=some_name VERSION={{ cookiecutter.version }}
+# Example: make docker-remove VERSION=latest
+# Example: make docker-remove IMAGE=some_name VERSION={{ cookiecutter.version }}
 .PHONY: docker-remove
 docker-remove:
 	@echo Removing docker $(IMAGE):$(VERSION) ...
