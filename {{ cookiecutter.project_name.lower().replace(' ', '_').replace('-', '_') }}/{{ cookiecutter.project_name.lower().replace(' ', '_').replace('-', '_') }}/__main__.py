@@ -6,12 +6,25 @@ from random import choice
 
 import typer
 from rich.console import Console
-
-from {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }} import version
-from {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}.example import hello
-
-
-class Color(str, Enum):
+from {{cookiecutter.project_name.lower import (
+    Color,
+    Enum,
+    ',
+    '',
+    '-',
+    '_',
+    '_' }},
+    '_' }}.example,
+    .replace,
+    :,
+    class,
+    from,
+    hello,
+    import,
+    str,
+    version,
+    {{ cookiecutter.project_name.lower,
+)
     white = "white"
     red = "red"
     cyan = "cyan"

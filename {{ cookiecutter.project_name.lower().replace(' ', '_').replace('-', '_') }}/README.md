@@ -11,7 +11,14 @@
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/.pre-commit-config.yaml)
 [![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/releases)
 [![License](https://img.shields.io/github/license/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }})](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/blob/master/LICENSE)
-![Coverage Report](assets/images/coverage.svg)
+
+[![coverage report](assets/images/coverage.svg)](.logs/coverage.txt)
+[![maintainability](assets/images/maintainability.svg)](.logs/maintainability.txt)
+[![complexity](assets/images/complexity.svg)](.logs/complexity.txt)
+[![static analysis](assets/images/mypy.svg)](.logs/mypy.txt)
+[![vulnerabilities](assets/images/vulnerabilities.svg)](.logs/safety.txt)
+[![lint report](assets/images/pylint.svg)](.logs/pylint-log.txt)
+[![docstring coverage](assets/images/interrogate_badge.svg)](.logs/docstring.txt)
 
 {{ cookiecutter.project_description }}
 

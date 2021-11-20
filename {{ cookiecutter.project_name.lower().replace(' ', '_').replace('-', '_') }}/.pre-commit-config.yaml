@@ -2,14 +2,25 @@ default_language_version:
   python: python{{ cookiecutter.minimal_python_version }}
 
 default_stages: [commit, push]
+files: ''
+exclude: '^.txt$'
+fail_fast: false
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.5.0
     hooks:
       - id: check-yaml
+      - id: check-added-large-files
+        args: [ "--maxkb=700" ]
+      - id: check-docstring-first
+      - id: check-json
+        exclude: ^.vscode/settings.json
+      - id: check-toml
       - id: end-of-file-fixer
         exclude: LICENSE
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
 
   - repo: local
     hooks:
@@ -34,3 +45,37 @@ repos:
         entry: poetry run black --config pyproject.toml
         types: [python]
         language: system
+
+  - repo: https://github.com/pycqa/bandit
+    rev: 1.7.0
+    hooks:
+      - id: bandit
+        language_version: python3
+        exclude: ^tests/
+        args:
+        - -s
+        - B101,B603
+  - repo: https://github.com/pycqa/flake8
+    rev: 3.9.2
+    hooks:
+      - id: flake8
+        exclude: ^build/
+        args: [--config, setup.cfg]
+  - repo: https://github.com/pycqa/pydocstyle
+    rev: 6.1.1
+    hooks:
+      - id: pydocstyle
+        exclude: ^build/
+        args: [--config, setup.cfg]
+  - repo: https://github.com/pycqa/pylint
+    rev: v2.10.2
+    hooks:
+      - id: pylint
+        exclude: ^build/
+        types: [ python ]
+        args: ["--rcfile=.pylintrc"]
+  - repo: https://github.com/econchick/interrogate
+    rev: 1.5.0  # or master if you're bold
+    hooks:
+      - id: interrogate
+        args: [--quiet, --fail-under=50]

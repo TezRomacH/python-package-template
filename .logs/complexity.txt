@@ -1,0 +1,13 @@
+hooks/pre_gen_project.py
+    F 35:0 validate_project_name - A (2)
+    F 52:0 validate_semver - A (2)
+    F 66:0 validate_line_length - A (2)
+    F 85:0 main - A (2)
+hooks/post_gen_project.py
+    F 40:0 remove_unused_files - A (3)
+    F 29:0 generate_license - A (1)
+    F 60:0 print_futher_instuctions - A (1)
+    F 103:0 main - A (1)
+
+8 blocks (classes, functions, methods) analyzed.
+Average complexity: A (1.75)

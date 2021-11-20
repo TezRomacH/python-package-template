@@ -91,6 +91,11 @@ def print_futher_instuctions(project_name: str, github: str) -> None:
         $ git branch -M main
         $ git remote add origin https://github.com/{github}/{project_name}.git
         $ git push -u origin main
+
+    6) For running all checks and making badges:
+
+        $ make test && make lint && make check-codestyle && make mypy && make check-safety && make extrabadges
+
     """
     print(textwrap.dedent(message))
 
