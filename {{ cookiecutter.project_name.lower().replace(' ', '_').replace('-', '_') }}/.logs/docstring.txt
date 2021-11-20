@@ -1,0 +1,11 @@
+=========== Coverage for /data/aasaam/python-package-template/hooks/ ===========
+----------------------------------- Summary ------------------------------------
+| Name                     |      Total |      Miss |      Cover |      Cover% |
+|--------------------------|------------|-----------|------------|-------------|
+| __init__.py              |          1 |         0 |          1 |        100% |
+| post_gen_project.py      |          6 |         2 |          4 |         67% |
+| pre_gen_project.py       |          5 |         1 |          4 |         80% |
+|--------------------------|------------|-----------|------------|-------------|
+| TOTAL                    |         12 |         3 |          9 |       75.0% |
+---------------- RESULT: PASSED (minimum: 50.0%, actual: 75.0%) ----------------
+Generated badge to /data/aasaam/python-package-template/assets/images/interrogate_badge.svg

@@ -1,0 +1,19 @@
+============================= test session starts ==============================
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.11.0, pluggy-1.0.0
+rootdir: /data/aasaam/python-package-template, configfile: pyproject.toml
+plugins: html-3.1.1, metadata-1.11.0, cov-3.0.0
+collected 1 item
+
+tests/test_utils.py .                                                    [100%]
+
+---------- coverage: platform linux, python 3.8.10-final-0 -----------
+Name                        Stmts   Miss  Cover
+-----------------------------------------------
+hooks/__init__.py               0      0   100%
+hooks/post_gen_project.py      32     32     0%
+hooks/pre_gen_project.py       31     14    55%
+-----------------------------------------------
+TOTAL                          63     46    27%
+
+
+============================== 1 passed in 0.08s ===============================

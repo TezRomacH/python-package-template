@@ -1,0 +1,3 @@
+hooks/__init__.py - A (100.00)
+hooks/pre_gen_project.py - A (81.35)
+hooks/post_gen_project.py - A (78.00)
