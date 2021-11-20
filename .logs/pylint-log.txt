@@ -7,4 +7,3 @@ hooks/post_gen_project.py:103:0: C0116: Missing function or method docstring (mi
 
 ------------------------------------------------------------------
 Your code has been rated at 9.37/10 (previous run: 9.37/10, +0.00)
-
