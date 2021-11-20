@@ -1,14 +1,10 @@
 """Tests for hello function."""
 import pytest
-from {{cookiecutter.project_name.lower import (
-    '',
-    '-',
-    '_',
-    '_' }}.example,
-    .replace,
-    @pytest.mark.parametrize,
-    hello,
-)
+
+from {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}.example import hello
+
+
+@pytest.mark.parametrize(
     ("name", "expected"),
     [
         ("Jeanette", "Hello Jeanette!"),
