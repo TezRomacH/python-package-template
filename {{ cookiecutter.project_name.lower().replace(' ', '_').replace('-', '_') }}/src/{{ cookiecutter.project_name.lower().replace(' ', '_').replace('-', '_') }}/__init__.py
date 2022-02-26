@@ -1,5 +1,4 @@
-# type: ignore[attr-defined]
-"""{{ cookiecutter.project_description }}"""
+"""{{ cookiecutter.project_description }}."""
 
 import sys
 
@@ -10,8 +9,9 @@ else:
 
 
 def get_version() -> str:
+    """Get the version of the package."""
     try:
-        return importlib_metadata.version(__name__)
+        return str(importlib_metadata.version(__name__))
     except importlib_metadata.PackageNotFoundError:  # pragma: no cover
         return "unknown"
 

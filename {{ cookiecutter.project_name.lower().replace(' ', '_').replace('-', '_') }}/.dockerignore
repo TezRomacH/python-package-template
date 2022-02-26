@@ -2,6 +2,7 @@
 .git
 .gitignore
 .github
+.gitattributes
 
 # Docker
 .dockerignore

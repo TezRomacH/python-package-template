@@ -8,10 +8,10 @@ name = "python-package-template"
 version = "1.1.1"
 description = "Cookiecutter template for Python cli/packages"
 readme = "README.md"
-authors = ["Roman Tezikov <tez.romach@gmail.com>"]
+authors = ["Jens Roland <mail@jensroland.com>"]
 license = "MIT"
-repository = "https://github.com/TezRomacH/python-package-template"
-homepage = "https://github.com/TezRomacH/python-package-template"
+repository = "https://github.com/JensRoland/python-package-template"
+homepage = "https://github.com/JensRoland/python-package-template"
 keywords = [
     "python",
     "cookiecutter",
@@ -60,12 +60,10 @@ color = true
 exclude = '''
 /(
     \.git
-    | \.hg
     | \.mypy_cache
     | \.tox
     | \.venv
     | _build
-    | buck-out
     | build
     | dist
     | env

@@ -8,14 +8,16 @@ repos:
     rev: v2.5.0
     hooks:
       - id: check-yaml
+        name: Validate YAML syntax
         exclude: ^{{ cookiecutter.project_name }}/.github/
       - id: end-of-file-fixer
-        exclude: LICENSE
+        name: Fix End-of-File blank lines
+        exclude: ^(LICENSE|requirements.txt)$
 
   - repo: local
     hooks:
       - id: pyupgrade
-        name: pyupgrade
+        name: pyupgrade - Upgrade Python code to the latest standard
         entry: poetry run pyupgrade --py37-plus
         exclude: ^{{ cookiecutter.project_name }}/
         types: [python]
@@ -24,7 +26,7 @@ repos:
   - repo: local
     hooks:
       - id: isort
-        name: isort
+        name: isort - reorder Python imports
         entry: poetry run isort --settings-path pyproject.toml
         exclude: ^{{ cookiecutter.project_name }}/
         types: [python]
@@ -33,7 +35,7 @@ repos:
   - repo: local
     hooks:
       - id: black
-        name: black
+        name: black - reformat Python code
         entry: poetry run black --config pyproject.toml
         exclude: ^{{ cookiecutter.project_name }}/
         types: [python]

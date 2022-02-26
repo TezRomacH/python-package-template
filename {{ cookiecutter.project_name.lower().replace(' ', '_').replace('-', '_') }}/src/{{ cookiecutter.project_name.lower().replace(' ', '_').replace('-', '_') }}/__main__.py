@@ -1,4 +1,5 @@
-# type: ignore[attr-defined]
+"""{{ cookiecutter.project_description }}."""
+
 from typing import Optional
 
 from enum import Enum
@@ -12,12 +13,14 @@ from {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}
 
 
 class Color(str, Enum):
-    white = "white"
-    red = "red"
-    cyan = "cyan"
-    magenta = "magenta"
-    yellow = "yellow"
-    green = "green"
+    """Enum of CLI output colors."""
+
+    WHITE = "white"
+    RED = "red"
+    CYAN = "cyan"
+    MAGENTA = "magenta"
+    YELLOW = "yellow"
+    GREEN = "green"
 
 
 app = typer.Typer(
@@ -46,7 +49,7 @@ def main(
         case_sensitive=False,
         help="Color for print. If not specified then choice will be random.",
     ),
-    print_version: bool = typer.Option(
+    print_version: bool = typer.Option(  # pylint: disable=unused-argument
         None,
         "-v",
         "--version",
@@ -55,9 +58,9 @@ def main(
         help="Prints the version of the {{ cookiecutter.project_name }} package.",
     ),
 ) -> None:
-    """Print a greeting with a giving name."""
+    """Print a greeting with a given name."""
     if color is None:
-        color = choice(list(Color))
+        color = choice(list(Color))  # nosec - PRNG is not used for a cryptographic purpose
 
     greeting: str = hello(name)
     console.print(f"[bold {color}]{greeting}[/]")

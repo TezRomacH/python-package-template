@@ -3,8 +3,9 @@
     'BSD-3': 'License :: OSI Approved :: BSD License',
     'GNU GPL v3.0': 'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
     'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
+    'Proprietary': 'License :: Other/Proprietary License',
 } -%}
-{%- set python_version_splitted = cookiecutter.minimal_python_version.split('.') | map('int') | list -%}
+{%- set python_version_splitted = cookiecutter.minimum_python_version.split('.') | map('int') | list -%}
 # Poetry pyproject.toml: https://python-poetry.org/docs/pyproject/
 [build-system]
 requires = ["poetry_core>=1.0.0"]
@@ -17,8 +18,8 @@ description = "{{ cookiecutter.project_description }}"
 readme = "README.md"
 authors = ["{{ cookiecutter.organization }} <{{ cookiecutter.email }}>"]
 license = "{{ cookiecutter.license }}"
-repository = "https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}"
-homepage = "https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}"
+repository = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_name }}"
+homepage = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_name }}"
 
 # Keywords description https://python-poetry.org/docs/pyproject/#keywords
 keywords = []  #! Update me
@@ -35,28 +36,33 @@ classifiers = [  #! Update me
   "Programming Language :: Python :: 3.{{ minor_version }}",{% endfor %}
 ]
 
+packages = [
+    { include = "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}", from = "src" },
+]
+
 {% if cookiecutter.create_example_template == 'cli' -%}[tool.poetry.scripts]
 # Entry points for the package https://python-poetry.org/docs/pyproject/#scripts
 "{{ cookiecutter.project_name }}" = "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}.__main__:app"{%- endif %}
 
 [tool.poetry.dependencies]
-python = "^{{ cookiecutter.minimal_python_version }}"
-{% if cookiecutter.minimal_python_version == '3.7' -%}importlib_metadata = {version = "^4.5.0", python = "<3.8"}{%- endif -%}
+python = "^{{ cookiecutter.minimum_python_version }}"
+{% if cookiecutter.minimum_python_version == '3.7' -%}importlib_metadata = {version = "^4.5.0", python = "<3.8"}{%- endif -%}
 {%+ if cookiecutter.create_example_template == 'cli' %}
 typer = {extras = ["all"], version = "^0.4.0"}
 rich = "^10.14.0"
 {% endif %}
+
 [tool.poetry.dev-dependencies]
 bandit = "^1.7.1"
-black = {version = "^21.10b0", allow-prereleases = true}
+black = {version = "^22.1.0"}
 darglint = "^1.8.1"
 isort = {extras = ["colors"], version = "^5.10.1"}
-mypy = "^0.910"
+mypy = "^0.931"
 mypy-extensions = "^0.4.3"
 pre-commit = "^2.15.0"
 pydocstyle = "^6.1.1"
 pylint = "^2.11.1"
-pytest = "^6.2.5"
+pytest = "^7.0.1"
 pyupgrade = "^2.29.1"
 safety = "^1.10.3"
 coverage = "^6.1.2"
@@ -66,19 +72,18 @@ pytest-cov = "^3.0.0"
 
 [tool.black]
 # https://github.com/psf/black
-target-version = ["py{{ cookiecutter.minimal_python_version.replace('.', '') }}"]
+target-version = ["py{{ cookiecutter.minimum_python_version.replace('.', '') }}"]
 line-length = {{ cookiecutter.line_length }}
-color = true
-
 exclude = '''
 /(
     \.git
-    | \.hg
+    | \.github
     | \.mypy_cache
+    | \.nox
     | \.tox
     | \.venv
+    | \.vscode
     | _build
-    | buck-out
     | build
     | dist
     | env
@@ -88,9 +93,8 @@ exclude = '''
 
 [tool.isort]
 # https://github.com/timothycrosley/isort/
-py_version = {{ cookiecutter.minimal_python_version.replace('.', '') }}
+py_version = {{ cookiecutter.minimum_python_version.replace('.', '') }}
 line_length = {{ cookiecutter.line_length }}
-
 known_typing = ["typing", "types", "typing_extensions", "mypy", "mypy_extensions"]
 sections = ["FUTURE", "TYPING", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
 include_trailing_comma = true
@@ -98,14 +102,31 @@ profile = "black"
 multi_line_output = 3
 indent = 4
 color_output = true
+skip = [
+  '.direnv',
+  '.git',
+  '.github',
+  '.mypy_cache',
+  '.nox',
+  '.tox',
+  '.venv',
+  '.vscode',
+  '__pypackages__',
+  '_build',
+  'build',
+  'dist',
+  'node_modules',
+  'env',
+  'venv',
+  "__init__.py"  # There is a known bug in isort on __init__.py files
+]
 
 [tool.mypy]
 # https://mypy.readthedocs.io/en/latest/config_file.html#using-a-pyproject-toml-file
-python_version = {{ cookiecutter.minimal_python_version }}
+python_version = {{ cookiecutter.minimum_python_version }}
 pretty = true
 show_traceback = true
 color_output = true
-
 allow_redefinition = false
 check_untyped_defs = true
 disallow_any_generics = true
@@ -125,6 +146,10 @@ warn_unreachable = true
 warn_unused_configs = true
 warn_unused_ignores = true
 
+[tool.pylint.messages_control]
+jobs = 0  # Use all CPU cores
+max-line-length = {{ cookiecutter.line_length }}
+disable = "no-self-use"
 
 [tool.pytest.ini_options]
 # https://docs.pytest.org/en/6.2.x/customize.html#pyproject-toml

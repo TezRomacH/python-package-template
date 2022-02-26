@@ -13,7 +13,7 @@ def hello(name: str) -> str:
     Examples:
         .. code:: python
 
-            >>> hello("Roman")
-            'Hello Roman!'
+            >>> hello("Jens")
+            'Hello Jens!'
     """
     return f"Hello {name}!"

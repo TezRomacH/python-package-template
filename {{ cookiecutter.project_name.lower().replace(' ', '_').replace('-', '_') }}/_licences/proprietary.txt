@@ -1,0 +1,5 @@
+Proprietary and confidential
+Copyright (c) {% now 'utc', '%Y' %} {{ cookiecutter.organization }}
+
+All rights reserved.
+Unauthorized copying of this project via any medium is strictly prohibited.

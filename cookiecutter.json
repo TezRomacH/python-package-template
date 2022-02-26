@@ -1,15 +1,15 @@
 {
   "project_name": "python-project",
-  "project_description": "Awesome `{{ cookiecutter.project_name.lower().replace(' ', '-') }}` is a Python cli/package created with https://github.com/TezRomacH/python-package-template",
+  "project_description": "{{ cookiecutter.project_name.lower().replace(' ', '-') }} is a python project",
   "organization": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
-  "license": ["MIT", "BSD-3", "GNU GPL v3.0", "Apache Software License 2.0"],
+  "license": ["MIT", "BSD-3", "GNU GPL v3.0", "Apache Software License 2.0" ,"Proprietary"],
   "_all_python_minor_version": [7, 8, 9],
-  "minimal_python_version": [3.7, 3.8, 3.9],
-  "github_name": "{{ cookiecutter.organization.lower().replace(' ', '_').replace('-', '_') }}",
-  "email": "hello@{{ cookiecutter.organization.lower().replace(' ', '-') }}.com",
+  "minimum_python_version": [3.7, 3.8, 3.9],
+  "github_username": "{{ cookiecutter.organization.lower().replace(' ', '_').replace('-', '_') }}",
+  "email": "mail@{{ cookiecutter.organization.lower().replace(' ', '-') }}.com",
   "version": "0.1.0",
-  "line_length": 88,
-  "create_example_template": ["cli", "none"],
+  "line_length": 120,
+  "create_example_template": ["none", "cli"],
 
   "_copy_without_render": [
     "poetry.lock"

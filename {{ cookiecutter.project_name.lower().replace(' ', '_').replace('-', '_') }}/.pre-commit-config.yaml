@@ -1,6 +1,3 @@
-default_language_version:
-  python: python{{ cookiecutter.minimal_python_version }}
-
 default_stages: [commit, push]
 
 repos:
@@ -8,29 +5,37 @@ repos:
     rev: v2.5.0
     hooks:
       - id: check-yaml
+        name: Validate YAML syntax
       - id: end-of-file-fixer
-        exclude: LICENSE
+        name: Fix End-of-File blank lines
+        exclude: ^(LICENSE|requirements.txt)$
 
   - repo: local
     hooks:
       - id: pyupgrade
-        name: pyupgrade
-        entry: poetry run pyupgrade --py{{ cookiecutter.minimal_python_version.replace('.', '') }}-plus
+        name: pyupgrade - Upgrade Python code to the latest standard
+        entry: poetry run pyupgrade --py{{ cookiecutter.minimum_python_version.replace('.', '') }}-plus
         types: [python]
         language: system
+        files: ^src/
 
-  - repo: local
-    hooks:
       - id: isort
-        name: isort
+        name: isort - reorder Python imports
         entry: poetry run isort --settings-path pyproject.toml
         types: [python]
         language: system
+        require_serial: true
 
-  - repo: local
-    hooks:
       - id: black
-        name: black
+        name: black - reformat Python code
         entry: poetry run black --config pyproject.toml
         types: [python]
         language: system
+        require_serial: true
+
+      - id: pylint
+        name: pylint
+        entry: poetry run pylint
+        types: [python]
+        language: system
+        require_serial: true

@@ -5,8 +5,8 @@ default_context:
   project_description: "{{ cookiecutter.project_description }}"
   organization: "{{ cookiecutter.organization }}"
   license: "{{ cookiecutter.license }}"
-  minimal_python_version: {{ cookiecutter.minimal_python_version }}
-  github_name: "{{ cookiecutter.github_name }}"
+  python_version: {{ cookiecutter.minimum_python_version }}
+  github_username: "{{ cookiecutter.github_username }}"
   email: "{{ cookiecutter.email }}"
   version: "{{ cookiecutter.version }}"
   line_length: "{{ cookiecutter.line_length }}"
