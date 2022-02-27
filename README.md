@@ -17,7 +17,7 @@ Your next Python package needs a bleeding-edge project structure.
 ## TL;DR
 
 ```bash
-cookiecutter gh:JensRoland/python-package-template --checkout v1.1.1
+cookiecutter gh:JensRoland/python-package-template --checkout v1.2.0
 ```
 
 ## Credit, Improvements & TODOs
@@ -95,7 +95,7 @@ pip install -U cookiecutter
 then go to a directory where you want to create your project and run:
 
 ```bash
-cookiecutter gh:JensRoland/python-package-template --checkout v1.1.1
+cookiecutter gh:JensRoland/python-package-template --checkout v1.2.0
 ```
 
 ### Input variables
