@@ -63,6 +63,7 @@ def print_further_instructions(project_name: str, directory: Path, github: str) 
 
     Args:
         project_name: current project name
+        directory: Path to the project directory
         github: GitHub username
     """
     message = f"""
