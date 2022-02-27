@@ -18,7 +18,7 @@ ORGANIZATION = "{{ cookiecutter.organization }}"
 # Values to generate github repository
 GITHUB_USER = "{{ cookiecutter.github_username }}"
 
-licences_dict = {
+licenses_dict = {
     "MIT": "mit",
     "BSD-3": "bsd3",
     "GNU GPL v3.0": "gpl3",
@@ -27,15 +27,15 @@ licences_dict = {
 }
 
 
-def generate_license(directory: Path, licence: str) -> None:
+def generate_license(directory: Path, license: str) -> None:
     """Generate license file for the project.
 
     Args:
         directory: path to the project directory
-        licence: chosen licence
+        license: chosen license
     """
-    move(str(directory / "_licences" / f"{licence}.txt"), str(directory / "LICENSE"))
-    rmtree(str(directory / "_licences"))
+    move(str(directory / "_licenses" / f"{license}.txt"), str(directory / "LICENSE"))
+    rmtree(str(directory / "_licenses"))
 
 
 def remove_unused_files(directory: Path, module_name: str, need_to_remove_cli: bool) -> None:
@@ -101,7 +101,7 @@ def print_further_instructions(project_name: str, directory: Path, github: str) 
 
 
 def main() -> None:
-    generate_license(directory=PROJECT_DIRECTORY, licence=licences_dict[LICENSE])
+    generate_license(directory=PROJECT_DIRECTORY, license=licenses_dict[LICENSE])
     remove_unused_files(
         directory=PROJECT_DIRECTORY,
         module_name=PROJECT_MODULE,
