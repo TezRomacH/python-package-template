@@ -21,6 +21,14 @@ repos:
 
   - repo: local
     hooks:
+      - id: autoflake
+        name: autoflake
+        entry: poetry run autoflake --in-place --remove-all-unused-imports --ignore-init-module-imports
+        types: [ python ]
+        language: system
+
+  - repo: local
+    hooks:
       - id: isort
         name: isort
         entry: poetry run isort --settings-path pyproject.toml

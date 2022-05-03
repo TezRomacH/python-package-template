@@ -31,7 +31,7 @@ In this [cookiecutter 🍪](https://github.com/cookiecutter/cookiecutter) templa
 
 - Supports `Python 3.7` and higher.
 - [`Poetry`](https://python-poetry.org/) as a dependencies manager. See configuration in [`pyproject.toml`](https://github.com/a1d4r/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/pyproject.toml) and [`setup.cfg`](https://github.com/a1d4r/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/setup.cfg).
-- Automatic codestyle with [`black`](https://github.com/psf/black), [`isort`](https://github.com/timothycrosley/isort) and [`pyupgrade`](https://github.com/asottile/pyupgrade).
+- Automatic codestyle with [`black`](https://github.com/psf/black), [`isort`](https://github.com/timothycrosley/isort), [`autoflake`](https://github.com/myint/autoflake), and [`pyupgrade`](https://github.com/asottile/pyupgrade).
 - Ready-to-use [`pre-commit`](https://pre-commit.com/) hooks with code-formatting.
 - Type checks with [`mypy`](https://mypy.readthedocs.io); docstring checks with [`darglint`](https://github.com/terrencepreilly/darglint); security checks with [`safety`](https://github.com/pyupio/safety) and [`bandit`](https://github.com/PyCQA/bandit)
 - Testing with [`pytest`](https://docs.pytest.org/en/latest/).
@@ -182,7 +182,7 @@ make pre-commit-install
 <summary>3. Codestyle</summary>
 <p>
 
-Automatic formatting uses `pyupgrade`, `isort` and `black`.
+Automatic formatting uses `pyupgrade`, `isort`, `autoflake`, and `black`.
 
 ```bash
 make codestyle
@@ -197,7 +197,7 @@ Codestyle checks only, without rewriting files:
 make check-codestyle
 ```
 
-> Note: `check-codestyle` uses `isort`, `black` and `darglint` library
+> Note: `check-codestyle` uses `isort`, `black`, and `darglint` library
 
 Update all dev libraries to the latest version using one comand
 
