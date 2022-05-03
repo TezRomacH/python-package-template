@@ -50,10 +50,10 @@ make codestyle
 
 ```bash
 git add .
-git commit -m ":tada: Initial commit"
-git branch -M main
+git commit -m "Initial commit"
+git branch -M master
 git remote add origin https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}.git
-git push -u origin main
+git push -u origin master
 ```
 
 ### Set up bots
@@ -141,26 +141,8 @@ Articles:
 ## Installation
 
 ```bash
-pip install -U {{ cookiecutter.project_name }}
-```
-
-or install with `Poetry`
-
-```bash
 poetry add {{ cookiecutter.project_name }}
 ```
-
-{% if cookiecutter.create_example_template == 'cli' -%}Then you can run
-
-```bash
-{{ cookiecutter.project_name }} --help
-```
-
-or with `Poetry`:
-
-```bash
-poetry run {{ cookiecutter.project_name }} --help
-```{%- endif %}
 
 ### Makefile usage
 
@@ -214,7 +196,7 @@ Automatic formatting uses `pyupgrade`, `isort` and `black`.
 make codestyle
 
 # or use synonym
-make formatting
+make format
 ```
 
 Codestyle checks only, without rewriting files:
@@ -236,13 +218,18 @@ make update-dev-deps
 <p>
 
 ```bash
-make check-safety
+make check-security
 ```
 
-This command launches `Poetry` integrity checks as well as identifies security issues with `Safety` and `Bandit`.
+This command identifies security issues with `Safety` and `Bandit`.
 
 ```bash
-make check-safety
+make check-security
+```
+
+To validate `pyproject.toml` use
+```bash
+make check-poetry
 ```
 
 </p>
@@ -252,13 +239,13 @@ make check-safety
 </details>
 
 <details>
-<summary>5. Type checks</summary>
+<summary>5. Linting and type checks</summary>
 <p>
 
-Run `mypy` static type checker
+Run static linting with `pylint` and `mypy`:
 
 ```bash
-make mypy
+make static-lint
 ```
 
 </p>
@@ -290,7 +277,7 @@ make lint
 the same as:
 
 ```bash
-make test && make check-codestyle && make mypy && make check-safety
+make test && make check-codestyle && make static-lint && make check-safety
 ```
 
 </p>

@@ -35,31 +35,23 @@ classifiers = [  #! Update me
   "Programming Language :: Python :: 3.{{ minor_version }}",{% endfor %}
 ]
 
-{% if cookiecutter.create_example_template == 'cli' -%}[tool.poetry.scripts]
-# Entry points for the package https://python-poetry.org/docs/pyproject/#scripts
-"{{ cookiecutter.project_name }}" = "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}.__main__:app"{%- endif %}
-
 [tool.poetry.dependencies]
 python = "^{{ cookiecutter.minimal_python_version }}"
 {% if cookiecutter.minimal_python_version == '3.7' -%}importlib_metadata = {version = "^4.5.0", python = "<3.8"}{%- endif -%}
-{%+ if cookiecutter.create_example_template == 'cli' %}
-typer = {extras = ["all"], version = "^0.4.0"}
-rich = "^10.14.0"
-{% endif %}
 [tool.poetry.dev-dependencies]
-bandit = "^1.7.1"
-black = {version = "^21.10b0", allow-prereleases = true}
+bandit = "^1.7.4"
+black = "^22.3.0"
 darglint = "^1.8.1"
 isort = {extras = ["colors"], version = "^5.10.1"}
-mypy = "^0.910"
+mypy = "^0.950"
 mypy-extensions = "^0.4.3"
-pre-commit = "^2.15.0"
+pre-commit = "^2.18.1"
 pydocstyle = "^6.1.1"
-pylint = "^2.11.1"
-pytest = "^6.2.5"
-pyupgrade = "^2.29.1"
+pylint = "^2.13.8"
+pytest = "^7.1.2"
+pyupgrade = "^2.32.0"
 safety = "^1.10.3"
-coverage = "^6.1.2"
+coverage = "^6.3.2"
 coverage-badge = "^1.1.0"
 pytest-html = "^3.1.1"
 pytest-cov = "^3.0.0"
@@ -105,11 +97,15 @@ python_version = {{ cookiecutter.minimal_python_version }}
 pretty = true
 show_traceback = true
 color_output = true
+#plugins = [
+#  "pydantic.mypy"
+#]
 
 allow_redefinition = false
 check_untyped_defs = true
 disallow_any_generics = true
 disallow_incomplete_defs = true
+disallow_untyped_defs = true
 ignore_missing_imports = true
 implicit_reexport = false
 no_implicit_optional = true
@@ -125,11 +121,22 @@ warn_unreachable = true
 warn_unused_configs = true
 warn_unused_ignores = true
 
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+
+#[tool.pydantic-mypy]
+## https://pydantic-docs.helpmanual.io/mypy_plugin/#configuring-the-plugin
+#init_forbid_extra = true
+#init_typed = true
+#warn_required_dynamic_aliases = true
+#warn_untyped_fields = true
 
 [tool.pytest.ini_options]
 # https://docs.pytest.org/en/6.2.x/customize.html#pyproject-toml
 # Directories that are not visited by pytest collector:
-norecursedirs =["hooks", "*.egg", ".eggs", "dist", "build", "docs", ".tox", ".git", "__pycache__"]
+norecursedirs = ["hooks", "*.egg", ".eggs", "dist", "build", "docs", ".tox", ".git", "__pycache__"]
 doctest_optionflags = ["NUMBER", "NORMALIZE_WHITESPACE", "IGNORE_EXCEPTION_DETAIL"]
 
 # Extra options:
@@ -152,3 +159,61 @@ branch = true
 [coverage.report]
 fail_under = 50
 show_missing = true
+
+[tool.pylint.master]
+fail-under = 10.0
+ignore = ["CVS"]
+
+[tool.pylint.messages_control]
+max-line-length = {{ cookiecutter.line_length }}
+extension-pkg-whitelist = ["pydantic"]
+disable = [
+  "missing-docstring",
+  "unused-argument",
+  "no-value-for-parameter",
+  "no-member",
+  "no-else-return",
+  "bad-whitespace",
+  "bad-continuation",
+  "line-too-long",
+  "fixme",
+  "protected-access",
+  "too-few-public-methods",
+  "invalid-name",
+  "unspecified-encoding",
+  "no-self-argument",  # pydantic validators
+  "no-self-use",  # pydantic validators
+  "redefined-outer-name",  # pytest fixtures
+  "unused-import",  # pylint does not give a fuck about type annotations
+]
+
+[tool.pylint.refactoring]
+max-nested-blocks = 3
+
+[tool.pylint.miscellaneous]
+notes = ["FIXME", "TODO"]
+
+[tool.pylint.basic]
+class-attribute-naming-style = "any"
+class-const-naming-style = "any"
+good-names=["i", "j", "k", "e", "x", "id", "_", "pk"]
+
+[tool.pylint.format]
+max-module-lines = 300
+
+[tool.pylint.similarities]
+min-similarity-lines = 10
+ignore-docstrings = true
+ignore-comments = true
+ignore-imports = true
+
+[tool.pylint.design]
+max-args = 10
+max-attributes = 10
+max-statements = 30
+
+[tool.pylint.exceptions]
+overgeneral-exceptions = ["BaseException", "Exception"]
+
+[tool.bandit]
+skips = ["B101"]

@@ -1,11 +1,14 @@
 #* Variables
 SHELL := /usr/bin/env bash
 PYTHON := python
-PYTHONPATH := `pwd`
 
 #* Docker variables
 IMAGE := {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}
 VERSION := latest
+
+#* Directories with source code
+CODE = {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }} tests
+TESTS = tests
 
 #* Poetry
 .PHONY: poetry-download
@@ -19,9 +22,8 @@ poetry-remove:
 #* Installation
 .PHONY: install
 install:
-	poetry lock -n && poetry export --without-hashes > requirements.txt
+	poetry lock -n
 	poetry install -n
-	-poetry run mypy --install-types --non-interactive ./
 
 .PHONY: pre-commit-install
 pre-commit-install:
@@ -31,36 +33,67 @@ pre-commit-install:
 .PHONY: codestyle
 codestyle:
 	poetry run pyupgrade --exit-zero-even-if-changed --py{{ cookiecutter.minimal_python_version.replace('.', '') }}-plus **/*.py
-	poetry run isort --settings-path pyproject.toml ./
-	poetry run black --config pyproject.toml ./
+	poetry run isort --settings-path pyproject.toml $(CODE)
+	poetry run black --config pyproject.toml $(CODE)
 
-.PHONY: formatting
-formatting: codestyle
+.PHONY: format
+format: codestyle
 
-#* Linting
+#* Test
 .PHONY: test
 test:
-	PYTHONPATH=$(PYTHONPATH) poetry run pytest -c pyproject.toml --cov-report=html --cov={{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }} tests/
+	poetry run pytest -c pyproject.toml --cov-report=html --cov={{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }} $(TESTS)
 	poetry run coverage-badge -o assets/images/coverage.svg -f
 
-.PHONY: check-codestyle
-check-codestyle:
-	poetry run isort --diff --check-only --settings-path pyproject.toml ./
-	poetry run black --diff --check --config pyproject.toml ./
-	poetry run darglint --verbosity 2 {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }} tests
+# Validate pyproject.toml
+.PHONY: check-poetry
+check-poetry:
+	poetry check
 
-.PHONY: mypy
-mypy:
-	poetry run mypy --config-file pyproject.toml ./
+#* Check code style
+.PHONY: check-isort
+check-isort:
+	poetry run isort --diff --check-only --settings-path pyproject.toml $(CODE)
+
+.PHONY: check-black
+check-black:
+	poetry run black --diff --check --config pyproject.toml $(CODE)
+
+.PHONY: check-darglint
+check-darglint:
+	poetry run darglint --verbosity 2 $(CODE)
+
+.PHONY: check-codestyle
+check-codestyle: check-isort check-black check-darglint
+
+#* Static linters
+
+.PHONY: check-pylint
+check-pylint:
+	poetry run pylint --rcfile=pyproject.toml $(CODE)
+
+.PHONY: check-mypy
+check-mypy:
+	poetry run mypy --install-types --non-interactive --config-file pyproject.toml $(CODE)
+
+.PHONY: static-lint
+static-lint: check-pylint check-mypy
+
+#* Check security issues
+
+.PHONY: check-bandit
+check-bandit:
+	poetry run bandit -ll --recursive $(CODE)
 
 .PHONY: check-safety
 check-safety:
-	poetry check
 	poetry run safety check --full-report
-	poetry run bandit -ll --recursive {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }} tests
+
+.PHONY: check-security
+check-security: check-safety check-bandit
 
 .PHONY: lint
-lint: test check-codestyle mypy check-safety
+lint: check-poetry check-codestyle static-lint check-security
 
 .PHONY: update-dev-deps
 update-dev-deps:

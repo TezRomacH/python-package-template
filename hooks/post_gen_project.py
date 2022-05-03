@@ -9,7 +9,6 @@ from shutil import move, rmtree
 PROJECT_DIRECTORY = Path.cwd().absolute()
 PROJECT_NAME = "{{ cookiecutter.project_name }}"
 PROJECT_MODULE = "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}"
-CREATE_EXAMPLE_TEMPLATE = "{{ cookiecutter.create_example_template }}"
 
 # Values to generate correct license
 LICENSE = "{{ cookiecutter.license }}"
@@ -35,26 +34,6 @@ def generate_license(directory: Path, licence: str) -> None:
     """
     move(str(directory / "_licences" / f"{licence}.txt"), str(directory / "LICENSE"))
     rmtree(str(directory / "_licences"))
-
-
-def remove_unused_files(directory: Path, module_name: str, need_to_remove_cli: bool) -> None:
-    """Remove unused files.
-
-    Args:
-        directory: path to the project directory
-        module_name: project module name
-        need_to_remove_cli: flag for removing CLI related files
-    """
-    files_to_delete: List[Path] = []
-
-    def _cli_specific_files() -> List[Path]:
-        return [directory / module_name / "__main__.py"]
-
-    if need_to_remove_cli:
-        files_to_delete.extend(_cli_specific_files())
-
-    for path in files_to_delete:
-        path.unlink()
 
 
 def print_futher_instuctions(project_name: str, github: str) -> None:
@@ -97,11 +76,6 @@ def print_futher_instuctions(project_name: str, github: str) -> None:
 
 def main() -> None:
     generate_license(directory=PROJECT_DIRECTORY, licence=licences_dict[LICENSE])
-    remove_unused_files(
-        directory=PROJECT_DIRECTORY,
-        module_name=PROJECT_MODULE,
-        need_to_remove_cli=CREATE_EXAMPLE_TEMPLATE != "cli",
-    )
     print_futher_instuctions(project_name=PROJECT_NAME, github=GITHUB_USER)
 
 

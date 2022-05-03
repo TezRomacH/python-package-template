@@ -10,4 +10,3 @@ default_context:
   email: "{{ cookiecutter.email }}"
   version: "{{ cookiecutter.version }}"
   line_length: "{{ cookiecutter.line_length }}"
-  create_example_template: "{{ cookiecutter.create_example_template }}"
