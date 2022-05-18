@@ -144,12 +144,23 @@ poetry run <project_name> --name Roman
 
 ### Building and releasing your package
 
-Building a new version of the application contains steps:
+If you don't want to release your project to PyPI, simply remove `.github/workflows/publish-to-pypi.yml`.
+
+To release your project, do the following steps:
+
+One time setup:
+- Sign up to the [test PyPI](https://test.pypi.org/account/register/) and [production PyPI](https://pypi.org/account/register/). Registration is free.
+- Create API tokens for both the test and production account. Tokens can be created under [Account Settings](https://test.pypi.org/manage/account/).
+- Store the tokes in your GitHub project: Settings -> Secrets -> Actions 
+- Name the secrets `TEST_PYPI_PASSWORD` and `PROD_PYPI_PASSWORD` respectively.
+- Once you release the first version of your application (see below), you can create API tokes with a narrow scope of just this project and replace the GitHub tokens. 
+
+Releasing a new version of the application contains these steps:
 
 - Bump the version of your package `poetry version <version>`. You can pass the new version explicitly, or a rule such as `major`, `minor`, or `patch`. For more details, refer to the [Semantic Versions](https://semver.org/) standard.
-- Make a commit to `GitHub`.
-- Create a `GitHub release`.
-- And... publish 🙂 `poetry publish --build`
+- Make a commit to any feature branch of `GitHub`. The `build-and-publish-test` job would publish your version to the [test PyPI](https://test.pypi.org/).
+- Create a tag, by creating a `GitHub release`. The `build-and-publish-production` job would publish your version to the [production PyPI](https://pypi.org/).
+
 
 ### Makefile usage
 
@@ -394,7 +405,6 @@ This template will continue to develop and follow the bleeding edge new tools an
 Here is a list of things that have yet to be implemented:
 
 - Tests coverage reporting ([`Codecov`](https://github.com/marketplace/codecov) ?).
-- Auto uploading your package to [`PyPI`](https://pypi.org/) when new GitHub release is created.
 - Automatic creation and deployment of documentation to GitHub pages. I look at [`MkDocs`](https://www.mkdocs.org/) with [Material Design theme](https://github.com/squidfunk/mkdocs-material) and [`mkdocstrings`](https://github.com/pawamoy/mkdocstrings).
 - Code metrics with [`Radon`](https://github.com/rubik/radon).
 - Docstring coverage with [`interrogate`](https://github.com/econchick/interrogate)

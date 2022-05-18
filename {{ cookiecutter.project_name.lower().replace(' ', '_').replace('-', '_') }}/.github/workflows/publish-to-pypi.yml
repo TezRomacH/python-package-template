@@ -1,0 +1,87 @@
+{% raw %}name: Publish python distribution to PyPI
+on: push
+
+jobs:
+  build-and-publish-test:
+    name: Build and publish python distribution to test PyPI
+    runs-on: ubuntu-18.04
+    if: "!(startsWith(github.event.ref, 'refs/tags') || github.ref == 'refs/heads/main')"
+    continue-on-error: true
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.8
+      - name: Setup pip
+        run: python -m pip install pip==21.0.1
+      - name: Build and publish to pypi
+        uses: JRubics/poetry-publish@v1.10
+        with:
+          python_version: '3.8.10'
+          poetry_version: "==1.1.4"
+          repository_name: '{% endraw %}{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}{% raw %}'
+          repository_url: 'https://test.pypi.org/legacy/'
+          pypi_token: ${{ secrets.test_pypi_password }}
+        continue-on-error: true
+      - name: Sleep to allow pypi index to update with the new version
+        run: sleep 5m
+      - name: Install poetry
+        run: make poetry-download
+      - name: Cleanup
+        run: |
+          rm -r {% endraw %}{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}{% raw %}
+          pip uninstall {% endraw %}{{ cookiecutter.project_name }}{% raw %}
+      - name: Perform System tests
+        run: |
+          poetry export --dev --without-hashes -f requirements.txt --output test-requirements.txt
+          pip install -r test-requirements.txt
+          pip install -i https://test.pypi.org/simple/ {% endraw %}{{ cookiecutter.project_name }}{% raw %}
+          python -m pytest -vvv
+          export INSTALLED=`pip freeze | grep {% endraw %}{{ cookiecutter.project_name }}{% raw %}`
+          echo "installed is: $INSTALLED, and we care about ${INSTALLED:21}"
+          export EXPECTED=`poetry version --short`
+          echo "expected is: $EXPECTED"
+          if [ "${INSTALLED:21}" != "$EXPECTED" ]; then exit 1; fi
+
+  build-and-publish-production:
+    name: Build and publish python distribution to production PyPI
+    runs-on: ubuntu-18.04
+    if: startsWith(github.event.ref, 'refs/tags')
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.8
+      - name: Setup pip
+        run: python -m pip install pip==21.0.1
+      - name: Build and publish to pypi
+        uses: JRubics/poetry-publish@v1.10
+        with:
+          python_version: '3.8.10'
+          poetry_version: "==1.1.4"
+          repository_name: '{% endraw %}{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}{% raw %}'
+          pypi_token: ${{ secrets.prod_pypi_password }}
+        continue-on-error: true
+      - name: Sleep to allow pypi index to update with the new version
+        run: sleep 5m
+      - name: Install poetry
+        run: make poetry-download
+      - name: Cleanup
+        run: |
+          rm -r {% endraw %}{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}{% raw %}
+          pip uninstall {% endraw %}{{ cookiecutter.project_name }}{% raw %}
+      - name: Perform System tests
+        run: |
+          poetry export --dev --without-hashes -f requirements.txt --output test-requirements.txt
+          pip install -r test-requirements.txt
+          pip install {% endraw %}{{ cookiecutter.project_name }}{% raw %}
+          python -m pytest -vvv -k
+          export INSTALLED=`pip freeze | grep {% endraw %}{{ cookiecutter.project_name }}{% raw %}`
+          echo "installed is: $INSTALLED, and we care about ${INSTALLED:21}"
+          export EXPECTED=`poetry version --short`
+          echo "expected is: $EXPECTED"
+          if [ "${INSTALLED:21}" != "$EXPECTED" ]; then exit 1; fi{% endraw %}
