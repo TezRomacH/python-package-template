@@ -81,12 +81,22 @@ etc
 
 ### Building and releasing your package
 
-Building a new version of the application contains steps:
+If you don't want to release your project to PyPI, simply remove `.github/workflows/publish-to-pypi.yml`.
+
+To release your project, do the following steps:
+
+One time setup:
+- Sign up to the [test PyPI](https://test.pypi.org/account/register/) and [production PyPI](https://pypi.org/account/register/). Registration is free.
+- Create API tokens for both the test and production account. Tokens can be created under [Account Settings](https://test.pypi.org/manage/account/). Use Entire account scope at first. 
+- Store the tokes in your GitHub project: [Settings -> Secrets -> Actions](https://github.com/{{ cookiecutter.github_name }}/{{ cookiecutter.project_name }}/settings/secrets/actions)
+- Name the secrets `TEST_PYPI_PASSWORD` and `PROD_PYPI_PASSWORD` respectively.
+- Once you release the first version of your application (see below), you can create API tokes with a narrow scope of just this project and replace the GitHub tokens. 
+
+Releasing a new version of the application contains these steps:
 
 - Bump the version of your package `poetry version <version>`. You can pass the new version explicitly, or a rule such as `major`, `minor`, or `patch`. For more details, refer to the [Semantic Versions](https://semver.org/) standard.
-- Make a commit to `GitHub`.
-- Create a `GitHub release`.
-- And... publish 🙂 `poetry publish --build`
+- Make a commit to any feature branch of `GitHub`. The `build-and-publish-test` job would publish your version to the [test PyPI](https://test.pypi.org/).
+- Create a tag, by creating a `GitHub release`. The `build-and-publish-production` job would publish your version to the [production PyPI](https://pypi.org/).
 
 ## 🎯 What's next
 
