@@ -1,0 +1,10 @@
+************* Module hooks.pre_gen_project
+hooks/pre_gen_project.py:78:0: C0325: Unnecessary parens after 'not' keyword (superfluous-parens)
+hooks/pre_gen_project.py:78:4: R1720: Unnecessary "else" after "raise" (no-else-raise)
+hooks/pre_gen_project.py:85:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module hooks.post_gen_project
+hooks/post_gen_project.py:103:0: C0116: Missing function or method docstring (missing-function-docstring)
+
+------------------------------------------------------------------
+Your code has been rated at 9.37/10 (previous run: 9.37/10, +0.00)
+

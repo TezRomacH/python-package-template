@@ -1,0 +1,4 @@
+[MASTER]
+init-hook='import sys; sys.path.append(".")'
+[MESSAGES CONTROL]
+disable=W0703, R0912, R0913, R0914, R0915, E0401, R0801

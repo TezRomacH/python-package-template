@@ -5,12 +5,18 @@
 [![Build status](https://github.com/TezRomacH/python-package-template/workflows/build/badge.svg?branch=master&event=push)](https://github.com/TezRomacH/python-package-template/actions?query=workflow%3Abuild)
 [![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/TezRomacH/python-package-template/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
 [![🚀 Your next Python package needs a bleeding-edge project structure.](https://img.shields.io/badge/python--package--template-%F0%9F%9A%80-brightgreen)](https://github.com/TezRomacH/python-package-template)
-
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/TezRomacH/python-package-template/blob/master/.pre-commit-config.yaml)
 [![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/TezRomacH/python-package-template/releases)
 [![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/TezRomacH/python-package-template/blob/master/LICENSE)
-![Coverage Report](assets/images/coverage.svg)
+
+[![coverage report](assets/images/coverage.svg)](.logs/coverage.txt)
+[![maintainability](assets/images/maintainability.svg)](.logs/maintainability.txt)
+[![complexity](assets/images/complexity.svg)](.logs/complexity.txt)
+[![static analysis](assets/images/mypy.svg)](.logs/mypy.txt)
+[![vulnerabilities](assets/images/vulnerabilities.svg)](.logs/safety.txt)
+[![lint report](assets/images/pylint.svg)](.logs/pylint-log.txt)
+[![docstring coverage](assets/images/interrogate_badge.svg)](.logs/docstring.txt)
 
 Your next Python package needs a bleeding-edge project structure.
 </div>
@@ -86,6 +92,7 @@ The input variables, with their default values:
 | `email`                  | based on the `organization` | Email for `CODE_OF_CONDUCT.md`, `SECURITY.md` files and to specify the ownership of the project in `pyproject.toml`. |
 | `version`                | `0.1.0`                     | Initial version of the package. Make sure it follows the [Semantic Versions](https://semver.org/) specification. |
 | `line_length`            | 88                         | The max length per line (used for codestyle with `black` and `isort`). NOTE: This value must be between 50 and 300. |
+| `docstyle_convention`    | `google`                   | The convention of docstrings (used for docstring styles with pydocstyle). NOTE. This value must be pep257, numpy or google. |
 | `create_example_template` | `cli`                      | If `cli` is chosen generator will create simple CLI application with [`Typer`](https://github.com/tiangolo/typer) and [`Rich`](https://github.com/willmcgugan/rich) libraries. One of `cli`, `none` |
 
 All input values will be saved in the `cookiecutter-config-file.yml` file so that you won't lose them. 😉
@@ -267,6 +274,18 @@ make test
 </details>
 
 <details>
+<summary>*. Making badges</summary>
+<p>
+
+
+```bash
+make extrabadges
+```
+
+</p>
+</details>
+
+<details>
 <summary>7. All linters</summary>
 <p>
 
@@ -393,11 +412,8 @@ This template will continue to develop and follow the bleeding edge new tools an
 
 Here is a list of things that have yet to be implemented:
 
-- Tests coverage reporting ([`Codecov`](https://github.com/marketplace/codecov) ?).
 - Auto uploading your package to [`PyPI`](https://pypi.org/) when new GitHub release is created.
 - Automatic creation and deployment of documentation to GitHub pages. I look at [`MkDocs`](https://www.mkdocs.org/) with [Material Design theme](https://github.com/squidfunk/mkdocs-material) and [`mkdocstrings`](https://github.com/pawamoy/mkdocstrings).
-- Code metrics with [`Radon`](https://github.com/rubik/radon).
-- Docstring coverage with [`interrogate`](https://github.com/econchick/interrogate)
 - `Dockerfile` linting with [`dockerfilelint`](https://github.com/replicatedhq/dockerfilelint).
 - [Hall of fame](https://github.com/sourcerer-io/hall-of-fame) from `Sourcerer`.
 - Some advanced Python linting (?).

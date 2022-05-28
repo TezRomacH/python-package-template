@@ -1,4 +1,5 @@
 """This module is called before project is created."""
+from typing import Optional
 
 import re
 import sys
@@ -62,7 +63,7 @@ def validate_semver(version: str) -> None:
         raise ValueError(message)
 
 
-def validate_line_length(line_length: int) -> None:
+def validate_line_length(line_length: int) -> Optional[str]:
     """Validate line_length parameter. Length should be between 50 and 300.
 
     Args:
@@ -70,10 +71,15 @@ def validate_line_length(line_length: int) -> None:
 
     Raises:
         ValueError: If line_length isn't between 50 and 300
+
+    Returns:
+        None.
     """
     if not (50 <= line_length <= 300):
         message = f"ERROR: line_length must be between 50 and 300. Got `{line_length}`."
         raise ValueError(message)
+    else:
+        return None
 
 
 def main() -> None:

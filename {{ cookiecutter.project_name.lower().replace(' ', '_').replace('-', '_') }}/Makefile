@@ -43,6 +43,11 @@ test:
 	PYTHONPATH=$(PYTHONPATH) poetry run pytest -c pyproject.toml --cov-report=html --cov={{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }} tests/
 	poetry run coverage-badge -o assets/images/coverage.svg -f
 
+.PHONY: extrabadges
+extrabadges:
+	$(SHELL) -c 'chmod u+x+r+w .shell/*.sh'
+	$(SHELL) -c 'chmod u+x+r+w .shell/badges.sh; . .shell/badges.sh'
+
 .PHONY: check-codestyle
 check-codestyle:
 	poetry run isort --diff --check-only --settings-path pyproject.toml ./
