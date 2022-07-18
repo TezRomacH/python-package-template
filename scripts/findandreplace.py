@@ -28,5 +28,5 @@ if __name__ == "__main__":
         "../.",
         "master",
         "main",
-        "Makefile", # "*.md", "*.json", "*.toml",
+        "*.py", # "*.md", "*.json", "*.toml",
     )
