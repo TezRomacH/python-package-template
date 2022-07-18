@@ -1,6 +1,6 @@
 {
   "project_name": "python-project",
-  "project_description": "Awesome `{{ cookiecutter.project_name.lower().replace(' ', '-') }}` is a Python cli/package created with https://github.com/TezRomacH/python-package-template",
+  "project_description": "Awesome `{{ cookiecutter.project_name.lower().replace(' ', '-') }}` is a Python cli/package created with https://github.com/william-cass-wright/cookiecutter-pypackage-slim",
   "organization": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "license": ["MIT", "BSD-3", "GNU GPL v3.0", "Apache Software License 2.0"],
   "_all_python_minor_version": [7, 8, 9],
