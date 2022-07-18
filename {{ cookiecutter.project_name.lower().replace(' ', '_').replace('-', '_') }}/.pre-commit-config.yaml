@@ -27,10 +27,10 @@ repos:
         types: [python]
         language: system
 
-  - repo: local
-    hooks:
-      - id: black
-        name: black
-        entry: poetry run black --config pyproject.toml
-        types: [python]
-        language: system
+  # - repo: local
+  #   hooks:
+  #     - id: black
+  #       name: black
+  #       entry: poetry run black --config pyproject.toml
+  #       types: [python]
+  #       language: system
