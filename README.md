@@ -2,14 +2,14 @@
 
 <div align="center">
 
-[![Build status](https://github.com/TezRomacH/python-package-template/workflows/build/badge.svg?branch=master&event=push)](https://github.com/TezRomacH/python-package-template/actions?query=workflow%3Abuild)
-[![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/TezRomacH/python-package-template/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
-[![🚀 Your next Python package needs a bleeding-edge project structure.](https://img.shields.io/badge/python--package--template-%F0%9F%9A%80-brightgreen)](https://github.com/TezRomacH/python-package-template)
+[![Build status](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/workflows/build/badge.svg?branch=master&event=push)](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/actions?query=workflow%3Abuild)
+[![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
+[![🚀 Your next Python package needs a bleeding-edge project structure.](https://img.shields.io/badge/python--package--template-%F0%9F%9A%80-brightgreen)](https://github.com/william-cass-wright/cookiecutter-pypackage-slim)
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/TezRomacH/python-package-template/blob/master/.pre-commit-config.yaml)
-[![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/TezRomacH/python-package-template/releases)
-[![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/TezRomacH/python-package-template/blob/master/LICENSE)
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/blob/master/.pre-commit-config.yaml)
+[![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/releases)
+[![License](https://img.shields.io/github/license/william-cass-wright/cookiecutter-pypackage-slim)](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/blob/master/LICENSE)
 ![Coverage Report](assets/images/coverage.svg)
 
 Your next Python package needs a bleeding-edge project structure.
@@ -18,7 +18,7 @@ Your next Python package needs a bleeding-edge project structure.
 ## TL;DR
 
 ```bash
-cookiecutter gh:TezRomacH/python-package-template --checkout v1.1.1
+cookiecutter gh:william-cass-wright/cookiecutter-pypackage-slim --checkout v1.1.1
 ```
 
 > All you need is the latest version of cookiecutter 😉
@@ -30,27 +30,27 @@ In this [cookiecutter 🍪](https://github.com/cookiecutter/cookiecutter) templa
 ### Development features
 
 - Supports `Python 3.7` and higher.
-- [`Poetry`](https://python-poetry.org/) as a dependencies manager. See configuration in [`pyproject.toml`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/pyproject.toml) and [`setup.cfg`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/setup.cfg).
+- [`Poetry`](https://python-poetry.org/) as a dependencies manager. See configuration in [`pyproject.toml`](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/pyproject.toml) and [`setup.cfg`](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/setup.cfg).
 - Automatic codestyle with [`black`](https://github.com/psf/black), [`isort`](https://github.com/timothycrosley/isort) and [`pyupgrade`](https://github.com/asottile/pyupgrade).
 - Ready-to-use [`pre-commit`](https://pre-commit.com/) hooks with code-formatting.
 - Type checks with [`mypy`](https://mypy.readthedocs.io); docstring checks with [`darglint`](https://github.com/terrencepreilly/darglint); security checks with [`safety`](https://github.com/pyupio/safety) and [`bandit`](https://github.com/PyCQA/bandit)
 - Testing with [`pytest`](https://docs.pytest.org/en/latest/).
-- Ready-to-use [`.editorconfig`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.editorconfig), [`.dockerignore`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.dockerignore), and [`.gitignore`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.gitignore). You don't have to worry about those things.
+- Ready-to-use [`.editorconfig`](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.editorconfig), [`.dockerignore`](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.dockerignore), and [`.gitignore`](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.gitignore). You don't have to worry about those things.
 
 ### Deployment features
 
 - `GitHub` integration: issue and pr templates.
-- `Github Actions` with predefined [build workflow](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/workflows/build.yml) as the default CI/CD.
-- Everything is already set up for security checks, codestyle checks, code formatting, testing, linting, docker builds, etc with [`Makefile`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/Makefile#L89). More details in [makefile-usage](#makefile-usage).
-- [Dockerfile](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/docker/Dockerfile) for your package.
+- `Github Actions` with predefined [build workflow](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/workflows/build.yml) as the default CI/CD.
+- Everything is already set up for security checks, codestyle checks, code formatting, testing, linting, docker builds, etc with [`Makefile`](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/Makefile#L89). More details in [makefile-usage](#makefile-usage).
+- [Dockerfile](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/docker/Dockerfile) for your package.
 - Always up-to-date dependencies with [`@dependabot`](https://dependabot.com/). You only need to [enable it](https://docs.github.com/en/github/administering-a-repository/enabling-and-disabling-version-updates#enabling-github-dependabot-version-updates).
-- Automatic release notes with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). You may see the list of labels in [`release-drafter.yml`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/release-drafter.yml). Works perfectly with [Semantic Versions](https://semver.org/) specification.
+- Automatic release notes with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter). You may see the list of labels in [`release-drafter.yml`](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/release-drafter.yml). Works perfectly with [Semantic Versions](https://semver.org/) specification.
 
 ### Open source community features
 
-- Ready-to-use [Pull Requests templates](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/PULL_REQUEST_TEMPLATE.md) and several [Issue templates](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/ISSUE_TEMPLATE).
+- Ready-to-use [Pull Requests templates](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/PULL_REQUEST_TEMPLATE.md) and several [Issue templates](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/ISSUE_TEMPLATE).
 - Files such as: `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, and `SECURITY.md` are generated automatically.
-- [`Stale bot`](https://github.com/apps/stale) that closes abandoned issues after a period of inactivity. (You will only [need to setup free plan](https://github.com/marketplace/stale)). Configuration is [here](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/.stale.yml).
+- [`Stale bot`](https://github.com/apps/stale) that closes abandoned issues after a period of inactivity. (You will only [need to setup free plan](https://github.com/marketplace/stale)). Configuration is [here](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/.stale.yml).
 - [Semantic Versions](https://semver.org/) specification with [`Release Drafter`](https://github.com/marketplace/actions/release-drafter).
 
 ## 🤯 How to use it
@@ -66,7 +66,7 @@ pip install -U cookiecutter
 then go to a directory where you want to create your project and run:
 
 ```bash
-cookiecutter gh:TezRomacH/python-package-template --checkout v1.1.1
+cookiecutter gh:william-cass-wright/cookiecutter-pypackage-slim --checkout v1.1.1
 ```
 
 ### Input variables
@@ -92,11 +92,11 @@ All input values will be saved in the `cookiecutter-config-file.yml` file so tha
 
 #### Demo
 
-[![Demo of github.com/TezRomacH/python-package-template](https://asciinema.org/a/422052.svg)](https://asciinema.org/a/422052)
+[![Demo of github.com/william-cass-wright/cookiecutter-pypackage-slim](https://asciinema.org/a/422052.svg)](https://asciinema.org/a/422052)
 
 ### More details
 
-Your project will contain `README.md` file with instructions for development, deployment, etc. You can read [the project README.md template](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D) before.
+Your project will contain `README.md` file with instructions for development, deployment, etc. You can read [the project README.md template](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D) before.
 
 ### Initial set up
 
@@ -104,7 +104,7 @@ Your project will contain `README.md` file with instructions for development, de
 
 By running `make install`
 
-After you create a project, it will appear in your directory, and will display [a message about how to initialize the project](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D#very-first-steps).
+After you create a project, it will appear in your directory, and will display [a message about how to initialize the project](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D#very-first-steps).
 
 #### Initialize `pre-commit`
 
@@ -153,7 +153,7 @@ Building a new version of the application contains steps:
 
 ### Makefile usage
 
-[`Makefile`](https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/Makefile) contains a lot of functions for faster development.
+[`Makefile`](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/Makefile) contains a lot of functions for faster development.
 
 <details>
 <summary>1. Download and remove Poetry</summary>
@@ -305,7 +305,7 @@ Remove docker image with
 make docker-remove
 ```
 
-More information [about docker](https://github.com/TezRomacH/python-package-template/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/docker).
+More information [about docker](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/tree/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/docker).
 
 </p>
 </details>
@@ -370,7 +370,7 @@ Articles:
 
 ## 📈 Releases
 
-You can see the list of available releases on the [GitHub Releases](https://github.com/TezRomacH/python-package-template/releases) page.
+You can see the list of available releases on the [GitHub Releases](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/releases) page.
 
 We follow [Semantic Versions](https://semver.org/) specification.
 
@@ -407,9 +407,9 @@ Here is a list of things that have yet to be implemented:
 
 ## 🛡 License
 
-[![License](https://img.shields.io/github/license/TezRomacH/python-package-template)](https://github.com/TezRomacH/python-package-template/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/william-cass-wright/cookiecutter-pypackage-slim)](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/blob/master/LICENSE)
 
-This project is licensed under the terms of the `MIT` license. See [LICENSE](https://github.com/TezRomacH/python-package-template/blob/master/LICENSE) for more details.
+This project is licensed under the terms of the `MIT` license. See [LICENSE](https://github.com/william-cass-wright/cookiecutter-pypackage-slim/blob/master/LICENSE) for more details.
 
 ## 🏅 Acknowledgements
 
@@ -439,12 +439,12 @@ Give them your ⭐️, these resources are amazing! 😉
   year = {2020},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://github.com/TezRomacH/python-package-template}}
+  howpublished = {\url{https://github.com/william-cass-wright/cookiecutter-pypackage-slim}}
 }
 ```
 
-Markdown source for the badge [![🚀 Your next Python package needs a bleeding-edge project structure.](https://img.shields.io/badge/python--package--template-%F0%9F%9A%80-brightgreen)](https://github.com/TezRomacH/python-package-template)
+Markdown source for the badge [![🚀 Your next Python package needs a bleeding-edge project structure.](https://img.shields.io/badge/python--package--template-%F0%9F%9A%80-brightgreen)](https://github.com/william-cass-wright/cookiecutter-pypackage-slim)
 
 ```markdown
-[![🚀 Your next Python package needs a bleeding-edge project structure.](https://img.shields.io/badge/python--package--template-%F0%9F%9A%80-brightgreen)](https://github.com/TezRomacH/python-package-template)
+[![🚀 Your next Python package needs a bleeding-edge project structure.](https://img.shields.io/badge/python--package--template-%F0%9F%9A%80-brightgreen)](https://github.com/william-cass-wright/cookiecutter-pypackage-slim)
 ```
