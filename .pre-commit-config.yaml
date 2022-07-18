@@ -1,5 +1,5 @@
 default_language_version:
-  python: python3.7
+  python: python3.9
 
 default_stages: [commit, push]
 
@@ -30,11 +30,11 @@ repos:
         types: [python]
         language: system
 
-  - repo: local
-    hooks:
-      - id: black
-        name: black
-        entry: poetry run black --config pyproject.toml
-        exclude: ^{{ cookiecutter.project_name }}/
-        types: [python]
-        language: system
+  # - repo: local
+  #   hooks:
+  #     - id: black
+  #       name: black
+  #       entry: poetry run black --config pyproject.toml
+  #       exclude: ^{{ cookiecutter.project_name }}/
+  #       types: [python]
+  #       language: system
