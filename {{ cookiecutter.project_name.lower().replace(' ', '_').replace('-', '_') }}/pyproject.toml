@@ -10,6 +10,7 @@
 requires = ["poetry_core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
+[tool]
 [tool.poetry]
 name = "{{ cookiecutter.project_name }}"
 version = "{{ cookiecutter.version }}"
@@ -46,7 +47,6 @@ python = "^{{ cookiecutter.minimal_python_version }}"
 typer = {extras = ["all"], version = "^0.4.0"}
 rich = "^10.14.0"
 {% endif %}
-bump2version = "^1.0.1"
 [tool.poetry.dev-dependencies]
 bandit = "^1.7.1"
 black = {version = "^21.10b0", allow-prereleases = true}
@@ -64,6 +64,8 @@ coverage = "^6.1.2"
 coverage-badge = "^1.1.0"
 pytest-html = "^3.1.1"
 pytest-cov = "^3.0.0"
+toml = {version = "^0.10.2", optional = true}
+bump2version = {version = "^1.0.1", optional = true}
 
 [tool.black]
 # https://github.com/psf/black
