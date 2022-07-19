@@ -7,22 +7,22 @@ updates:
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     allow:
       - dependency-type: "all"
     commit-message:
       prefix: ":arrow_up:"
-    open-pull-requests-limit: 50
+    open-pull-requests-limit: 10
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     allow:
       - dependency-type: "all"
     commit-message:
       prefix: ":arrow_up:"
-    open-pull-requests-limit: 50
+    open-pull-requests-limit: 10
 
   - package-ecosystem: "docker"
     directory: "/docker"
@@ -32,4 +32,4 @@ updates:
       - dependency-type: "all"
     commit-message:
       prefix: ":arrow_up:"
-    open-pull-requests-limit: 50
+    open-pull-requests-limit: 10

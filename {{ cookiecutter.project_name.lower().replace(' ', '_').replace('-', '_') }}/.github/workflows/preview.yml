@@ -1,4 +1,4 @@
-{% raw %}# This is a basic workflow to help you get started with Actions
+# This is a basic workflow to help you get started with Actions
 
 name: stage & preview workflow
 
@@ -18,7 +18,7 @@ jobs:
 
     strategy:
       matrix:
-        python-versions: [ 3.8 ]
+        python-versions: [ 3.9 ]
 
     steps:
       - uses: actions/checkout@v2
@@ -48,4 +48,3 @@ jobs:
           password: ${{ secrets.TEST_PYPI_API_TOKEN}}
           repository_url: https://test.pypi.org/legacy/
           skip_existing: true
-{% endraw %}

@@ -1,13 +1,23 @@
-{% raw %}name: build
+name: build
 
-on: [push, pull_request]
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["{% endraw %}{{ cookiecutter.minimal_python_version }}"{%- if cookiecutter.minimal_python_version != '3.9' -%}, "3.9"{% endif %}]{% raw %}
+        python-version: ["3.9"]
 
     steps:
     - uses: actions/checkout@v2
@@ -29,9 +39,9 @@ jobs:
         poetry config virtualenvs.in-project true
         poetry install
 
-    - name: Run style checks
-      run: |
-        make check-codestyle
+    # - name: Run style checks
+    #   run: |
+    #     make check-codestyle
 
     - name: Run tests
       run: |
@@ -39,4 +49,4 @@ jobs:
 
     # - name: Run safety checks
     #   run: |
-    #     make check-safety{% endraw %}
+    #     make check-safety

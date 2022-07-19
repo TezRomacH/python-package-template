@@ -4,7 +4,7 @@
     'GNU GPL v3.0': 'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
     'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
 } -%}
-{%- set python_version_splitted = cookiecutter.minimal_python_version.split('.') | map('int') | list -%}
+
 # Poetry pyproject.toml: https://python-poetry.org/docs/pyproject/
 [build-system]
 requires = ["poetry_core>=1.0.0"]
@@ -32,40 +32,51 @@ classifiers = [  #! Update me
   "Topic :: Software Development :: Libraries :: Python Modules",
   "{{ license_classifiers[cookiecutter.license] }}",
   "Programming Language :: Python :: 3",
-  {%- for minor_version in cookiecutter._all_python_minor_version if minor_version >= python_version_splitted[1] %}
-  "Programming Language :: Python :: 3.{{ minor_version }}",{% endfor %}
+  "Programming Language :: Python :: 3.9",
 ]
 
-{% if cookiecutter.create_example_template == 'cli' -%}[tool.poetry.scripts]
 # Entry points for the package https://python-poetry.org/docs/pyproject/#scripts
 "{{ cookiecutter.project_name }}" = "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}.__main__:app"{%- endif %}
 
 [tool.poetry.dependencies]
-python = "^{{ cookiecutter.minimal_python_version }}"
-{% if cookiecutter.minimal_python_version == '3.7' -%}importlib_metadata = {version = "^4.5.0", python = "<3.8"}{%- endif -%}
-{%+ if cookiecutter.create_example_template == 'cli' %}
-typer = {extras = ["all"], version = "^0.4.0"}
-rich = "^10.14.0"
-{% endif %}
-[tool.poetry.dev-dependencies]
-bandit = "^1.7.1"
-black = {version = "^21.10b0", allow-prereleases = true}
-darglint = "^1.8.1"
-isort = {extras = ["colors"], version = "^5.10.1"}
-mypy = "^0.910"
+python = "^3.9"
+black = {version = "^21.10b0", allow-prereleases = true, optional = true}
+isort = {extras = ["colors"], version = "^5.10.1", optional = true}
+flake8  = { version = "^3.9.2", optional = true}
+flake8-docstrings = { version = "^1.6.0", optional = true }
+mypy = {version = "^0.900", optional = true}
 mypy-extensions = "^0.4.3"
-pre-commit = "^2.15.0"
+pytest  = { version = "^6.2.4", optional = true}
+pytest-cov  = { version = "^2.12.0", optional = true}
+pytest-html = "^3.1.1"
+virtualenv  = { version = "^20.2.2", optional = true}
+pip  = { version = "^20.3.1", optional = true}
+twine  = { version = "^3.3.0", optional = true}
+mkdocs-autorefs = {version = "^0.2.1", optional = true}
+pre-commit = {version = "^2.12.0", optional = true}
+toml = {version = "^0.10.2", optional = true}
+bump2version = {version = "^1.0.1", optional = true}
+bandit = "^1.7.1"
+darglint = "^1.8.1"
 pydocstyle = "^6.1.1"
 pylint = "^2.11.1"
-pytest = "^6.2.5"
 pyupgrade = "^2.29.1"
 safety = "^1.10.3"
 coverage = "^6.1.2"
 coverage-badge = "^1.1.0"
-pytest-html = "^3.1.1"
-pytest-cov = "^3.0.0"
-toml = {version = "^0.10.2", optional = true}
-bump2version = {version = "^1.0.1", optional = true}
+
+[tool.poetry.extras]
+test = [
+    "pytest",
+    "black",
+    "isort",
+    "mypy",
+    "flake8",
+    "flake8-docstrings",
+    "pytest-cov"
+    ]
+
+dev = ["tox", "pre-commit", "virtualenv", "pip", "twine", "toml", "bump2version"]
 
 [tool.black]
 # https://github.com/psf/black
@@ -91,7 +102,7 @@ exclude = '''
 
 [tool.isort]
 # https://github.com/timothycrosley/isort/
-py_version = {{ cookiecutter.minimal_python_version.replace('.', '') }}
+py_version = 39
 line_length = {{ cookiecutter.line_length }}
 
 known_typing = ["typing", "types", "typing_extensions", "mypy", "mypy_extensions"]
@@ -104,7 +115,7 @@ color_output = true
 
 [tool.mypy]
 # https://mypy.readthedocs.io/en/latest/config_file.html#using-a-pyproject-toml-file
-python_version = {{ cookiecutter.minimal_python_version }}
+python_version = 3.9
 pretty = true
 show_traceback = true
 color_output = true
