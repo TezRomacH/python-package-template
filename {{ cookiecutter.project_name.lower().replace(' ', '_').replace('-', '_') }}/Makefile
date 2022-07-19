@@ -10,11 +10,11 @@ VERSION := latest
 #* Poetry
 .PHONY: poetry-download
 poetry-download:
-	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/main/install-poetry.py | $(PYTHON) -
+	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | $(PYTHON) -
 
 .PHONY: poetry-remove
 poetry-remove:
-	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/main/install-poetry.py | $(PYTHON) - --uninstall
+	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | $(PYTHON) - --uninstall
 
 #* Installation
 .PHONY: install
@@ -32,7 +32,7 @@ pre-commit-install:
 codestyle:
 	poetry run pyupgrade --exit-zero-even-if-changed --py{{ cookiecutter.minimal_python_version.replace('.', '') }}-plus **/*.py
 	poetry run isort --settings-path pyproject.toml ./
-	poetry run black --config pyproject.toml ./
+# 	poetry run black --config pyproject.toml ./
 
 .PHONY: formatting
 formatting: codestyle
