@@ -1,4 +1,4 @@
-# Publish package on main branch if it's tagged with 'v*'
+{% raw %}# Publish package on main branch if it's tagged with 'v*'
 
 name: release & publish workflow
 
@@ -87,3 +87,4 @@ jobs:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
           skip_existing: true
+{% endraw %}
