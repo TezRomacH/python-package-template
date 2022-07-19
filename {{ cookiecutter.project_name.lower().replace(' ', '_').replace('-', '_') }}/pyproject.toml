@@ -35,9 +35,6 @@ classifiers = [  #! Update me
   "Programming Language :: Python :: 3.9",
 ]
 
-# Entry points for the package https://python-poetry.org/docs/pyproject/#scripts
-"{{ cookiecutter.project_name }}" = "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}.__main__:app"{%- endif %}
-
 [tool.poetry.dependencies]
 python = "^3.9"
 black = {version = "^21.10b0", allow-prereleases = true, optional = true}
