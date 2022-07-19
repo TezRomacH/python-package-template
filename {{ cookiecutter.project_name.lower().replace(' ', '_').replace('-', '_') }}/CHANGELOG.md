@@ -1,5 +1,5 @@
 # Changelog
 
-## {{ cookiecutter.version }} ({% now 'local' %})
+## {{ cookiecutter.version }}
 
 * First release on PyPI.
