@@ -52,8 +52,8 @@ mypy:
 .PHONY: check-safety
 check-safety:
 	poetry check
-	poetry run safety check --full-report
 	poetry run bandit -ll --recursive hooks
+	poetry run safety check --full-report
 
 .PHONY: lint
 lint: test check-codestyle mypy check-safety
