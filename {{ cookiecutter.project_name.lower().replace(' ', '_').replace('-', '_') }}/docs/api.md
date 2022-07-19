@@ -1,0 +1,1 @@
+::: {{ cookiecutter.pkg_name }}
