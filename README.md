@@ -1,17 +1,9 @@
 # cookiecutter pypackage slim
 
 ## Summary
-### Background
-- this project was heavily inspired by two projects:
-	- [TezRomacH/python-package-template]
-	- [waynerv/cookiecutter-pypackage]
-- a number of repos were analyzed: [REFERENCES.md]
-- cool tool used to [search cookiecutter templates on github]
-
-[TezRomacH/python-package-template]: https://github.com/TezRomacH/python-package-template
-[waynerv/cookiecutter-pypackage]: https://github.com/waynerv/cookiecutter-pypackage
-[./REFERENCES.md]: ./references/REFERENCES.md
-[search cookiecutter templates on github]:http://cookiecutter-templates.sebastianruml.name/
+### Purpose
+- cookiecutter template for creating python packages with modern project structure
+- accelerate your package development cycle and create more with software!
 
 ### Key components:
 - docker
@@ -49,6 +41,7 @@
 - create branch in cloned repo
 - copy/paste cookiecutter contents
 - git add commit and push
+- add testpypi token to repo secrets
 - manually trigger `stage & preview workflow`
 
 ### Commands
@@ -67,3 +60,15 @@ git add .
 git commit -m ":tada: Initial commit"
 git push -u origin first
 ```
+
+## Background
+- this project was heavily inspired by two projects:
+	- [TezRomacH/python-package-template]
+	- [waynerv/cookiecutter-pypackage]
+- a number of repos were analyzed: [REFERENCES.md]
+- cool tool used to [search cookiecutter templates on github]
+
+[TezRomacH/python-package-template]: https://github.com/TezRomacH/python-package-template
+[waynerv/cookiecutter-pypackage]: https://github.com/waynerv/cookiecutter-pypackage
+[./REFERENCES.md]: ./references/REFERENCES.md
+[search cookiecutter templates on github]:http://cookiecutter-templates.sebastianruml.name/
