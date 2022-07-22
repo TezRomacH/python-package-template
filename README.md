@@ -43,8 +43,16 @@
 - create branch in cloned repo
 - copy/paste cookiecutter contents
 - git add commit and push
-- add testpypi token to repo secrets
-- manually trigger `stage & preview workflow`
+	- this will automatically run `build` workflow
+- add test [pypi token] to repo secrets
+
+| Name | Value |
+| ---- | ---- |
+| TEST_PYPI_API_TOKEN | pypi-<alphanumeric string> |
+
+- merge branch or manually trigger `stage & preview workflow` 
+
+[pypi token]: https://pypi.org/help/#apitoken
 
 ### Commands
 ```bash
