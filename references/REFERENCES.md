@@ -17,46 +17,44 @@
 ## topics
 | name                          | mkdocstrings | pyinstaller | cookiecutter-poetry | github-ci | tox   | cookiecutter | best-practices |
 |-------------------------------|--------------|-------------|---------------------|-----------|-------|--------------|----------------|
-| click-app-template-repository | FALSE        | FALSE       | FALSE               | FALSE     | FALSE | FALSE        | FALSE          |
-| cookiecutter-click-app        | FALSE        | FALSE       | FALSE               | FALSE     | FALSE | FALSE        | FALSE          |
-| cookiecutter-poetry           | FALSE        | TRUE        | TRUE                | FALSE     | FALSE | TRUE         | FALSE          |
-| cookiecutter-pypackage        | FALSE        | FALSE       | FALSE               | FALSE     | FALSE | FALSE        | FALSE          |
-| cookiecutter-pypackage        | FALSE        | FALSE       | FALSE               | FALSE     | FALSE | FALSE        | FALSE          |
-| cookiecutter-pypackage        | FALSE        | FALSE       | FALSE               | FALSE     | FALSE | FALSE        | FALSE          |
-| cookiecutter-python-package   | FALSE        | FALSE       | FALSE               | FALSE     | FALSE | TRUE         | FALSE          |
-| python-package-template       | FALSE        | FALSE       | FALSE               | FALSE     | FALSE | TRUE         | TRUE           |
-| python-project-wizard         | TRUE         | FALSE       | FALSE               | TRUE      | TRUE  | TRUE         | FALSE          |
+| click-app-template-repository | -        | -       | -               | -     | - | -        | -          |
+| cookiecutter-click-app        | -        | -       | -               | -     | - | -        | -          |
+| cookiecutter-poetry           | -        | TRUE        | TRUE                | -     | - | TRUE         | -          |
+| cookiecutter-pypackage        | -        | -       | -               | -     | - | -        | -          |
+| cookiecutter-pypackage        | -        | -       | -               | -     | - | -        | -          |
+| cookiecutter-pypackage        | -        | -       | -               | -     | - | -        | -          |
+| cookiecutter-python-package   | -        | -       | -               | -     | - | TRUE         | -          |
+| python-package-template       | -        | -       | -               | -     | - | TRUE         | TRUE           |
+| python-project-wizard         | TRUE         | -       | -               | TRUE      | TRUE  | TRUE         | -          |
 
 **continued...**
 | codecov | jupyterlab | automated-testing | ci    | cookiecutter-python | cookiecutter-pypi-package | cookiecutter-python3 | cookiecutter-pypackage | pre-commit-hooks | python | automation | pypi-package |
 |---------|------------|-------------------|-------|---------------------|---------------------------|----------------------|------------------------|------------------|--------|------------|--------------|
-| FALSE   | FALSE      | FALSE             | FALSE | FALSE               | FALSE                     | FALSE                | FALSE                  | FALSE            | FALSE  | FALSE      | FALSE        |
-| FALSE   | FALSE      | FALSE             | FALSE | FALSE               | FALSE                     | FALSE                | FALSE                  | FALSE            | FALSE  | FALSE      | FALSE        |
-| FALSE   | TRUE       | FALSE             | FALSE | FALSE               | FALSE                     | FALSE                | FALSE                  | FALSE            | TRUE   | FALSE      | FALSE        |
-| FALSE   | FALSE      | FALSE             | FALSE | FALSE               | FALSE                     | FALSE                | FALSE                  | FALSE            | FALSE  | FALSE      | FALSE        |
-| FALSE   | FALSE      | FALSE             | FALSE | FALSE               | FALSE                     | FALSE                | FALSE                  | FALSE            | FALSE  | FALSE      | FALSE        |
-| FALSE   | FALSE      | FALSE             | FALSE | FALSE               | FALSE                     | FALSE                | FALSE                  | FALSE            | FALSE  | FALSE      | FALSE        |
-| FALSE   | FALSE      | TRUE              | TRUE  | TRUE                | TRUE                      | FALSE                | FALSE                  | FALSE            | FALSE  | TRUE       | TRUE         |
-| FALSE   | FALSE      | FALSE             | FALSE | FALSE               | FALSE                     | FALSE                | FALSE                  | FALSE            | TRUE   | FALSE      | FALSE        |
-| TRUE    | FALSE      | FALSE             | FALSE | FALSE               | FALSE                     | TRUE                 | TRUE                   | TRUE             | TRUE   | FALSE      | FALSE        |
+| -   | -      | -             | - | -               | -                     | -                | -                  | -            | -  | -      | -        |
+| -   | -      | -             | - | -               | -                     | -                | -                  | -            | -  | -      | -        |
+| -   | TRUE       | -             | - | -               | -                     | -                | -                  | -            | TRUE   | -      | -        |
+| -   | -      | -             | - | -               | -                     | -                | -                  | -            | -  | -      | -        |
+| -   | -      | -             | - | -               | -                     | -                | -                  | -            | -  | -      | -        |
+| -   | -      | -             | - | -               | -                     | -                | -                  | -            | -  | -      | -        |
+| -   | -      | TRUE              | TRUE  | TRUE                | TRUE                      | -                | -                  | -            | -  | TRUE       | TRUE         |
+| -   | -      | -             | - | -               | -                     | -                | -                  | -            | TRUE   | -      | -        |
+| TRUE    | -      | -             | - | -               | -                     | TRUE                 | TRUE                   | TRUE             | TRUE   | -      | -        |
 
 **continued...**
 | makefile | template | codestyle | pytest | scaffold | semantic-versions | cookiecutter-template | boilerplate | python-packages |
 |----------|----------|-----------|--------|----------|-------------------|-----------------------|-------------|-----------------|
-| FALSE    | FALSE    | FALSE     | FALSE  | FALSE    | FALSE             | FALSE                 | FALSE       | FALSE           |
-| FALSE    | FALSE    | FALSE     | FALSE  | FALSE    | FALSE             | FALSE                 | FALSE       | FALSE           |
-| FALSE    | FALSE    | FALSE     | TRUE   | FALSE    | FALSE             | TRUE                  | FALSE       | FALSE           |
-| FALSE    | FALSE    | FALSE     | FALSE  | FALSE    | FALSE             | FALSE                 | FALSE       | FALSE           |
-| FALSE    | FALSE    | FALSE     | FALSE  | FALSE    | FALSE             | FALSE                 | FALSE       | FALSE           |
-| FALSE    | FALSE    | FALSE     | FALSE  | FALSE    | FALSE             | FALSE                 | FALSE       | FALSE           |
-| FALSE    | FALSE    | FALSE     | FALSE  | FALSE    | FALSE             | TRUE                  | FALSE       | FALSE           |
-| TRUE     | TRUE     | TRUE      | FALSE  | FALSE    | TRUE              | FALSE                 | FALSE       | TRUE            |
-| FALSE    | TRUE     | FALSE     | FALSE  | TRUE     | FALSE             | TRUE                  | TRUE        | FALSE           |
+| -    | -    | -     | -  | -    | -             | -                 | -       | -           |
+| -    | -    | -     | -  | -    | -             | -                 | -       | -           |
+| -    | -    | -     | TRUE   | -    | -             | TRUE                  | -       | -           |
+| -    | -    | -     | -  | -    | -             | -                 | -       | -           |
+| -    | -    | -     | -  | -    | -             | -                 | -       | -           |
+| -    | -    | -     | -  | -    | -             | -                 | -       | -           |
+| -    | -    | -     | -  | -    | -             | TRUE                  | -       | -           |
+| TRUE     | TRUE     | TRUE      | -  | -    | TRUE              | -                 | -       | TRUE            |
+| -    | TRUE     | -     | -  | TRUE     | -             | TRUE                  | TRUE        | -           |
 
 ## code
 ```python
-%reset -f
-
 import datetime
 
 import pandas as pd

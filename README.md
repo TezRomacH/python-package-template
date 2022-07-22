@@ -37,42 +37,37 @@
 [readthedocs]: https://github.com/readthedocs/readthedocs.org
 
 ## Quick Start
-- create github repo
-- clone locally
-- cookiecutter with defaults
+- create github repo 
+- clone locally & run cookiecutter
+```bash
+git clone git@github.com:william-cass-wright/<project_name>.git
+cookiecutter https://github.com/william-cass-wright/cookiecutter-pypackage-slim.git _<project_name>
+```
 - create branch in cloned repo
 - copy/paste cookiecutter contents
+- setup with makefile
+```bash
+make poetry-download # if poetry isn't already installed
+make install
+make pre-commit-install
+make test
+make codestyle
+```
+
 - git add commit and push
 	- this will automatically run `build` workflow
 - add test [pypi token] to repo secrets
 
 | Name | Value |
 | ---- | ---- |
-| TEST_PYPI_API_TOKEN | pypi-<alphanumeric string> |
+| TEST_PYPI_API_TOKEN | `pypi-<alphanumeric string>` |
 
 - merge branch or manually trigger `stage & preview workflow` 
 
 [pypi token]: https://pypi.org/help/#apitoken
 
-### Commands
-```bash
-git clone git@github.com:william-cass-wright/<project_name>.git
-cookiecutter https://github.com/william-cass-wright/cookiecutter-pypackage-slim.git _<project_name>
-# copy/paste contents
-make poetry-download
-make install
-make pre-commit-install
-git checkout -b first
-git add .
-git commit -m ":tada: Initial commit"
-# this will run pre-commits and usually change something
-git add .
-git commit -m ":tada: Initial commit"
-git push -u origin first
-```
-
 ## Background
-- this project was heavily inspired by two projects:
+- this project drew inspiration from previous work:
 	- [TezRomacH/python-package-template]
 	- [waynerv/cookiecutter-pypackage]
 	- [wemake-services/wemake-python-package]
@@ -82,5 +77,5 @@ git push -u origin first
 [TezRomacH/python-package-template]: https://github.com/TezRomacH/python-package-template
 [waynerv/cookiecutter-pypackage]: https://github.com/waynerv/cookiecutter-pypackage
 [wemake-services/wemake-python-package]: https://github.com/wemake-services/wemake-python-package
-[./REFERENCES.md]: ./references/REFERENCES.md
+[REFERENCES.md]: /references/REFERENCES.md
 [search cookiecutter templates on github]:http://cookiecutter-templates.sebastianruml.name/
