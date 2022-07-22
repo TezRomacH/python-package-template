@@ -15,7 +15,7 @@
 	- run tests
 	- deploy to PyPI
 	- dependabot
-	- mkdocs (*TODO*)
+	- mkdocs/[readthedocs] (*TODO*)
 - testing
 	- black
 	- tox
@@ -33,6 +33,8 @@
 	- code of conduct
 	- contributing
 	- security
+
+[readthedocs]: https://github.com/readthedocs/readthedocs.org
 
 ## Quick Start
 - create github repo
@@ -65,10 +67,12 @@ git push -u origin first
 - this project was heavily inspired by two projects:
 	- [TezRomacH/python-package-template]
 	- [waynerv/cookiecutter-pypackage]
+	- [wemake-services/wemake-python-package]
 - a number of repos were analyzed: [REFERENCES.md]
 - cool tool used to [search cookiecutter templates on github]
 
 [TezRomacH/python-package-template]: https://github.com/TezRomacH/python-package-template
 [waynerv/cookiecutter-pypackage]: https://github.com/waynerv/cookiecutter-pypackage
+[wemake-services/wemake-python-package]: https://github.com/wemake-services/wemake-python-package
 [./REFERENCES.md]: ./references/REFERENCES.md
 [search cookiecutter templates on github]:http://cookiecutter-templates.sebastianruml.name/
