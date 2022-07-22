@@ -28,7 +28,7 @@ pre-commit-install:
 codestyle:
 	poetry run pyupgrade --exit-zero-even-if-changed --py37-plus **/*.py
 	poetry run isort --settings-path pyproject.toml hooks tests
-	poetry run black --config pyproject.toml hooks tests
+# 	poetry run black --config pyproject.toml hooks tests
 
 .PHONY: formatting
 formatting: codestyle
@@ -42,7 +42,7 @@ test:
 .PHONY: check-codestyle
 check-codestyle:
 	poetry run isort --diff --check-only --settings-path pyproject.toml hooks tests
-	poetry run black --diff --check --config pyproject.toml hooks tests
+# 	poetry run black --diff --check --config pyproject.toml hooks tests
 	poetry run darglint --verbosity 2 hooks tests
 
 .PHONY: mypy
