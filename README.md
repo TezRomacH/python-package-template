@@ -4,6 +4,7 @@
 ### Purpose
 - cookiecutter template for creating python packages with modern project structure
 - accelerate your package development cycle and create more with software!
+- for a step-by-step guide on building a non-templated package, see [this blog post](https://mathspp.com/blog/how-to-create-a-python-package-in-2022) by [Rodrigo Girão Serrão](https://github.com/rodrigogiraoserrao)
 
 ### Key components:
 - docker
