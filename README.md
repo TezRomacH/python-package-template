@@ -67,10 +67,15 @@ make codestyle
 
 [pypi token]: https://pypi.org/help/#apitoken
 
+## Additional Setup
+- Set up [Dependabot](https://docs.github.com/en/github/administering-a-repository/enabling-and-disabling-version-updates#enabling-github-dependabot-version-updates) to ensure you have the latest dependencies.
+- codecov
+
 ## Background
 - this project drew inspiration from previous work:
 	- [TezRomacH/python-package-template]
-	- [waynerv/cookiecutter-pypackage]
+	- [waynerv/cookiecutter-pypackage] (zillionare fork)
+	- [zillionare/python-project-wizard]
 	- [wemake-services/wemake-python-package]
 - a number of repos were analyzed: [REFERENCES.md]
 - cool tool used to [search cookiecutter templates on github]
@@ -80,3 +85,4 @@ make codestyle
 [wemake-services/wemake-python-package]: https://github.com/wemake-services/wemake-python-package
 [REFERENCES.md]: /references/REFERENCES.md
 [search cookiecutter templates on github]:http://cookiecutter-templates.sebastianruml.name/
+[zillionare/python-project-wizard]: https://github.com/zillionare/python-project-wizard

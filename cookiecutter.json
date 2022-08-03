@@ -14,7 +14,7 @@
   "create_example_template": ["none", "cli"],
 
   "_copy_without_render": [
-    "poetry.lock",
+    // "poetry.lock",
     ".github/workflows/*.yml"
   ]
 }
