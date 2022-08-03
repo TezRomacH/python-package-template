@@ -4,6 +4,7 @@
 ### Purpose
 - cookiecutter template for creating python packages with modern project structure
 - accelerate your package development cycle and create more with software!
+- for a step-by-step guide on building a non-templated package, see [this blog post](https://mathspp.com/blog/how-to-create-a-python-package-in-2022) by [Rodrigo Girão Serrão](https://github.com/rodrigogiraoserrao)
 
 ### Key components:
 - docker
@@ -66,10 +67,15 @@ make codestyle
 
 [pypi token]: https://pypi.org/help/#apitoken
 
+## Additional Setup
+- Set up [Dependabot](https://docs.github.com/en/github/administering-a-repository/enabling-and-disabling-version-updates#enabling-github-dependabot-version-updates) to ensure you have the latest dependencies.
+- codecov
+
 ## Background
 - this project drew inspiration from previous work:
 	- [TezRomacH/python-package-template]
-	- [waynerv/cookiecutter-pypackage]
+	- [waynerv/cookiecutter-pypackage] (zillionare fork)
+	- [zillionare/python-project-wizard]
 	- [wemake-services/wemake-python-package]
 - a number of repos were analyzed: [REFERENCES.md]
 - cool tool used to [search cookiecutter templates on github]
@@ -79,3 +85,4 @@ make codestyle
 [wemake-services/wemake-python-package]: https://github.com/wemake-services/wemake-python-package
 [REFERENCES.md]: /references/REFERENCES.md
 [search cookiecutter templates on github]:http://cookiecutter-templates.sebastianruml.name/
+[zillionare/python-project-wizard]: https://github.com/zillionare/python-project-wizard
