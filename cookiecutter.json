@@ -4,7 +4,7 @@
   "organization": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "license": ["MIT", "BSD-3", "GNU GPL v3.0", "Apache Software License 2.0"],
   "_all_python_minor_version": [7, 8, 9],
-  "minimal_python_version": [3.7, 3.8, 3.9],
+  "minimal_python_version": [3.7, 3.8, 3.9, 3.10, 3.11],
   "github_name": "{{ cookiecutter.organization.lower().replace(' ', '_').replace('-', '_') }}",
   "email": "hello@{{ cookiecutter.organization.lower().replace(' ', '-') }}.com",
   "version": "0.1.0",
