@@ -29,7 +29,7 @@ In this [cookiecutter 🍪](https://github.com/cookiecutter/cookiecutter) templa
 
 ### Development features
 
-- Supports `Python 3.7` and higher.
+- Supports `Python 3.8` and higher.
 - [`Poetry`](https://python-poetry.org/) as a dependencies manager. See configuration in [`pyproject.toml`](https://github.com/a1d4r/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/pyproject.toml) and [`setup.cfg`](https://github.com/a1d4r/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/setup.cfg).
 - Automatic codestyle with [`black`](https://github.com/psf/black), [`isort`](https://github.com/timothycrosley/isort), [`autoflake`](https://github.com/myint/autoflake), and [`pyupgrade`](https://github.com/asottile/pyupgrade).
 - Ready-to-use [`pre-commit`](https://pre-commit.com/) hooks with code-formatting.
@@ -75,17 +75,17 @@ Template generator will ask you to fill some variables.
 
 The input variables, with their default values:
 
-|      **Parameter**       |      **Default value**      | **Description**                                                                                                                                  |
-|:------------------------:|:---------------------------:|--------------------------------------------------------------------------------------------------------------------------------------------------|
-|      `project_name`      |      `python-project`       | [Check the availability of possible name](http://ivantomic.com/projects/ospnc/) before creating the project.                                     |
-|  `project_description`   | based on the `project_name` | Brief description of your project.                                                                                                               |
-|      `organization`      | based on the `project_name` | Name of the organization. We need to generate LICENCE and to specify ownership in `pyproject.toml`.                                              |
-|        `license`         |            `MIT`            | One of `MIT`, `BSD-3`, `GNU GPL v3.0` and `Apache Software License 2.0`.                                                                         |
-| `minimal_python_version` |            `3.7`            | Minimal Python version. One of `3.7`, `3.8` and `3.9`. It is used for builds, GitHub workflow and formatters (`black`, `isort` and `pyupgrade`). |
-|      `github_name`       | based on the `organization` | GitHub username for hosting. Also used to set up `README.md`, `pyproject.toml` and template files for GitHub.                                    |
-|         `email`          | based on the `organization` | Email for `CODE_OF_CONDUCT.md`, `SECURITY.md` files and to specify the ownership of the project in `pyproject.toml`.                             |
-|        `version`         |           `0.1.0`           | Initial version of the package. Make sure it follows the [Semantic Versions](https://semver.org/) specification.                                 |
-|      `line_length`       |             88              | The max length per line (used for codestyle with `black` and `isort`). NOTE: This value must be between 50 and 300.                              |
+|      **Parameter**       |      **Default value**      | **Description**                                                                                                                                       |
+|:------------------------:|:---------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+|      `project_name`      |      `python-project`       | [Check the availability of possible name](http://ivantomic.com/projects/ospnc/) before creating the project.                                          |
+|  `project_description`   | based on the `project_name` | Brief description of your project.                                                                                                                    |
+|      `organization`      | based on the `project_name` | Name of the organization. We need to generate LICENCE and to specify ownership in `pyproject.toml`.                                                   |
+|        `license`         |            `MIT`            | One of `MIT`, `BSD-3`, `GNU GPL v3.0` and `Apache Software License 2.0`.                                                                              |
+| `minimal_python_version` |            `3.8`            | Minimal Python version. One of `3.8`, `3.9`, `3.10`, `3.11`. It is used for builds, GitHub workflow and formatters (`black`, `isort` and `pyupgrade`). |
+|      `github_name`       | based on the `organization` | GitHub username for hosting. Also used to set up `README.md`, `pyproject.toml` and template files for GitHub.                                         |
+|         `email`          | based on the `organization` | Email for `CODE_OF_CONDUCT.md`, `SECURITY.md` files and to specify the ownership of the project in `pyproject.toml`.                                  |
+|        `version`         |           `0.1.0`           | Initial version of the package. Make sure it follows the [Semantic Versions](https://semver.org/) specification.                                      |
+|      `line_length`       |             88              | The max length per line (used for codestyle with `black` and `isort`). NOTE: This value must be between 50 and 300.                                   |
 
 All input values will be saved in the `cookiecutter-config-file.yml` file so that you won't lose them. 😉
 
