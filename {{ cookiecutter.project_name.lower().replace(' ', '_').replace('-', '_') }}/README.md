@@ -213,6 +213,9 @@ Update all dev libraries to the latest version using one comand
 make update-dev-deps
 ```
 
+</p>
+</details>
+
 <details>
 <summary>4. Code security</summary>
 <p>
@@ -231,9 +234,6 @@ To validate `pyproject.toml` use
 ```bash
 make check-poetry
 ```
-
-</p>
-</details>
 
 </p>
 </details>
